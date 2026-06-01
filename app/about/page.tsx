@@ -51,7 +51,7 @@ export default function AboutPage() {
 
             {/* Visual block */}
             <div className="relative border border-black/8 aspect-[4/3] flex items-center justify-center overflow-hidden"
-              style={{ background: "var(--color-cream)" }}>
+              style={{ background: "var(--color-mint)" }}>
               <span className="font-display font-bold tracking-display text-ink/6 select-none pointer-events-none"
                 style={{ fontSize: "clamp(8rem, 20vw, 16rem)", lineHeight: 1 }}
                 aria-hidden>ô</span>

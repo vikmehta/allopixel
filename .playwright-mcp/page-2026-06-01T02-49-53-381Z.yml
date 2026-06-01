@@ -1,0 +1,396 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=e3]:
+    - navigation [ref=e4]:
+      - link "Allôpixel — home" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - text: Allôpixel
+      - generic [ref=e6]:
+        - link "Work" [ref=e7] [cursor=pointer]:
+          - /url: /work
+          - text: Work
+        - link "About" [ref=e8] [cursor=pointer]:
+          - /url: /about
+          - text: About
+        - link "Services" [ref=e9] [cursor=pointer]:
+          - /url: /services
+          - text: Services
+        - link "Contact" [ref=e10] [cursor=pointer]:
+          - /url: /contact
+          - text: Contact
+        - link "Let's Talk" [ref=e11] [cursor=pointer]:
+          - /url: /contact
+  - main [ref=e12]:
+    - generic [ref=e13]:
+      - generic [ref=e14]:
+        - generic [ref=e15]:
+          - generic [ref=e18]: Allôpixel Studio · Montréal
+          - generic [ref=e19]:
+            - heading "We make" [level=1] [ref=e21]
+            - heading "small businesses" [level=1] [ref=e23]
+            - heading "look unforgettable." [level=1] [ref=e25]
+          - paragraph [ref=e27]: Brand identity, web design, and creative direction — without the agency price tag.
+          - generic [ref=e28]:
+            - link "See our work" [ref=e29] [cursor=pointer]:
+              - /url: /work
+              - text: See our work
+              - img [ref=e30]
+            - link "Get a free quote" [ref=e32] [cursor=pointer]:
+              - /url: /contact
+          - generic [ref=e33]:
+            - img [ref=e34]
+            - generic [ref=e36]: Free discovery call · No commitment required
+        - generic [ref=e38]: Scroll
+      - generic [ref=e41]:
+        - generic [ref=e42]:
+          - generic [ref=e43]: Brand Identity
+          - generic [ref=e44]: ·
+        - generic [ref=e45]:
+          - generic [ref=e46]: Web Design
+          - generic [ref=e47]: ·
+        - generic [ref=e48]:
+          - generic [ref=e49]: Logo Design
+          - generic [ref=e50]: ·
+        - generic [ref=e51]:
+          - generic [ref=e52]: Social Media
+          - generic [ref=e53]: ·
+        - generic [ref=e54]:
+          - generic [ref=e55]: Print & Collateral
+          - generic [ref=e56]: ·
+        - generic [ref=e57]:
+          - generic [ref=e58]: Montréal
+          - generic [ref=e59]: ·
+        - generic [ref=e60]:
+          - generic [ref=e61]: Affordable
+          - generic [ref=e62]: ·
+        - generic [ref=e63]:
+          - generic [ref=e64]: Fast Turnaround
+          - generic [ref=e65]: ·
+        - generic [ref=e66]:
+          - generic [ref=e67]: No Hidden Fees
+          - generic [ref=e68]: ·
+        - generic [ref=e69]:
+          - generic [ref=e70]: Creative Direction
+          - generic [ref=e71]: ·
+        - generic [ref=e72]:
+          - generic [ref=e73]: Brand Identity
+          - generic [ref=e74]: ·
+        - generic [ref=e75]:
+          - generic [ref=e76]: Web Design
+          - generic [ref=e77]: ·
+        - generic [ref=e78]:
+          - generic [ref=e79]: Logo Design
+          - generic [ref=e80]: ·
+        - generic [ref=e81]:
+          - generic [ref=e82]: Social Media
+          - generic [ref=e83]: ·
+        - generic [ref=e84]:
+          - generic [ref=e85]: Print & Collateral
+          - generic [ref=e86]: ·
+        - generic [ref=e87]:
+          - generic [ref=e88]: Montréal
+          - generic [ref=e89]: ·
+        - generic [ref=e90]:
+          - generic [ref=e91]: Affordable
+          - generic [ref=e92]: ·
+        - generic [ref=e93]:
+          - generic [ref=e94]: Fast Turnaround
+          - generic [ref=e95]: ·
+        - generic [ref=e96]:
+          - generic [ref=e97]: No Hidden Fees
+          - generic [ref=e98]: ·
+        - generic [ref=e99]:
+          - generic [ref=e100]: Creative Direction
+          - generic [ref=e101]: ·
+      - generic [ref=e104]:
+        - generic [ref=e105]:
+          - generic [ref=e106]: The problem
+          - heading "Most design is either too expensive or feels generic." [level=2] [ref=e107]
+        - generic [ref=e109]:
+          - paragraph [ref=e110]: We believe every small business deserves a brand that competes with the big players — at a price that actually makes sense.
+          - paragraph [ref=e111]: No inflated retainers. No design-by-committee. No surprises on the invoice. Just honest, thoughtful creative work that makes your business memorable.
+          - generic [ref=e112]:
+            - generic [ref=e113]:
+              - generic [ref=e114]: 100+
+              - generic [ref=e115]: Projects delivered
+            - generic [ref=e116]:
+              - generic [ref=e117]: 5★
+              - generic [ref=e118]: Average client rating
+            - generic [ref=e119]:
+              - generic [ref=e120]: 48hr
+              - generic [ref=e121]: Average first draft
+            - generic [ref=e122]:
+              - generic [ref=e123]: $0
+              - generic [ref=e124]: Discovery call cost
+      - generic [ref=e126]:
+        - generic [ref=e127]:
+          - generic [ref=e128]:
+            - generic [ref=e129]: Selected work
+            - heading "Work that speaks for itself." [level=2] [ref=e130]:
+              - text: Work that speaks
+              - text: for itself.
+          - link "View all projects" [ref=e131] [cursor=pointer]:
+            - /url: /work
+            - text: View all projects
+            - img [ref=e132]
+        - generic [ref=e134]:
+          - link "View project Restaurant · Branding Island Juice Co. A vibrant tropical brand identity that turned a local juice bar into a destination." [ref=e136] [cursor=pointer]:
+            - /url: /work
+            - generic [ref=e142]:
+              - text: View project
+              - img [ref=e143]
+            - generic [ref=e145]:
+              - text: Restaurant · Branding
+              - heading "Island Juice Co." [level=3] [ref=e146]
+              - paragraph [ref=e147]: A vibrant tropical brand identity that turned a local juice bar into a destination.
+          - link "View project Wellness · Web Design Blue Rabbit Therapy A calm, trust-first website for a therapy practice that needed to feel safe and approachable." [ref=e149] [cursor=pointer]:
+            - /url: /work
+            - generic [ref=e155]:
+              - text: View project
+              - img [ref=e156]
+            - generic [ref=e158]:
+              - text: Wellness · Web Design
+              - heading "Blue Rabbit Therapy" [level=3] [ref=e159]
+              - paragraph [ref=e160]: A calm, trust-first website for a therapy practice that needed to feel safe and approachable.
+          - link "View project Fashion · Brand Identity Siwalic Apparels A bold, modern brand refresh for a clothing label targeting urban South Asian markets." [ref=e162] [cursor=pointer]:
+            - /url: /work
+            - generic [ref=e168]:
+              - text: View project
+              - img [ref=e169]
+            - generic [ref=e171]:
+              - text: Fashion · Brand Identity
+              - heading "Siwalic Apparels" [level=3] [ref=e172]
+              - paragraph [ref=e173]: A bold, modern brand refresh for a clothing label targeting urban South Asian markets.
+      - generic [ref=e175]:
+        - generic [ref=e176]:
+          - generic [ref=e177]: What we do
+          - heading "Everything your brand needs, under one roof." [level=2] [ref=e178]
+        - generic [ref=e179]:
+          - generic [ref=e181]:
+            - generic [ref=e182]:
+              - img [ref=e184]
+              - generic [ref=e187]: "01"
+            - heading "Brand Identity" [level=3] [ref=e188]
+            - paragraph [ref=e189]: Logo, color systems, typography, and brand guidelines that make you instantly recognizable.
+          - generic [ref=e191]:
+            - generic [ref=e192]:
+              - img [ref=e194]
+              - generic [ref=e197]: "02"
+            - heading "Web Design & Dev" [level=3] [ref=e198]
+            - paragraph [ref=e199]: Beautiful, fast websites that work on every screen and convert visitors into clients.
+          - generic [ref=e201]:
+            - generic [ref=e202]:
+              - img [ref=e204]
+              - generic [ref=e208]: "03"
+            - heading "Social Media Design" [level=3] [ref=e209]
+            - paragraph [ref=e210]: Consistent, eye-catching content templates and kits your audience will stop scrolling for.
+          - generic [ref=e212]:
+            - generic [ref=e213]:
+              - img [ref=e215]
+              - generic [ref=e218]: "04"
+            - heading "Print & Collateral" [level=3] [ref=e219]
+            - paragraph [ref=e220]: Business cards, brochures, menus, and signage that feel as premium as your brand.
+          - generic [ref=e222]:
+            - generic [ref=e223]:
+              - img [ref=e225]
+              - generic [ref=e227]: "05"
+            - heading "Logo Design" [level=3] [ref=e228]
+            - paragraph [ref=e229]: From wordmarks to icon-based marks — a logo that carries your story in every glance.
+          - generic [ref=e231]:
+            - generic [ref=e232]:
+              - img [ref=e234]
+              - generic [ref=e237]: "06"
+            - heading "Creative Direction" [level=3] [ref=e238]
+            - paragraph [ref=e239]: Strategy-driven creative oversight for brands that need a coherent visual story across all touchpoints.
+      - generic [ref=e241]:
+        - generic [ref=e242]:
+          - generic [ref=e243]: Transparent pricing
+          - heading "No surprises. No hidden fees. Just honest pricing." [level=2] [ref=e244]:
+            - text: No surprises. No hidden fees.
+            - text: Just honest pricing.
+        - paragraph [ref=e246]: Every project starts with a free discovery call. No commitment.
+        - generic [ref=e247]:
+          - generic [ref=e249]:
+            - generic [ref=e250]:
+              - heading "Spark" [level=3] [ref=e251]
+              - generic [ref=e252]:
+                - generic [ref=e253]: $299
+                - generic [ref=e254]: +
+              - paragraph [ref=e255]: Perfect for new businesses and side projects
+            - list [ref=e256]:
+              - listitem [ref=e257]:
+                - img [ref=e258]
+                - generic [ref=e260]: Logo design (2 concepts)
+              - listitem [ref=e261]:
+                - img [ref=e262]
+                - generic [ref=e264]: Brand color palette
+              - listitem [ref=e265]:
+                - img [ref=e266]
+                - generic [ref=e268]: Font pairing guide
+              - listitem [ref=e269]:
+                - img [ref=e270]
+                - generic [ref=e272]: 3 social media templates
+              - listitem [ref=e273]:
+                - img [ref=e274]
+                - generic [ref=e276]: File delivery (PNG, SVG, PDF)
+            - link "Start with Spark" [ref=e277] [cursor=pointer]:
+              - /url: /contact
+          - generic [ref=e279]:
+            - generic [ref=e280]: Most popular
+            - generic [ref=e281]:
+              - heading "Studio" [level=3] [ref=e282]
+              - generic [ref=e283]:
+                - generic [ref=e284]: $799
+                - generic [ref=e285]: +
+              - paragraph [ref=e286]: Perfect for small businesses ready to grow
+            - list [ref=e287]:
+              - listitem [ref=e288]:
+                - img [ref=e289]
+                - generic [ref=e291]: Everything in Spark
+              - listitem [ref=e292]:
+                - img [ref=e293]
+                - generic [ref=e295]: Full brand guidelines
+              - listitem [ref=e296]:
+                - img [ref=e297]
+                - generic [ref=e299]: 5-page responsive website
+              - listitem [ref=e300]:
+                - img [ref=e301]
+                - generic [ref=e303]: Mobile optimization
+              - listitem [ref=e304]:
+                - img [ref=e305]
+                - generic [ref=e307]: Contact form integration
+              - listitem [ref=e308]:
+                - img [ref=e309]
+                - generic [ref=e311]: Basic SEO setup
+            - link "Start with Studio" [ref=e312] [cursor=pointer]:
+              - /url: /contact
+          - generic [ref=e314]:
+            - generic [ref=e315]:
+              - heading "Launch" [level=3] [ref=e316]
+              - generic [ref=e317]:
+                - generic [ref=e318]: $1,499
+                - generic [ref=e319]: +
+              - paragraph [ref=e320]: Perfect for brands ready to stand out
+            - list [ref=e321]:
+              - listitem [ref=e322]:
+                - img [ref=e323]
+                - generic [ref=e325]: Everything in Studio
+              - listitem [ref=e326]:
+                - img [ref=e327]
+                - generic [ref=e329]: Social media kit (10 templates)
+              - listitem [ref=e330]:
+                - img [ref=e331]
+                - generic [ref=e333]: Business card design
+              - listitem [ref=e334]:
+                - img [ref=e335]
+                - generic [ref=e337]: Letterhead & stationery
+              - listitem [ref=e338]:
+                - img [ref=e339]
+                - generic [ref=e341]: 30-day post-launch support
+              - listitem [ref=e342]:
+                - img [ref=e343]
+                - generic [ref=e345]: Priority turnaround
+            - link "Start with Launch" [ref=e346] [cursor=pointer]:
+              - /url: /contact
+        - paragraph [ref=e348]:
+          - text: Need something custom?
+          - link "Let's talk" [ref=e349] [cursor=pointer]:
+            - /url: /contact
+          - text: — we build tailored packages for unique projects.
+      - generic [ref=e351]:
+        - generic [ref=e352]:
+          - generic [ref=e353]: How we work
+          - heading "Simple, transparent, and built around you." [level=2] [ref=e354]
+        - generic [ref=e355]:
+          - generic [ref=e357]:
+            - generic [ref=e359]: "01"
+            - heading "Discovery Call" [level=3] [ref=e360]
+            - paragraph [ref=e361]: We start with a free 30-minute call to understand your business, your goals, and what makes you different. No pressure, no pitch.
+          - generic [ref=e363]:
+            - generic [ref=e365]: "02"
+            - heading "Strategy & Proposal" [level=3] [ref=e366]
+            - paragraph [ref=e367]: We turn your goals into a clear creative brief and send you a detailed proposal — scope, timeline, and price all laid out.
+          - generic [ref=e369]:
+            - generic [ref=e371]: "03"
+            - heading "Design & Iteration" [level=3] [ref=e372]
+            - paragraph [ref=e373]: We design, you give feedback, we refine. You're involved every step of the way, never left waiting for a reveal.
+          - generic [ref=e375]:
+            - generic [ref=e376]: "04"
+            - heading "Launch & Beyond" [level=3] [ref=e377]
+            - paragraph [ref=e378]: We deliver every file you need, make sure everything works perfectly, and stay available for questions after launch.
+      - generic [ref=e380]:
+        - generic [ref=e381]:
+          - generic [ref=e382]: Kind words
+          - heading "Our clients say it best." [level=2] [ref=e383]
+        - generic [ref=e384]:
+          - generic [ref=e386]:
+            - generic [ref=e387]: "\""
+            - blockquote [ref=e388]: Working with Allôpixel was the best decision I made for my business. They took my scattered ideas and turned them into a brand I'm genuinely proud to show off.
+            - generic [ref=e389]:
+              - generic [ref=e391]: SC
+              - generic [ref=e392]:
+                - generic [ref=e393]: Sarah C.
+                - generic [ref=e394]: Owner, The Bloom Bakery
+          - generic [ref=e396]:
+            - generic [ref=e397]: "\""
+            - blockquote [ref=e398]: The website they built us has already brought in three new clients. It looks premium, loads fast, and I can actually update it myself. Worth every penny.
+            - generic [ref=e399]:
+              - generic [ref=e401]: MR
+              - generic [ref=e402]:
+                - generic [ref=e403]: Marco R.
+                - generic [ref=e404]: Founder, Reno Pro Plus
+          - generic [ref=e406]:
+            - generic [ref=e407]: "\""
+            - blockquote [ref=e408]: I needed a portfolio site that felt like me — not just another photography template. What I got exceeded every expectation. The process was so easy.
+            - generic [ref=e409]:
+              - generic [ref=e411]: JP
+              - generic [ref=e412]:
+                - generic [ref=e413]: Jess P.
+                - generic [ref=e414]: Photographer, Jess Blackwell Studio
+      - generic [ref=e416]:
+        - heading "Ready to build something great?" [level=2] [ref=e417]
+        - paragraph [ref=e418]: Let’s start with a free 30-minute discovery call.
+        - link "Book a free call" [ref=e420] [cursor=pointer]:
+          - /url: /contact
+          - text: Book a free call
+          - img [ref=e421]
+  - contentinfo [ref=e423]:
+    - generic [ref=e424]:
+      - generic [ref=e425]:
+        - generic [ref=e426]:
+          - link "Allôpixel" [ref=e427] [cursor=pointer]:
+            - /url: /
+          - paragraph [ref=e428]: Affordable design for ambitious small businesses.
+          - paragraph [ref=e429]: Montréal, Canada
+        - generic [ref=e430]:
+          - paragraph [ref=e431]: Navigate
+          - list [ref=e432]:
+            - listitem [ref=e433]:
+              - link "Work" [ref=e434] [cursor=pointer]:
+                - /url: /work
+            - listitem [ref=e435]:
+              - link "About" [ref=e436] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e437]:
+              - link "Services" [ref=e438] [cursor=pointer]:
+                - /url: /services
+            - listitem [ref=e439]:
+              - link "Contact" [ref=e440] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=e441]:
+          - paragraph [ref=e442]: Get in touch
+          - link "hello@allopixel.com" [ref=e443] [cursor=pointer]:
+            - /url: mailto:hello@allopixel.com
+          - link "Book a free discovery call →" [ref=e444] [cursor=pointer]:
+            - /url: /contact
+          - generic [ref=e445]:
+            - link "Follow Allôpixel on Instagram" [ref=e446] [cursor=pointer]:
+              - /url: https://instagram.com/allopixel
+              - img [ref=e447]
+            - link "Follow Allôpixel on LinkedIn" [ref=e451] [cursor=pointer]:
+              - /url: https://linkedin.com/company/allopixel
+              - img [ref=e452]
+      - generic [ref=e456]:
+        - paragraph [ref=e457]: © 2026 Allôpixel. All rights reserved.
+        - paragraph [ref=e458]: Crafted with care in Montréal

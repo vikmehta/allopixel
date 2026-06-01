@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 
 const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
+const vp = { once: true, amount: 0.05 } as const;
 
 const projects = [
   {
@@ -34,14 +34,9 @@ const projects = [
 ];
 
 export default function SelectedWork() {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, amount: 0.08 });
-
   return (
     <section className="bg-chalk py-28 lg:py-36">
       <div className="max-w-[1600px] mx-auto px-8 md:px-12 lg:px-16">
-
-        {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-16 pb-8 border-b border-black/8">
           <div>
             <span className="section-label block mb-4">Selected work</span>
@@ -51,8 +46,7 @@ export default function SelectedWork() {
             </h2>
           </div>
           <Link href="/work"
-            className="font-mono text-[0.65rem] uppercase tracking-[0.15em] text-ink/40 hover:text-coral transition-colors flex items-center gap-2 shrink-0 mb-1"
-          >
+            className="font-mono text-[0.65rem] uppercase tracking-[0.15em] text-ink/40 hover:text-coral transition-colors flex items-center gap-2 shrink-0 mb-1">
             View all
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden>
               <path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
@@ -60,33 +54,26 @@ export default function SelectedWork() {
           </Link>
         </div>
 
-        {/* Projects — alternating layout like Ref2 */}
-        <div ref={ref} className="space-y-0">
+        <div className="space-y-0">
           {projects.map((p, i) => {
             const isEven = i % 2 === 0;
             return (
               <motion.div key={p.id}
-                initial={{ opacity: 0, y: 48 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.75, delay: i * 0.15, ease }}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={vp}
+                transition={{ duration: 0.7, delay: i * 0.1, ease }}
               >
                 <Link href="/work"
-                  className="group grid grid-cols-1 md:grid-cols-12 gap-0 border-b border-black/8 py-12 items-center hover:bg-black/[0.015] transition-colors duration-300 -mx-6 px-6 md:-mx-12 md:px-12 lg:-mx-20 lg:px-20"
+                  className="group grid grid-cols-1 md:grid-cols-12 gap-0 border-b border-black/8 py-12 items-center hover:bg-black/[0.015] transition-colors duration-300 -mx-8 px-8 md:-mx-12 md:px-12 lg:-mx-16 lg:px-16"
                 >
-                  {/* Image — alternates sides */}
                   <div className={`md:col-span-7 ${!isEven ? "md:order-2" : ""}`}>
                     <div className="relative overflow-hidden aspect-[16/10] rounded-sm">
-                      {/* Gradient placeholder */}
-                      <div
-                        className="absolute inset-0 grayscale group-hover:grayscale-0 transition-all duration-700"
-                        style={{ background: p.gradient }}
-                      />
-                      {/* Subtle overlay on hover */}
+                      <div className="absolute inset-0 grayscale group-hover:grayscale-0 transition-all duration-700"
+                        style={{ background: p.gradient }} />
                       <div className="absolute inset-0 bg-coral/0 group-hover:bg-coral/5 transition-all duration-500 z-10" />
                     </div>
                   </div>
-
-                  {/* Info */}
                   <div className={`md:col-span-5 ${!isEven ? "md:order-1 md:pr-16" : "md:pl-16"} mt-6 md:mt-0`}>
                     <div className="flex items-center gap-3 mb-5">
                       <span className="font-mono text-[0.6rem] text-ink/35 uppercase tracking-widest">{p.year}</span>
@@ -97,9 +84,7 @@ export default function SelectedWork() {
                       style={{ fontSize: "clamp(1.8rem, 3vw, 3rem)" }}>
                       {p.name}
                     </h3>
-                    <p className="font-body text-base text-ink/55 leading-relaxed mb-8">
-                      {p.desc}
-                    </p>
+                    <p className="font-body text-base text-ink/55 leading-relaxed mb-8">{p.desc}</p>
                     <span className="font-mono text-[0.65rem] uppercase tracking-[0.14em] text-ink/35 group-hover:text-coral transition-colors duration-200 flex items-center gap-2">
                       View project
                       <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden>

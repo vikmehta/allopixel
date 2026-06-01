@@ -1,9 +1,10 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { useState } from "react";
 
 const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
+const vp = { once: true, amount: 0.05 } as const;
 
 const services = [
   { num: "01", title: "Brand Identity", desc: "Logo, color systems, typography, and brand guidelines that make you instantly recognizable across every touchpoint." },
@@ -15,23 +16,20 @@ const services = [
 ];
 
 export default function Services() {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, amount: 0.1 });
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
-    <section ref={ref} className="bg-chalk py-28 lg:py-36">
+    <section className="bg-chalk py-28 lg:py-36">
       <div className="max-w-[1600px] mx-auto px-8 md:px-12 lg:px-16">
-
-        {/* Header */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
           <div>
-            <motion.span initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} className="section-label block mb-5">
+            <motion.span initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
+              viewport={vp} className="section-label block mb-5">
               What we do
             </motion.span>
             <motion.h2
-              initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.65, ease }}
+              initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+              viewport={vp} transition={{ duration: 0.65, ease }}
               className="font-display font-bold tracking-display leading-[0.92] text-ink"
               style={{ fontSize: "clamp(2.2rem, 4.5vw, 4.5rem)" }}
             >
@@ -39,8 +37,8 @@ export default function Services() {
             </motion.h2>
           </div>
           <motion.p
-            initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.15, ease }}
+            initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={vp} transition={{ duration: 0.6, delay: 0.1, ease }}
             className="font-body text-lg text-ink/55 leading-relaxed self-end max-w-md"
           >
             Under one roof, without the agency overhead. Every service is
@@ -48,15 +46,15 @@ export default function Services() {
           </motion.p>
         </div>
 
-        {/* Editorial numbered list */}
-        <motion.div initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ delay: 0.2 }}>
+        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
+          viewport={vp} transition={{ delay: 0.1 }}>
           {services.map((s, i) => (
             <div key={s.num}>
               <div className="rule" />
               <div
                 className="grid grid-cols-[3rem_1fr] lg:grid-cols-[3rem_1fr_1fr_1.5rem] gap-x-8 gap-y-2 items-center py-7 cursor-default transition-all duration-200 group"
                 style={{
-                  borderLeft: `2px solid ${hovered === i ? "#E84C2B" : "transparent"}`,
+                  borderLeft: `2px solid ${hovered === i ? "var(--color-coral)" : "transparent"}`,
                   paddingLeft: hovered === i ? "1.25rem" : "0",
                 }}
                 onMouseEnter={() => setHovered(i)}
@@ -72,11 +70,9 @@ export default function Services() {
                 <p className="hidden lg:block font-body text-sm text-ink/50 leading-relaxed col-start-2 lg:col-start-auto">
                   {s.desc}
                 </p>
-                <svg
-                  width="16" height="16" viewBox="0 0 16 16" fill="none"
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                   className={`hidden lg:block transition-all duration-200 ${hovered === i ? "text-coral translate-x-1" : "text-ink/15"}`}
-                  aria-hidden
-                >
+                  aria-hidden>
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>

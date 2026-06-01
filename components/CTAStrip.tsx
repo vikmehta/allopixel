@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
+
+const vp = { once: true, amount: 0.2 } as const;
 
 interface CTAStripProps {
   heading?: string;
@@ -19,16 +20,13 @@ export default function CTAStrip({
   btnHref = "/contact",
   dark = false,
 }: CTAStripProps) {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, amount: 0.4 });
-
   if (dark) {
     return (
-      <section ref={ref} className="bg-ink grain py-24 lg:py-28">
+      <section className="bg-ink grain py-24 lg:py-28">
         <div className="max-w-[1600px] mx-auto px-8 md:px-12 lg:px-16">
           <motion.div
-            initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.65 }}
+            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={vp} transition={{ duration: 0.65 }}
             className="flex flex-col sm:flex-row sm:items-center justify-between gap-8"
           >
             <div>
@@ -44,22 +42,22 @@ export default function CTAStrip({
   }
 
   return (
-    <section ref={ref} className="bg-coral grain py-24 lg:py-28 overflow-hidden relative">
+    <section className="bg-coral grain py-24 lg:py-28 overflow-hidden relative">
       <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-white/5 pointer-events-none" aria-hidden />
       <div className="absolute -bottom-16 -left-16 w-48 h-48 rounded-full bg-white/5 pointer-events-none" aria-hidden />
       <div className="max-w-[1600px] mx-auto px-8 md:px-12 lg:px-16 relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.65 }}
+          initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+          viewport={vp} transition={{ duration: 0.65 }}
           className="flex flex-col sm:flex-row sm:items-center justify-between gap-8"
         >
           <div>
-            <h2 className="font-display font-bold tracking-display leading-[0.92] text-white"
+            <h2 className="font-display font-bold tracking-display leading-[0.92] text-ink"
               style={{ fontSize: "clamp(2rem, 4vw, 4rem)" }}>{heading}</h2>
-            <p className="font-body text-white/60 mt-3">{sub}</p>
+            <p className="font-body text-ink/60 mt-3">{sub}</p>
           </div>
           <Link href={btnHref}
-            className="btn shrink-0 bg-white text-coral border-white hover:bg-chalk hover:border-chalk">
+            className="btn btn-ink shrink-0">
             {btnLabel}
           </Link>
         </motion.div>

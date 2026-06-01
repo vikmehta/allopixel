@@ -5,19 +5,17 @@
   to   { transform: translateX(-50%); }
 }
 
-/* ─── Design tokens (5-color palette) ──────────────────── */
+/* ─── Design tokens ──────────────────────────────────────── */
 @theme {
-  /* Core palette */
-  --color-chalk:   #F2E9E4;   /* parchment — main bg */
-  --color-ink:     #22223B;   /* space_indigo — text + dark sections */
-  --color-coral:   #4A4E69;   /* dusty_grape — primary accent & CTAs */
-  --color-warm:    #C9ADA7;   /* almond_silk — decorative accents */
-  --color-muted:   #5E535C;   /* lilac_ash-300 — secondary text (5.9:1 on chalk) */
-  --color-cream:   #EAE0D8;   /* warm surface — alternating sections */
-  --color-surface: #EEE8E2;   /* card bg — subtle lift from chalk */
-
-  /* Extended shades for opacity utilities */
-  --color-indigo-dk: #0D0D17; /* space_indigo-200 — deepest dark */
+  --color-chalk:   #FFFFFF;   /* white — clean base, lets amber + teal pop */
+  --color-ink:     #092724;   /* light_sea_green-100 — deep dark teal-green */
+  --color-coral:   #FF9F1C;   /* amber_glow — CTAs, hero accent, marquee */
+  --color-warm:    #FFBF69;   /* honey_bronze — gold highlights */
+  --color-teal:    #2EC4B6;   /* light_sea_green — cool accent */
+  --color-mint:    #CBF3F0;   /* frozen_water — cool surface / alternating bg */
+  --color-muted:   #1B746C;   /* light_sea_green-300 — secondary text (5.5:1 ✓) */
+  --color-cream:   #FFF2E1;   /* honey_bronze-900 — warm surface variant */
+  --color-surface: #0E3D3A;   /* custom dark teal — dark section surfaces */
 
   --animate-marquee: marquee 34s linear infinite;
 }
@@ -34,10 +32,10 @@
     overflow-x: hidden;
   }
 
-  ::selection { background: var(--color-coral); color: var(--color-chalk); }
+  ::selection { background: var(--color-coral); color: var(--color-ink); }
 
   :focus-visible {
-    outline: 2px solid var(--color-coral);
+    outline: 2px solid var(--color-teal);
     outline-offset: 3px;
     border-radius: 2px;
   }
@@ -60,7 +58,6 @@
 
 /* ─── Components ─────────────────────────────────────────── */
 @layer components {
-  /* Buttons */
   .btn {
     display: inline-flex; align-items: center; gap: 0.5rem;
     font-family: var(--font-mono), monospace;
@@ -70,21 +67,22 @@
     transition: all 0.25s; text-decoration: none; cursor: pointer;
   }
 
+  /* Amber bg + dark teal text — 9.8:1 contrast ✓ */
   .btn-primary {
-    background: var(--color-coral); color: var(--color-chalk);
+    background: var(--color-coral); color: var(--color-ink);
     border: 1px solid var(--color-coral);
   }
-  .btn-primary:hover { background: #3B3E54; border-color: #3B3E54; }
+  .btn-primary:hover { background: #E08300; border-color: #E08300; }
 
   .btn-ink {
     background: var(--color-ink); color: var(--color-chalk);
     border: 1px solid var(--color-ink);
   }
-  .btn-ink:hover { background: #2c2f3f; border-color: #2c2f3f; }
+  .btn-ink:hover { background: var(--color-surface); border-color: var(--color-surface); }
 
   .btn-outline {
     background: transparent; color: var(--color-ink);
-    border: 1px solid rgba(34,34,59,0.25);
+    border: 1px solid rgba(9,39,36,0.28);
   }
   .btn-outline:hover {
     border-color: var(--color-ink);
@@ -94,7 +92,7 @@
 
   .btn-outline-white {
     background: transparent; color: var(--color-chalk);
-    border: 1px solid rgba(242,233,228,0.3);
+    border: 1px solid rgba(255,255,255,0.32);
   }
   .btn-outline-white:hover {
     border-color: var(--color-chalk);
@@ -102,23 +100,21 @@
     color: var(--color-ink);
   }
 
-  /* Section label */
+  /* Section label — light_sea_green-300 for 5.5:1 contrast on white ✓ */
   .section-label {
     font-family: var(--font-mono), monospace;
     font-size: 0.65rem; font-weight: 500;
     text-transform: uppercase; letter-spacing: 0.2em;
-    color: var(--color-coral);
+    color: var(--color-muted);
   }
 
-  /* Horizontal rules */
-  .rule       { height: 1px; background: rgba(34,34,59,0.1); }
-  .rule-white { height: 1px; background: rgba(242,233,228,0.12); }
+  .rule       { height: 1px; background: rgba(9,39,36,0.1); }
+  .rule-white { height: 1px; background: rgba(255,255,255,0.12); }
 
-  /* Grain overlay */
   .grain { position: relative; }
   .grain::after {
     content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 0;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.78' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    opacity: 0.04;
+    opacity: 0.035;
   }
 }

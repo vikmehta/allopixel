@@ -1,59 +1,24 @@
 "use client";
 
-import { motion, useInView, type Variants } from "framer-motion";
-import { useRef } from "react";
-import { fadeUp, fadeIn, scaleUp, staggerContainer } from "@/lib/motion";
-
-const variantMap: Record<string, Variants> = {
-  fadeUp,
-  fadeIn,
-  scaleUp,
-  staggerContainer,
-};
+import { motion } from "framer-motion";
 
 interface AnimatedSectionProps {
   children: React.ReactNode;
   className?: string;
-  variant?: "fadeUp" | "fadeIn" | "scaleUp" | "staggerContainer";
   delay?: number;
-  threshold?: number;
-  once?: boolean;
 }
 
 export default function AnimatedSection({
   children,
   className = "",
-  variant = "fadeUp",
   delay = 0,
-  threshold = 0.12,
-  once = true,
 }: AnimatedSectionProps) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once, amount: threshold });
-
-  const selectedVariant = variantMap[variant];
-  const animationVariant = delay
-    ? {
-        ...selectedVariant,
-        visible: {
-          ...selectedVariant.visible,
-          transition: {
-            ...(typeof selectedVariant.visible === "object" &&
-            "transition" in selectedVariant.visible
-              ? (selectedVariant.visible as { transition?: object }).transition
-              : {}),
-            delay,
-          },
-        },
-      }
-    : selectedVariant;
-
   return (
     <motion.div
-      ref={ref}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-      variants={animationVariant}
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.05 }}
+      transition={{ duration: 0.65, delay, ease: [0.22, 1, 0.36, 1] }}
       className={className}
     >
       {children}

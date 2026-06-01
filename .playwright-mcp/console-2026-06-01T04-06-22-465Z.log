@@ -1,0 +1,5 @@
+[     396ms] [WARNING] Unrecognized feature: 'vr'. @ https://019e8131-2a3f-733e-8e67-c8e39d0dc805.arena.site/:340
+[     396ms] [WARNING] Unrecognized feature: 'ambient-light-sensor'. @ https://019e8131-2a3f-733e-8e67-c8e39d0dc805.arena.site/:340
+[     396ms] [WARNING] Unrecognized feature: 'battery'. @ https://019e8131-2a3f-733e-8e67-c8e39d0dc805.arena.site/:340
+[     396ms] [WARNING] Unrecognized feature: 'bluetooth'. @ https://019e8131-2a3f-733e-8e67-c8e39d0dc805.arena.site/:340
+[     544ms] [WARNING] An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing. @ https://019e8131-2a3f-733e-8e67-c8e39d0dc805.arena.site/?embed=true:0

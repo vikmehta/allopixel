@@ -1,9 +1,9 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 
 const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
+const vp = { once: true, amount: 0.05 } as const;
 
 const testimonials = [
   {
@@ -27,14 +27,11 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, amount: 0.1 });
-
   return (
-    <section ref={ref} className="bg-chalk py-28 lg:py-36">
+    <section className="bg-chalk py-28 lg:py-36">
       <div className="max-w-[1600px] mx-auto px-8 md:px-12 lg:px-16">
-
-        <motion.div initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} className="mb-16">
+        <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
+          viewport={vp} transition={{ duration: 0.6 }} className="mb-16">
           <span className="section-label block mb-5">Kind words</span>
           <h2 className="font-display font-bold tracking-display leading-[0.92] text-ink"
             style={{ fontSize: "clamp(2rem, 4vw, 4rem)" }}>
@@ -45,8 +42,8 @@ export default function Testimonials() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
           {testimonials.map((t, i) => (
             <motion.div key={t.name}
-              initial={{ opacity: 0, y: 24 }} animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: i * 0.12, ease }}
+              initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
+              viewport={vp} transition={{ duration: 0.6, delay: i * 0.1, ease }}
               className="border-t border-black/10 pt-8 pr-0 md:pr-10"
             >
               <blockquote className="font-body text-base lg:text-lg text-ink/70 leading-relaxed mb-8">
