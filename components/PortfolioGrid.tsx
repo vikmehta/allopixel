@@ -2,41 +2,59 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-type Cat = "All" | "Branding" | "Web" | "Print" | "Social";
-const cats: Cat[] = ["All", "Branding", "Web", "Print", "Social"];
+type CatKey = "All" | "Web Design" | "Events" | "Portfolio" | "Food";
 
-const projects = [
-  { id: 1, name: "Island Juice Co.", client: "Food & Beverage", tags: ["Branding"], year: "2024", gradient: "linear-gradient(135deg, #1C3320 0%, #3D7A4A 100%)" },
-  { id: 2, name: "Blue Rabbit Therapy", client: "Health & Wellness", tags: ["Web"], year: "2024", gradient: "linear-gradient(135deg, #0F1E30 0%, #2E5080 100%)" },
-  { id: 3, name: "Siwalic Apparels", client: "Fashion", tags: ["Branding", "Print"], year: "2023", gradient: "linear-gradient(135deg, #1E0E0A 0%, #632618 100%)" },
-  { id: 4, name: "Madawaska Trails", client: "Travel & Outdoors", tags: ["Social", "Branding"], year: "2024", gradient: "linear-gradient(135deg, #0F1E10 0%, #2D5A30 100%)" },
-  { id: 5, name: "Reno Pro Plus", client: "Home Services", tags: ["Web"], year: "2023", gradient: "linear-gradient(135deg, #151515 0%, #3A3A3A 100%)" },
-  { id: 6, name: "Instabake", client: "Food & Bakery", tags: ["Branding", "Social"], year: "2024", gradient: "linear-gradient(135deg, #2E1A08 0%, #7A4A1A 100%)" },
-  { id: 7, name: "SLNA Studio", client: "Creative Studio", tags: ["Branding", "Print"], year: "2023", gradient: "linear-gradient(135deg, #0E0E20 0%, #2A2050 100%)" },
-  { id: 8, name: "Dalmaa", client: "Tech", tags: ["Web", "Branding"], year: "2024", gradient: "linear-gradient(135deg, #0A1520 0%, #1C3850 100%)" },
+const catKeys: CatKey[] = ["All", "Web Design", "Events", "Portfolio", "Food"];
+
+type Project = {
+  id: number;
+  name: string;
+  client: string;
+  tags: CatKey[];
+  year: string;
+  gradient: string;
+  image: string;
+  url: string;
+  desc: string;
+};
+
+const projects: Project[] = [
+  { id: 1, name: "In Bloom Events", client: "Events & Networking", tags: ["Web Design", "Events"], year: "2025", gradient: "linear-gradient(135deg, #2A0F18 0%, #4A1F30 50%, #7A3A50 100%)", image: "/work-inbloom.jpeg", url: "https://www.inbloomevents.ca/", desc: "Luxury women's empowerment event website." },
+  { id: 2, name: "Blue Rabbit Therapy", client: "Health & Wellness", tags: ["Web Design"], year: "2024", gradient: "linear-gradient(135deg, #0A1520 0%, #142538 50%, #1E3A58 100%)", image: "/work-bluerabbit.png", url: "https://bluerabbittherapy.com/", desc: "Virtual psychotherapy practice across Ontario." },
+  { id: 3, name: "Jess Blackwell", client: "Film & Creative", tags: ["Web Design", "Portfolio"], year: "2024", gradient: "linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 50%, #2A2520 100%)", image: "/work-jessblackwell.jpeg", url: "https://www.jessblackwell.com/", desc: "Cinematic portfolio for a Toronto-based filmmaker." },
+  { id: 4, name: "Reno Pro Plus", client: "Home Renovation", tags: ["Web Design"], year: "2024", gradient: "linear-gradient(135deg, #0D1525 0%, #1A2840 50%, #253A5A 100%)", image: "/work-renoproplus.jpeg", url: "https://renoproplus.com/", desc: "Home renovation contractor serving Laval & Montréal." },
+  { id: 5, name: "Dalmaa", client: "Food & Recipe Blog", tags: ["Web Design", "Food"], year: "2025", gradient: "linear-gradient(135deg, #1A0D05 0%, #2E1A0A 50%, #4A2C10 100%)", image: "/work-dalmaa.png", url: "https://dalmaa.vercel.app/", desc: "Recipe blog celebrating Indian and continental cuisine." },
 ];
 
 const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
 export default function PortfolioGrid() {
-  const [active, setActive] = useState<Cat>("All");
+  const [activeKey, setActiveKey] = useState<CatKey>("All");
+  const { tr } = useLanguage();
 
-  const filtered = active === "All" ? projects : projects.filter(p => p.tags.includes(active));
+  // Map translated filter labels to their keys
+  const filterLabels = tr.work.filters;
+
+  const filtered = activeKey === "All"
+    ? projects
+    : projects.filter(p => p.tags.includes(activeKey));
 
   return (
     <div>
       {/* Filters */}
       <div className="flex flex-wrap gap-2 mb-12">
-        {cats.map(cat => (
-          <button key={cat} onClick={() => setActive(cat)}
-            className={`font-mono text-[0.65rem] uppercase tracking-[0.15em] px-4 py-2.5 border transition-all duration-200 ${
-              active === cat
+        {catKeys.map((key, i) => (
+          <button key={key} onClick={() => setActiveKey(key)}
+            className={`font-mono text-[0.85rem] uppercase tracking-[0.15em] px-4 py-2.5 border transition-all duration-200 ${
+              activeKey === key
                 ? "bg-ink text-chalk border-ink"
                 : "bg-transparent text-ink/45 border-black/15 hover:border-black/40 hover:text-ink"
             }`}
           >
-            {cat}
+            {filterLabels[i]}
           </button>
         ))}
       </div>
@@ -46,46 +64,43 @@ export default function PortfolioGrid() {
         <AnimatePresence mode="popLayout">
           {filtered.map((p) => (
             <motion.div key={p.id} layout
-              initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.96 }}
+              initial={{ scale: 0.97 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.97, opacity: 0 }}
               transition={{ duration: 0.35, ease }}
             >
-              <div className="group border border-black/10 hover:border-black/30 transition-all duration-300 cursor-pointer">
+              <a href={p.url} target="_blank" rel="noopener noreferrer"
+                className="group block border border-black/10 hover:border-black/30 hover:shadow-xl hover:-translate-y-1 transition-[border-color,box-shadow,transform] duration-300">
                 {/* Image */}
                 <div className="relative overflow-hidden aspect-[16/10]">
-                  <div className="absolute inset-0 grayscale group-hover:grayscale-0 transition-all duration-700"
-                    style={{ background: p.gradient }} />
+                  {p.image ? (
+                    <Image
+                      src={p.image}
+                      alt={p.name}
+                      fill
+                      className="object-cover object-top grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105 transition-all duration-700"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105 transition-all duration-700"
+                      style={{ background: p.gradient }} />
+                  )}
                 </div>
                 {/* Info */}
                 <div className="p-6 border-t border-black/8">
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="font-mono text-[0.6rem] text-ink/30 uppercase tracking-wider">{p.year}</span>
+                    <span className="font-mono text-[0.85rem] text-ink/30 uppercase tracking-wider">{p.year}</span>
                     <span className="w-px h-3 bg-black/15" />
                     {p.tags.map(t => (
-                      <span key={t} className="font-mono text-[0.6rem] text-coral uppercase tracking-wider">{t}</span>
+                      <span key={t} className="font-mono text-[0.85rem] text-coral uppercase tracking-wider">{t}</span>
                     ))}
                   </div>
                   <h3 className="font-display font-semibold tracking-display text-ink text-2xl mb-1">{p.name}</h3>
-                  <p className="font-body text-sm text-ink/40">{p.client}</p>
+                  <p className="font-body text-sm text-ink/40 mb-2">{p.client}</p>
+                  <p className="font-body text-sm text-ink/55 leading-relaxed">{p.desc}</p>
                 </div>
-              </div>
+              </a>
             </motion.div>
           ))}
-
-          {/* In-progress ghost */}
-          {(active === "All" || active === "Branding") && (
-            <motion.div layout initial={{ opacity: 0 }} animate={{ opacity: 1 }} key="ghost">
-              <div className="border border-dashed border-black/15 aspect-[16/10] relative flex items-center justify-center bg-black/[0.02]">
-                <motion.div animate={{ opacity: [0.3, 0.7, 0.3] }} transition={{ duration: 3, repeat: Infinity }}>
-                  <span className="font-mono text-[0.65rem] text-ink/30 uppercase tracking-widest">In progress</span>
-                </motion.div>
-              </div>
-              <div className="p-6 border-t border-black/8 border-l border-dashed border-black/15 border-r border-b">
-                <div className="h-3 w-16 bg-black/6 rounded mb-3" />
-                <div className="h-5 w-36 bg-black/6 rounded" />
-              </div>
-            </motion.div>
-          )}
         </AnimatePresence>
       </motion.div>
     </div>

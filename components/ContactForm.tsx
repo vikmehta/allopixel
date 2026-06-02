@@ -1,9 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const { tr } = useLanguage();
+  const f = tr.contact.form;
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -24,60 +27,58 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} noValidate className="space-y-8">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
         <div>
-          <label htmlFor="name" className="font-mono text-[0.6rem] uppercase tracking-widest text-coral block mb-3">Name</label>
-          <input id="name" name="name" type="text" required placeholder="Your name" className={inputClass} />
+          <label htmlFor="name" className="font-mono text-[0.85rem] uppercase tracking-widest text-coral block mb-3">{f.name}</label>
+          <input id="name" name="name" type="text" required placeholder={f.namePlaceholder} className={inputClass} />
         </div>
         <div>
-          <label htmlFor="email" className="font-mono text-[0.6rem] uppercase tracking-widest text-coral block mb-3">Email</label>
-          <input id="email" name="email" type="email" required placeholder="you@example.com" className={inputClass} />
+          <label htmlFor="email" className="font-mono text-[0.85rem] uppercase tracking-widest text-coral block mb-3">{f.email}</label>
+          <input id="email" name="email" type="email" required placeholder={f.emailPlaceholder} className={inputClass} />
         </div>
       </div>
 
       <div>
-        <label htmlFor="project-type" className="font-mono text-[0.6rem] uppercase tracking-widest text-coral block mb-3">Project type</label>
+        <label htmlFor="project-type" className="font-mono text-[0.85rem] uppercase tracking-widest text-coral block mb-3">{f.projectType}</label>
         <select id="project-type" name="project_type" className={`${inputClass} cursor-pointer`}
           style={{ background: "transparent", color: "rgba(250,250,248,0.7)" }}>
-          <option value="" style={{ background: "#111" }}>Select a service…</option>
-          {["Brand Identity","Web Design & Development","Logo Design","Social Media Design","Print & Collateral","Full Package (Brand + Web)","Other / Not sure yet"]
-            .map(o => <option key={o} value={o} style={{ background: "#111" }}>{o}</option>)}
+          <option value="" style={{ background: "#111" }}>{f.projectPlaceholder}</option>
+          {f.services.map(o => <option key={o} value={o} style={{ background: "#111" }}>{o}</option>)}
         </select>
       </div>
 
       <div>
-        <label htmlFor="budget" className="font-mono text-[0.6rem] uppercase tracking-widest text-coral block mb-3">Budget range</label>
+        <label htmlFor="budget" className="font-mono text-[0.85rem] uppercase tracking-widest text-coral block mb-3">{f.budget}</label>
         <select id="budget" name="budget" className={`${inputClass} cursor-pointer`}
           style={{ background: "transparent", color: "rgba(250,250,248,0.7)" }}>
-          <option value="" style={{ background: "#111" }}>Select a range…</option>
-          {["Under $300","$300 – $800","$800 – $1,500","$1,500 – $3,000","$3,000+","Not sure yet"]
-            .map(o => <option key={o} value={o} style={{ background: "#111" }}>{o}</option>)}
+          <option value="" style={{ background: "#111" }}>{f.budgetPlaceholder}</option>
+          {f.budgets.map(o => <option key={o} value={o} style={{ background: "#111" }}>{o}</option>)}
         </select>
       </div>
 
       <div>
-        <label htmlFor="message" className="font-mono text-[0.6rem] uppercase tracking-widest text-coral block mb-3">Tell us about your project</label>
+        <label htmlFor="message" className="font-mono text-[0.85rem] uppercase tracking-widest text-coral block mb-3">{f.message}</label>
         <textarea id="message" name="message" required rows={4}
-          placeholder="What do you need? What's your business? Any references or deadlines?"
+          placeholder={f.messagePlaceholder}
           className={`${inputClass} resize-none`} />
       </div>
 
       {status === "success" ? (
         <div className="border border-white/10 p-6 text-center">
-          <p className="font-display font-bold text-xl text-white tracking-display">Message sent.</p>
-          <p className="font-body text-sm text-white/40 mt-2">We&apos;ll be in touch within 24 hours.</p>
+          <p className="font-display font-bold text-xl text-white tracking-display">{f.successTitle}</p>
+          <p className="font-body text-sm text-white/40 mt-2">{f.successSub}</p>
         </div>
       ) : (
         <button type="submit" disabled={status === "sending"}
           className="btn btn-primary disabled:opacity-50 disabled:cursor-not-allowed">
           {status === "sending" ? (
-            <><span className="w-3.5 h-3.5 rounded-full border-2 border-white border-t-transparent animate-spin" />Sending…</>
-          ) : "Send message"}
+            <><span className="w-3.5 h-3.5 rounded-full border-2 border-white border-t-transparent animate-spin" />{f.sending}</>
+          ) : f.submit}
         </button>
       )}
 
       {status === "error" && (
         <p className="font-body text-sm text-coral/80">
-          Something went wrong. Email us at{" "}
-          <a href="mailto:hello@allopixel.com" className="underline">hello@allopixel.com</a>
+          {f.errorMsg}{" "}
+          <a href="mailto:info.allopixel@gmail.com" className="underline">info.allopixel@gmail.com</a>
         </p>
       )}
     </form>

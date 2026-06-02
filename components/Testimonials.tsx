@@ -1,58 +1,46 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
-const vp = { once: true, amount: 0.05 } as const;
+const vp = { once: true, amount: 0 } as const;
 
 const testimonials = [
-  {
-    quote: "Working with Allôpixel was the best decision I made for my business. They took my scattered ideas and turned them into a brand I'm genuinely proud to show off everywhere.",
-    name: "Sarah C.",
-    role: "Owner, The Bloom Bakery",
-    project: "Brand Identity",
-  },
-  {
-    quote: "The website they built has already brought in three new clients. It looks premium, loads fast, and I can update it myself. Worth every single penny — and then some.",
-    name: "Marco R.",
-    role: "Founder, Reno Pro Plus",
-    project: "Web Design",
-  },
-  {
-    quote: "I needed a portfolio that felt like me — not another template. What I got exceeded every expectation. The process was clear, fast, and genuinely enjoyable.",
-    name: "Jess P.",
-    role: "Photographer, Jess Blackwell Studio",
-    project: "Web Design",
-  },
+  { quote: "Working with AllôPixel was the best decision I made for my business. They took my scattered ideas and turned them into a brand I'm genuinely proud to show off everywhere.", name: "Sarah C.", role: "Owner, The Bloom Bakery", project: "Brand Identity" },
+  { quote: "The website they built has already brought in three new clients. It looks premium, loads fast, and I can update it myself. Worth every single penny — and then some.", name: "Marco R.", role: "Founder, Reno Pro Plus", project: "Web Design" },
+  { quote: "I needed a portfolio that felt like me — not another template. What I got exceeded every expectation. The process was clear, fast, and genuinely enjoyable.", name: "Jess P.", role: "Photographer, Jess Blackwell Studio", project: "Web Design" },
 ];
 
 export default function Testimonials() {
+  const { tr } = useLanguage();
+  const t = tr.testimonials;
+
   return (
     <section className="bg-chalk py-28 lg:py-36">
       <div className="max-w-[1600px] mx-auto px-8 md:px-12 lg:px-16">
-        <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
-          viewport={vp} transition={{ duration: 0.6 }} className="mb-16">
-          <span className="section-label block mb-5">Kind words</span>
+        <div className="mb-16">
+          <span className="section-label block mb-5">{t.label}</span>
           <h2 className="font-display font-bold tracking-display leading-[0.92] text-ink"
             style={{ fontSize: "clamp(2rem, 4vw, 4rem)" }}>
-            Our clients say it best.
+            {t.heading}
           </h2>
-        </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
-          {testimonials.map((t, i) => (
-            <motion.div key={t.name}
-              initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
+          {testimonials.map((item, i) => (
+            <motion.div key={item.name}
+              initial={{ y: 24 }} whileInView={{ y: 0 }}
               viewport={vp} transition={{ duration: 0.6, delay: i * 0.1, ease }}
               className="border-t border-black/10 pt-8 pr-0 md:pr-10"
             >
               <blockquote className="font-body text-base lg:text-lg text-ink/70 leading-relaxed mb-8">
-                &ldquo;{t.quote}&rdquo;
+                &ldquo;{item.quote}&rdquo;
               </blockquote>
               <div>
-                <div className="font-display font-semibold text-xl tracking-display text-ink">{t.name}</div>
-                <div className="font-mono text-[0.6rem] text-ink/40 uppercase tracking-wider mt-1">{t.role}</div>
-                <div className="font-mono text-[0.6rem] text-coral uppercase tracking-wider mt-0.5">{t.project}</div>
+                <div className="font-display font-semibold text-xl tracking-display text-ink">{item.name}</div>
+                <div className="font-mono text-[0.85rem] text-ink/40 uppercase tracking-wider mt-1">{item.role}</div>
+                <div className="font-mono text-[0.85rem] text-coral uppercase tracking-wider mt-0.5">{item.project}</div>
               </div>
             </motion.div>
           ))}

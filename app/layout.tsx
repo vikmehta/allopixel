@@ -3,6 +3,7 @@ import { Playfair_Display, DM_Sans, DM_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import { LanguageProvider } from "@/contexts/LanguageContext";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -46,20 +47,22 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${dmSans.variable} ${dmMono.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${playfair.variable} ${dmSans.variable} ${dmMono.variable}`}>
       <head>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org", "@type": "LocalBusiness",
-          name: "Allôpixel", url: "https://allopixel.com", email: "hello@allopixel.com",
+          name: "Allôpixel", url: "https://allopixel.com", email: "info.allopixel@gmail.com",
           description: "Boutique creative studio offering brand identity, web design, and creative direction for small businesses.",
           address: { "@type": "PostalAddress", addressLocality: "Montréal", addressRegion: "QC", addressCountry: "CA" },
           priceRange: "$$",
         })}} />
       </head>
-      <body className="bg-chalk text-ink antialiased font-body">
-        <Nav />
-        <main id="main-content">{children}</main>
-        <Footer />
+      <body className="bg-chalk text-ink antialiased font-body" suppressHydrationWarning>
+        <LanguageProvider>
+          <Nav />
+          <main id="main-content">{children}</main>
+          <Footer />
+        </LanguageProvider>
       </body>
     </html>
   );

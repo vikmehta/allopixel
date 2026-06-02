@@ -1,0 +1,314 @@
+export type Lang = "en" | "fr";
+
+const translations = {
+  en: {
+    nav: {
+      home: "Home", work: "Work", about: "About", services: "Services", cta: "Get in touch",
+      skipToContent: "Skip to content", openMenu: "Open menu", closeMenu: "Close menu",
+    },
+    hero: {
+      label: "Boutique Creative Studio · Montréal",
+      headline: ["Great design.", "No agency", "price tag."],
+      sub: "Brand identity, web design, and creative direction for small businesses, artists, and individuals",
+      cta1: "See our work", cta2: "Free quote",
+      tags: ["Fast turnaround", "Transparent pricing", "No hidden fees"],
+    },
+    selectedWork: {
+      label: "Selected work",
+      heading: ["Work that speaks", "for itself."],
+      viewAll: "View all", viewProject: "View project",
+    },
+    services: {
+      label: "What we do",
+      heading: ["Everything your", "brand needs."],
+      sub: "Under one roof, without the agency overhead. Every service is available standalone or as part of a package.",
+      items: [
+        { title: "Brand Identity", desc: "Logo, color systems, typography, and brand guidelines that make you instantly recognizable across every touchpoint." },
+        { title: "Web Design & Development", desc: "Beautiful, fast websites built from scratch — not templates. Responsive, accessible, and built to convert." },
+        { title: "Logo Design", desc: "A focused logo project — 2 concepts, multiple rounds of refinement, delivered in every format you'll ever need." },
+        { title: "Social Media Design", desc: "Consistent content templates that make maintaining a polished, on-brand presence genuinely effortless." },
+        { title: "Print & Collateral", desc: "Business cards, brochures, menus, and signage that carry your brand into the physical world with confidence." },
+        { title: "Creative Direction", desc: "Ongoing strategic creative oversight for brands that need a coherent visual story across every channel." },
+      ],
+    },
+    testimonials: {
+      label: "Kind words", heading: "Our clients say it best.",
+    },
+    process: {
+      label: "How we work",
+      heading: ["Simple, transparent,", "built around you."],
+      steps: [
+        { title: "Discovery Call", desc: "A free 30-minute conversation to understand your business, goals, and what makes you different. No obligation." },
+        { title: "Strategy & Proposal", desc: "A clear proposal with scope, timeline, and price — all in plain language before any work begins." },
+        { title: "Design & Iteration", desc: "We design, you give feedback, we refine. Multiple revision rounds built in. You're involved at every step." },
+        { title: "Launch & Beyond", desc: "Final delivery, walkthrough, and ongoing availability for questions long after the project is done." },
+      ],
+    },
+    faq: {
+      label: "FAQ",
+      heading: ["Questions we get", "all the time."],
+      items: [
+        { q: "How long does a project take?", a: "Most projects take 1–4 weeks. A logo takes about a week. A full brand + website is typically 3–4 weeks. We give you a clear timeline in your proposal before any work begins." },
+        { q: "Do you work with businesses outside Montréal?", a: "Absolutely. We work with clients across Canada and internationally. Everything is handled remotely — video calls, shared feedback tools, and clear communication throughout." },
+        { q: "What if I only need a logo?", a: "Completely fine. Our Spark package is designed exactly for that. We also offer standalone logo design for businesses that already have other brand elements in place." },
+        { q: "Do you offer payment plans?", a: "Yes. For larger projects, we typically split 50% upfront to begin and 50% on delivery. We can discuss other arrangements if needed." },
+        { q: "What do I need to have ready before we start?", a: "Just your ideas and your goals. We'll guide you through everything else — you don't need to arrive with a creative brief or references prepared." },
+        { q: "Can I update my website myself after launch?", a: "Yes. Every website we build comes with a walkthrough so you can manage basic content updates yourself. For bigger changes, we're always available to help." },
+        { q: "Do you offer ongoing support after the project ends?", a: "Our Launch package includes 30 days of post-launch support. Beyond that, we offer support arrangements on a per-hour or retainer basis." },
+        { q: "What makes AllôPixel different?", a: "We keep things honest, fast, and affordable without cutting corners on quality. You deal directly with the people doing the work — no account managers, no outsourcing." },
+      ],
+    },
+    pricing: {
+      label: "Transparent pricing",
+      heading: ["Honest pricing.", "Always."],
+      sub: "Every project starts with a free 30-minute discovery call. No commitment.",
+      mostPopular: "Most popular", getStarted: "Get started",
+      customNote: "Need something custom?", customLink: "Let's talk",
+      customSuffix: "— we build tailored packages for unique projects.",
+      tiers: [
+        { name: "Spark", tagline: "For new businesses & side projects", features: ["Logo design (2 concepts)", "Brand color palette", "Font pairing guide", "3 social media templates", "All source files"] },
+        { name: "Studio", tagline: "For small businesses ready to grow", features: ["Everything in Spark", "Full brand guidelines", "5-page responsive website", "Mobile optimization", "Contact form", "Basic SEO setup"] },
+        { name: "Launch", tagline: "For brands ready to stand out", features: ["Everything in Studio", "Social media kit (10 templates)", "Business card design", "Letterhead & stationery", "30-day post-launch support", "Priority turnaround"] },
+      ],
+    },
+    cta: {
+      default: { heading: "Ready to build something great?", sub: "Start with a free 30-minute discovery call — no commitment.", btn: "Book a free call" },
+      work: { heading: "Like what you see?", sub: "Let's make something great together.", btn: "Start a project" },
+      about: { heading: "Ready to work together?", sub: "Start with a free discovery call — no commitment.", btn: "Work with us" },
+      services: { heading: "Still have questions?", sub: "Book a free call and we'll answer everything.", btn: "Book a free call" },
+    },
+    footer: {
+      tagline: "Affordable design for ambitious small businesses. Brand identity, web design, and creative direction — without the agency price tag.",
+      location: "Montréal, Canada", navigate: "Navigate", sayHello: "Say hello",
+      bookCall: "Book a free call →", copyright: "All rights reserved.", crafted: "Crafted with ❤️ by",
+    },
+    marquee: {
+      items: ["Brand Identity", "Web Design", "Logo Design", "Social Media", "Print & Collateral", "Montréal", "Affordable", "Fast Turnaround", "No Hidden Fees", "Creative Direction"],
+    },
+    contact: {
+      label: "Get in touch", heading: "Let's build something great.",
+      sub: "Tell us about your project. We'll be in touch within 24 hours.",
+      whatNext: "What happens next",
+      steps: [
+        { title: "We read your message", desc: "Every inquiry is reviewed personally. We respond within 24 hours." },
+        { title: "We schedule a call", desc: "A free 30-minute discovery call to make sure we're the right fit." },
+        { title: "You get a proposal", desc: "A clear proposal — scope, timeline, and price — before any work begins." },
+      ],
+      emailLabel: "Email", locationLabel: "Location",
+      location: "Montréal, Canada · Working globally",
+      form: {
+        name: "Name", namePlaceholder: "Your name",
+        email: "Email", emailPlaceholder: "you@example.com",
+        projectType: "Project type", projectPlaceholder: "Select a service…",
+        budget: "Budget range", budgetPlaceholder: "Select a range…",
+        message: "Tell us about your project",
+        messagePlaceholder: "What do you need? What's your business? Any references or deadlines?",
+        submit: "Send message", sending: "Sending…",
+        successTitle: "Allô! Your message landed safely.",
+        successSub: "Expect to hear from us within 24 hours.",
+        errorMsg: "Something went wrong. Email us at",
+        services: ["Brand Identity", "Web Design & Development", "Logo Design", "Social Media Design", "Print & Collateral", "Full Package (Brand + Web)", "Other / Not sure yet"],
+        budgets: ["Under $300", "$300 – $800", "$800 – $1,500", "$1,500 – $3,000", "$3,000+", "Not sure yet"],
+      },
+    },
+    about: {
+      label: "Our story", heading: "We believe great design changes businesses.",
+      story: [
+        { size: "lg", text: "Most small business owners already know what bad design costs." },
+        { size: "base", text: "The first impression that doesn't land. The client who chooses someone else. The brand that feels temporary while they wait for the \"right time\" to invest." },
+        { size: "base", text: "What fewer people realize is that it doesn't have to be this way." },
+        { size: "base", text: "We started AllôPixel in Montréal because we believe the gap between what small businesses deserve and what they can afford isn't inevitable — it's a problem the industry created." },
+        { size: "base", text: "We're a small team that works directly on every project ourselves. No junior handoffs. No layers of account managers. No inflated pricing to cover overhead you never asked for." },
+        { size: "base", text: "Just thoughtful design, modern websites, and branding that helps businesses look as professional as the work they already do." },
+        { size: "base", text: "Because when design is done right, it doesn't feel like an expense." },
+        { size: "lg-bold", text: "It feels like the investment that changes everything." },
+      ],
+      valuesLabel: "What we stand for", valuesHeading: "Our values aren't decorative.",
+      values: [
+        { title: "Honesty First", desc: "We tell you what your brand actually needs — not just what you want to hear. Straight talk and clear pricing, every time." },
+        { title: "Affordable Always", desc: "Great design shouldn't be a luxury. We keep our prices honest so any business, at any stage, can access work that makes a real difference." },
+        { title: "No Jargon Ever", desc: "We speak plainly. No design-speak, no confusing briefs. You'll always know exactly where your project stands and what comes next." },
+        { title: "Quality Without Compromise", desc: "Affordable doesn't mean generic. Every project gets original thinking, meticulous craft, and a commitment to work we're genuinely proud of." },
+      ],
+      visualQuote: ["“Allô” is French for hello.", "Every project is a new introduction."],
+    },
+    work: {
+      label: "Portfolio",
+      heading: ["Work that speaks", "for itself."],
+      sub: "Every project here was designed to help a brand show up clearly, consistently, and memorably.",
+      filters: ["All", "Web Design", "Events", "Portfolio", "Food"],
+    },
+    servicesPage: {
+      label: "Services",
+      heading: ["Good design.", "Honest prices.", "No surprises."],
+      sub: "Every project starts with a clear quote. You'll know exactly what you're getting — and what it costs — before we touch a thing.",
+      whatsIncluded: "What's included",
+      items: [
+        { title: "Brand Identity", desc: "A logo is just the beginning. We build the full visual system — logo, colour palette, typography, and brand guidelines — so your business looks consistent and professional everywhere it shows up.", deliverables: ["Logo suite (primary, secondary, icon)", "Colour system & typography pairing", "Brand guidelines document", "Files: PNG, SVG, PDF, AI"] },
+        { title: "Web Design & Development", desc: "We build fast, professional websites using cutting-edge technologies and trusted platforms, tailored to your business goals and designed to make a lasting impression.", deliverables: ["Custom website design (desktop + mobile)", "React, Next.js, Tailwind CSS, WordPress & more", "Bilingual websites (English / French)", "Contact forms & lead generation tools", "SEO setup & performance optimization", "Fast, secure, and mobile-friendly"] },
+        { title: "Social Media Content", desc: "We design and manage social media content for our clients — so your brand stays active, consistent, and growing without you having to think about it.", deliverables: ["Custom post & story design", "Content scheduling & calendar management", "Comment moderation", "Monthly analytics report", "Editable templates (Canva or Figma)"] },
+        { title: "Print & Collateral", desc: "Business cards, menus, brochures, flyers — whatever you need to show up professionally in the real world.", deliverables: ["Custom design to your specs", "Print-ready files (CMYK, bleed + crop marks)", "Multiple format versions as needed"] },
+        { title: "Creative Direction", desc: "Need a consistent visual story across everything? We act as your ongoing creative partner — guiding, reviewing, keeping it all coherent.", deliverables: ["Brand strategy session", "Visual direction document", "Ongoing review & feedback", "Flexible retainer or per-project"] },
+      ],
+    },
+  },
+  fr: {
+    nav: {
+      home: "Accueil", work: "Projets", about: "À propos", services: "Services", cta: "Nous contacter",
+      skipToContent: "Passer au contenu", openMenu: "Ouvrir le menu", closeMenu: "Fermer le menu",
+    },
+    hero: {
+      label: "Studio Créatif Boutique · Montréal",
+      headline: ["Un design de qualité.", "Sans les prix", "d'une agence."],
+      sub: "Identité de marque, conception web et direction créative pour les petites entreprises, artistes et particuliers",
+      cta1: "Voir nos projets", cta2: "Devis gratuit",
+      tags: ["Délais rapides", "Prix transparents", "Sans frais cachés"],
+    },
+    selectedWork: {
+      label: "Projets sélectionnés",
+      heading: ["Un travail qui", "parle de lui-même."],
+      viewAll: "Voir tout", viewProject: "Voir le projet",
+    },
+    services: {
+      label: "Ce que nous faisons",
+      heading: ["Tout ce dont votre", "marque a besoin."],
+      sub: "Sous un même toit, sans les frais d'agence. Chaque service est disponible seul ou en forfait.",
+      items: [
+        { title: "Identité de marque", desc: "Logo, systèmes de couleurs, typographie et charte graphique pour vous rendre immédiatement reconnaissable sur tous les supports." },
+        { title: "Conception & Développement Web", desc: "Des sites web beaux et rapides, créés de zéro — pas de modèles. Responsifs, accessibles et conçus pour convertir." },
+        { title: "Création de logo", desc: "Un projet de logo ciblé — 2 concepts, plusieurs rondes de révision, livré dans tous les formats dont vous aurez besoin." },
+        { title: "Conception Médias Sociaux", desc: "Des gabarits de contenu cohérents qui rendent l'entretien d'une présence soignée et fidèle à votre image vraiment facile." },
+        { title: "Impression & Matériel", desc: "Cartes d'affaires, brochures, menus et signalisation qui transportent votre marque dans le monde physique avec assurance." },
+        { title: "Direction Créative", desc: "Supervision créative stratégique continue pour les marques qui ont besoin d'une histoire visuelle cohérente sur tous les canaux." },
+      ],
+    },
+    testimonials: {
+      label: "Ils nous font confiance", heading: "Nos clients parlent mieux que nous.",
+    },
+    process: {
+      label: "Notre processus",
+      heading: ["Simple, transparent,", "construit autour de vous."],
+      steps: [
+        { title: "Appel découverte", desc: "Une conversation gratuite de 30 minutes pour comprendre votre entreprise, vos objectifs et ce qui vous distingue. Sans engagement." },
+        { title: "Stratégie & Proposition", desc: "Une proposition claire avec la portée, le calendrier et le prix — en langage simple avant que le travail commence." },
+        { title: "Design & Itération", desc: "Nous concevons, vous donnez vos commentaires, nous affinons. Plusieurs rondes de révision incluses. Vous êtes impliqué à chaque étape." },
+        { title: "Lancement & Au-delà", desc: "Livraison finale, présentation et disponibilité continue pour répondre à vos questions bien après la fin du projet." },
+      ],
+    },
+    faq: {
+      label: "FAQ",
+      heading: ["Questions qu'on", "nous pose souvent."],
+      items: [
+        { q: "Combien de temps dure un projet ?", a: "La plupart des projets prennent 1 à 4 semaines. Un logo prend environ une semaine. Une marque complète + site web prend généralement 3 à 4 semaines. Nous vous donnons un calendrier clair dans votre proposition avant que le travail commence." },
+        { q: "Travaillez-vous avec des entreprises hors de Montréal ?", a: "Absolument. Nous travaillons avec des clients partout au Canada et à l'international. Tout est géré à distance — appels vidéo, outils de rétroaction partagés et communication claire tout au long du projet." },
+        { q: "Et si j'ai seulement besoin d'un logo ?", a: "Tout à fait possible. Notre forfait Spark est conçu exactement pour ça. Nous offrons aussi la création de logo en service autonome pour les entreprises qui ont déjà d'autres éléments de marque en place." },
+        { q: "Proposez-vous des plans de paiement ?", a: "Oui. Pour les projets plus importants, nous divisons généralement 50 % au début et 50 % à la livraison. Nous pouvons discuter d'autres arrangements si nécessaire." },
+        { q: "Que dois-je avoir de prêt avant de commencer ?", a: "Juste vos idées et vos objectifs. Nous vous guiderons dans tout le reste — vous n'avez pas besoin d'arriver avec un brief créatif ou des références préparées." },
+        { q: "Puis-je mettre à jour mon site moi-même après le lancement ?", a: "Oui. Chaque site que nous construisons est accompagné d'une présentation pour que vous puissiez gérer les mises à jour de contenu de base vous-même. Pour des changements plus importants, nous sommes toujours disponibles pour aider." },
+        { q: "Offrez-vous un soutien continu après la fin du projet ?", a: "Notre forfait Launch comprend 30 jours de soutien post-lancement. Au-delà, nous offrons des arrangements de soutien à l'heure ou en mode forfait." },
+        { q: "Qu'est-ce qui distingue AllôPixel ?", a: "Nous restons honnêtes, rapides et abordables sans compromettre la qualité. Vous traitez directement avec les personnes qui font le travail — pas de gestionnaires de comptes, pas d'externalisation." },
+      ],
+    },
+    pricing: {
+      label: "Tarifs transparents",
+      heading: ["Des prix honnêtes.", "Toujours."],
+      sub: "Chaque projet commence par un appel découverte gratuit de 30 minutes. Sans engagement.",
+      mostPopular: "Le plus populaire", getStarted: "Commencer",
+      customNote: "Besoin d'un forfait sur mesure ?", customLink: "Parlons-en",
+      customSuffix: "— nous créons des forfaits adaptés aux projets uniques.",
+      tiers: [
+        { name: "Spark", tagline: "Pour les nouvelles entreprises et projets parallèles", features: ["Création de logo (2 concepts)", "Palette de couleurs de marque", "Guide de typographie", "3 gabarits pour médias sociaux", "Tous les fichiers sources"] },
+        { name: "Studio", tagline: "Pour les petites entreprises prêtes à grandir", features: ["Tout ce qui est dans Spark", "Charte graphique complète", "Site web responsive 5 pages", "Optimisation mobile", "Formulaire de contact", "Configuration SEO de base"] },
+        { name: "Launch", tagline: "Pour les marques prêtes à se démarquer", features: ["Tout ce qui est dans Studio", "Kit médias sociaux (10 gabarits)", "Conception de carte d'affaires", "Papier à en-tête et papeterie", "30 jours de soutien post-lancement", "Délai prioritaire"] },
+      ],
+    },
+    cta: {
+      default: { heading: "Prêts à créer quelque chose de grand ?", sub: "Commencez avec un appel découverte gratuit de 30 minutes — sans engagement.", btn: "Réserver un appel" },
+      work: { heading: "Ce que vous voyez vous plaît ?", sub: "Créons quelque chose de grand ensemble.", btn: "Démarrer un projet" },
+      about: { heading: "Prêts à travailler ensemble ?", sub: "Commencez par un appel découverte gratuit — sans engagement.", btn: "Travaillons ensemble" },
+      services: { heading: "Vous avez encore des questions ?", sub: "Réservez un appel gratuit et nous répondrons à tout.", btn: "Réserver un appel" },
+    },
+    footer: {
+      tagline: "Design accessible pour les petites entreprises ambitieuses. Identité de marque, web et direction créative — sans les prix d'une agence.",
+      location: "Montréal, Canada", navigate: "Navigation", sayHello: "Nous contacter",
+      bookCall: "Réserver un appel →", copyright: "Tous droits réservés.", crafted: "Fait avec ❤️ par",
+    },
+    marquee: {
+      items: ["Identité de marque", "Conception Web", "Création de logo", "Médias sociaux", "Impression & Matériel", "Montréal", "Abordable", "Délais rapides", "Sans frais cachés", "Direction créative"],
+    },
+    contact: {
+      label: "Nous contacter", heading: "Créons quelque chose de grand.",
+      sub: "Parlez-nous de votre projet. Nous vous répondrons dans les 24 heures.",
+      whatNext: "Ce qui se passe ensuite",
+      steps: [
+        { title: "Nous lisons votre message", desc: "Chaque demande est examinée personnellement. Nous répondons dans les 24 heures." },
+        { title: "Nous planifions un appel", desc: "Un appel découverte gratuit de 30 minutes pour s'assurer que nous sommes le bon choix." },
+        { title: "Vous recevez une proposition", desc: "Une proposition claire — portée, calendrier et prix — avant que le travail commence." },
+      ],
+      emailLabel: "Courriel", locationLabel: "Localisation",
+      location: "Montréal, Canada · Travail à l'international",
+      form: {
+        name: "Nom", namePlaceholder: "Votre nom",
+        email: "Courriel", emailPlaceholder: "vous@exemple.com",
+        projectType: "Type de projet", projectPlaceholder: "Sélectionner un service…",
+        budget: "Budget estimé", budgetPlaceholder: "Sélectionner une fourchette…",
+        message: "Parlez-nous de votre projet",
+        messagePlaceholder: "De quoi avez-vous besoin ? Quelle est votre entreprise ? Des références ou des délais ?",
+        submit: "Envoyer le message", sending: "Envoi en cours…",
+        successTitle: "Allô ! Votre message est bien reçu.",
+        successSub: "Attendez-vous à nous entendre dans les 24 heures.",
+        errorMsg: "Quelque chose a mal tourné. Écrivez-nous à",
+        services: ["Identité de marque", "Conception & Développement Web", "Création de logo", "Conception Médias Sociaux", "Impression & Matériel", "Forfait complet (Marque + Web)", "Autre / Pas encore certain"],
+        budgets: ["Moins de 300 $", "300 $ – 800 $", "800 $ – 1 500 $", "1 500 $ – 3 000 $", "3 000 $+", "Pas encore certain"],
+      },
+    },
+    about: {
+      label: "Notre histoire", heading: "Nous croyons que le design change les entreprises.",
+      story: [
+        { size: "lg", text: "La plupart des propriétaires de petites entreprises savent déjà ce que coûte un mauvais design." },
+        { size: "base", text: "La première impression qui ne convainc pas. Le client qui choisit quelqu'un d'autre. La marque qui semble temporaire pendant qu'ils attendent le « bon moment » pour investir." },
+        { size: "base", text: "Ce que peu de gens réalisent, c'est que ça n'a pas à être ainsi." },
+        { size: "base", text: "Nous avons fondé AllôPixel à Montréal parce que nous croyons que l'écart entre ce que les petites entreprises méritent et ce qu'elles peuvent se permettre n'est pas inévitable — c'est un problème créé par l'industrie." },
+        { size: "base", text: "Nous sommes une petite équipe qui travaille directement sur chaque projet nous-mêmes. Pas de transferts vers des juniors. Pas de couches de gestionnaires de comptes. Pas de tarifs gonflés pour couvrir des frais généraux que vous n'avez jamais demandés." },
+        { size: "base", text: "Juste un design réfléchi, des sites web modernes et une image de marque qui aide les entreprises à paraître aussi professionnelles que le travail qu'elles font déjà." },
+        { size: "base", text: "Parce que lorsque le design est bien fait, ça ne ressemble pas à une dépense." },
+        { size: "lg-bold", text: "Ça ressemble à l'investissement qui change tout." },
+      ],
+      valuesLabel: "Ce en quoi nous croyons", valuesHeading: "Nos valeurs ne sont pas décoratives.",
+      values: [
+        { title: "L'honnêteté d'abord", desc: "Nous vous disons ce dont votre marque a vraiment besoin — pas seulement ce que vous voulez entendre. Langage direct et prix clairs, à chaque fois." },
+        { title: "Toujours abordable", desc: "Un bon design ne devrait pas être un luxe. Nos prix sont honnêtes pour que toute entreprise, à n'importe quelle étape, puisse accéder à un travail qui fait une vraie différence." },
+        { title: "Jamais de jargon", desc: "Nous parlons simplement. Pas de jargon de design, pas de briefs confus. Vous saurez toujours exactement où en est votre projet et ce qui vient ensuite." },
+        { title: "Qualité sans compromis", desc: "Abordable ne veut pas dire générique. Chaque projet reçoit une pensée originale, un soin méticuleux et un engagement envers un travail dont nous sommes vraiment fiers." },
+      ],
+      visualQuote: ["« Allô » signifie bonjour en français.", "Chaque projet est une nouvelle introduction."],
+    },
+    work: {
+      label: "Portfolio",
+      heading: ["Un travail qui", "parle de lui-même."],
+      sub: "Chaque projet ici a été conçu pour aider une marque à se présenter clairement, de manière cohérente et mémorable.",
+      filters: ["Tous", "Conception Web", "Événements", "Portfolio", "Alimentation"],
+    },
+    servicesPage: {
+      label: "Services",
+      heading: ["Bon design.", "Prix honnêtes.", "Aucune surprise."],
+      sub: "Chaque projet commence par un devis clair. Vous saurez exactement ce que vous obtenez — et ce que ça coûte — avant que nous touchions à quoi que ce soit.",
+      whatsIncluded: "Ce qui est inclus",
+      items: [
+        { title: "Identité de marque", desc: "Un logo n'est que le début. Nous construisons le système visuel complet — logo, palette de couleurs, typographie et charte graphique — pour que votre entreprise soit cohérente et professionnelle partout.", deliverables: ["Suite de logos (principal, secondaire, icône)", "Système de couleurs et de typographie", "Document de charte graphique", "Fichiers : PNG, SVG, PDF, AI"] },
+        { title: "Conception & Développement Web", desc: "Nous créons des sites web rapides et professionnels avec des technologies de pointe et des plateformes éprouvées, adaptés à vos objectifs commerciaux.", deliverables: ["Conception de site sur mesure (bureau + mobile)", "React, Next.js, Tailwind CSS, WordPress et plus", "Sites bilingues (anglais / français)", "Formulaires de contact et outils de génération de prospects", "Configuration SEO et optimisation des performances", "Rapide, sécurisé et adapté aux mobiles"] },
+        { title: "Contenu pour Médias Sociaux", desc: "Nous concevons et gérons le contenu des médias sociaux pour nos clients — pour que votre marque reste active, cohérente et en croissance.", deliverables: ["Conception de publications et stories sur mesure", "Planification et calendrier de contenu", "Modération des commentaires", "Rapport d'analyse mensuel", "Gabarits modifiables (Canva ou Figma)"] },
+        { title: "Impression & Matériel", desc: "Cartes d'affaires, menus, brochures, feuillets — tout ce dont vous avez besoin pour vous présenter professionnellement dans le monde réel.", deliverables: ["Conception sur mesure selon vos spécifications", "Fichiers prêts à imprimer (CMJN, fond perdu + traits de coupe)", "Plusieurs versions de format selon les besoins"] },
+        { title: "Direction Créative", desc: "Besoin d'une histoire visuelle cohérente partout ? Nous agissons comme votre partenaire créatif continu — guidant, révisant, gardant tout cohérent.", deliverables: ["Session de stratégie de marque", "Document de direction visuelle", "Révision et rétroaction continues", "Forfait flexible ou par projet"] },
+      ],
+    },
+  },
+};
+
+export type Translations = typeof translations.en;
+
+// Enforces FR is always a complete mirror of EN at the definition site
+const _typeCheck: Record<Lang, Translations> = translations;
+void _typeCheck;
+
+export default translations;
