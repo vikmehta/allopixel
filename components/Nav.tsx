@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Nav() {
@@ -11,6 +11,16 @@ export default function Nav() {
   const [open, setOpen] = useState(false);
   const { lang, toggle, tr } = useLanguage();
   const onDark = pathname === "/contact" && !scrolled;
+
+  // Track previous pathname so we only close menu on real navigation,
+  // not on the null→"/" transition that fires during hydration on mobile.
+  const prevPathname = useRef(pathname);
+  useEffect(() => {
+    if (pathname && prevPathname.current !== pathname) {
+      prevPathname.current = pathname;
+      setOpen(false);
+    }
+  }, [pathname]);
 
   const links = [
     { href: "/", label: tr.nav.home },
@@ -25,7 +35,6 @@ export default function Nav() {
     return () => window.removeEventListener("scroll", fn);
   }, []);
 
-  useEffect(() => { setOpen(false); }, [pathname]);
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
@@ -73,10 +82,11 @@ export default function Nav() {
             </button>
           </div>
 
-          {/* Mobile hamburger */}
+          {/* Mobile hamburger — touch-action:manipulation removes 300ms iOS delay */}
           <button
-            onClick={() => setOpen(prev => !prev)}
-            className="md:hidden flex flex-col justify-center gap-[5px] w-11 h-11 -mr-2"
+            onClick={() => setOpen(!open)}
+            style={{ touchAction: "manipulation" }}
+            className={`md:hidden flex flex-col justify-center gap-[5px] w-11 h-11 -mr-2 cursor-pointer ${onDark ? "" : ""}`}
             aria-label={open ? tr.nav.closeMenu : tr.nav.openMenu}
             aria-expanded={open}
           >
@@ -87,13 +97,17 @@ export default function Nav() {
         </nav>
       </header>
 
-      {/* Mobile menu — no Framer Motion, plain CSS for max reliability */}
+      {/* Mobile menu overlay — no Framer Motion, conditional render only */}
       {open && (
-        <div className="fixed inset-0 z-[60] bg-chalk flex flex-col px-8 pt-20 pb-10 md:hidden">
+        <div
+          className="fixed inset-0 z-[60] bg-chalk flex flex-col px-8 pt-20 pb-10"
+          style={{ touchAction: "pan-y" }}
+        >
           {/* Close button */}
           <button
             onClick={() => setOpen(false)}
-            className="absolute top-4 right-6 w-11 h-11 flex items-center justify-center text-ink/50 hover:text-ink"
+            style={{ touchAction: "manipulation" }}
+            className="absolute top-4 right-6 w-11 h-11 flex items-center justify-center text-ink/50 hover:text-ink cursor-pointer"
             aria-label={tr.nav.closeMenu}
           >
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden>
@@ -118,7 +132,8 @@ export default function Nav() {
               </Link>
               <button
                 onClick={() => { toggle(); setOpen(false); }}
-                className="font-mono text-[0.7rem] uppercase tracking-[0.15em] text-ink/40 border border-black/15 hover:text-ink hover:border-black/30 transition-colors px-2.5 py-2"
+                style={{ touchAction: "manipulation" }}
+                className="font-mono text-[0.7rem] uppercase tracking-[0.15em] text-ink/40 border border-black/15 hover:text-ink hover:border-black/30 transition-colors px-2.5 py-2 cursor-pointer"
                 aria-label={lang === "en" ? "Passer en français" : "Switch to English"}
               >
                 {lang === "en" ? "FR" : "EN"}
