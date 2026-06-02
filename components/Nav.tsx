@@ -99,8 +99,8 @@ export default function Nav() {
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.28 }}
+            initial={{ y: -12 }} animate={{ y: 0 }} exit={{ y: -12 }}
+            transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
             className="fixed inset-0 z-[60] bg-chalk flex flex-col px-8 pt-24 pb-10"
           >
             {/* Close button at top-right */}
@@ -116,13 +116,13 @@ export default function Nav() {
 
             <div className="flex-1 flex flex-col justify-center gap-8">
               {links.map(({ href, label }, i) => (
-                <motion.div key={href} initial={{ x: -20 }} animate={{ x: 0 }} transition={{ delay: i * 0.06 }}>
+                <motion.div key={href} initial={{ x: -16 }} animate={{ x: 0 }} transition={{ delay: i * 0.05, duration: 0.25, ease: [0.22, 1, 0.36, 1] }}>
                   <Link href={href} className="font-display font-bold text-5xl tracking-display text-ink hover:text-coral transition-colors">
                     {label}
                   </Link>
                 </motion.div>
               ))}
-              <motion.div initial={{ x: -20 }} animate={{ x: 0 }} transition={{ delay: 0.25 }} className="flex gap-4 items-center">
+              <motion.div initial={{ x: -16 }} animate={{ x: 0 }} transition={{ delay: 0.2, duration: 0.25, ease: [0.22, 1, 0.36, 1] }} className="flex gap-4 items-center">
                 <Link href="/contact" className="btn btn-ink mt-4">{tr.nav.cta}</Link>
                 <button
                   onClick={() => { toggle(); setOpen(false); }}
