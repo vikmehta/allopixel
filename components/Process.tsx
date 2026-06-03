@@ -12,7 +12,7 @@ export default function Process() {
   const p = tr.process;
 
   return (
-    <section className="py-14 md:py-20 lg:py-36" style={{ background: "var(--color-mint)" }}>
+    <section className="py-14 md:py-20 lg:py-36" style={{ background: "rgb(250, 243, 234)" }}>
       <div className="max-w-[1600px] mx-auto px-8 md:px-12 lg:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-16">
           <div>
