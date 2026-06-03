@@ -28,14 +28,14 @@ export default function Pricing() {
           <p className="font-body text-base text-chalk/50 mt-5 max-w-2xl leading-relaxed">{p.sub}</p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 items-start">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {p.tiers.map((tier, i) => (
             <motion.div key={tier.name}
               initial={{ y: 28 }} whileInView={{ y: 0 }}
               viewport={vp} transition={{ duration: 0.6, delay: i * 0.08, ease }}
               className={`relative flex flex-col p-8 bg-chalk transition-all duration-300 ${
                 featured[i]
-                  ? "border border-chalk lg:-mt-4 lg:mb-4"
+                  ? "border border-chalk"
                   : "border border-chalk/20 hover:border-chalk/40"
               }`}
             >
