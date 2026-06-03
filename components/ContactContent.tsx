@@ -17,7 +17,7 @@ export default function ContactContent() {
             <span className="font-mono text-[0.85rem] uppercase tracking-widest text-chalk/45 block mb-6">{c.label}</span>
             <h1 className="font-display font-bold tracking-display leading-[0.92] text-chalk mb-8"
               style={{ fontSize: "clamp(2.5rem, 6vw, 5.5rem)" }}>
-              {c.heading}
+              {c.heading[0]} <span className="text-coral">{c.heading[1]}</span>
             </h1>
             <p className="font-body text-lg text-chalk/45 leading-relaxed mb-12">{c.sub}</p>
 

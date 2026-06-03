@@ -16,7 +16,8 @@ export default function AboutContent() {
           <span className="section-label block mb-5">{a.label}</span>
           <h1 className="font-display font-bold tracking-display leading-[0.92] text-ink max-w-4xl"
             style={{ fontSize: "clamp(2.8rem, 7vw, 7rem)" }}>
-            {a.heading}
+            {a.heading[0]}<br />
+            <span className="text-coral">{a.heading[1]}</span>
           </h1>
         </div>
       </section>

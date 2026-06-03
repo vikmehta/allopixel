@@ -86,7 +86,7 @@ const translations = {
       items: ["Brand Identity", "Web Design", "Logo Design", "Social Media", "Print & Collateral", "Montréal", "Affordable", "Fast Turnaround", "No Hidden Fees", "Creative Direction"],
     },
     contact: {
-      label: "Get in touch", heading: "Let's build something great.",
+      label: "Get in touch", heading: ["Let's build something", "great."],
       sub: "Tell us about your project. We'll be in touch within 24 hours.",
       whatNext: "What happens next",
       steps: [
@@ -112,7 +112,7 @@ const translations = {
       },
     },
     about: {
-      label: "Our story", heading: "We believe great design changes businesses.",
+      label: "Our story", heading: ["We believe great design", "changes businesses."],
       story: [
         { size: "lg", text: "Most small business owners already know what bad design costs." },
         { size: "base", text: "The first impression that doesn't land. The client who chooses someone else. The brand that feels temporary while they wait for the \"right time\" to invest." },
@@ -237,7 +237,7 @@ const translations = {
       items: ["Identité de marque", "Conception Web", "Création de logo", "Médias sociaux", "Impression & Matériel", "Montréal", "Abordable", "Délais rapides", "Sans frais cachés", "Direction créative"],
     },
     contact: {
-      label: "Nous contacter", heading: "Créons quelque chose de grand.",
+      label: "Nous contacter", heading: ["Créons quelque chose de", "grand."],
       sub: "Parlez-nous de votre projet. Nous vous répondrons dans les 24 heures.",
       whatNext: "Ce qui se passe ensuite",
       steps: [
@@ -263,7 +263,7 @@ const translations = {
       },
     },
     about: {
-      label: "Notre histoire", heading: "Nous croyons que le design change les entreprises.",
+      label: "Notre histoire", heading: ["Nous croyons que le design", "change les entreprises."],
       story: [
         { size: "lg", text: "La plupart des propriétaires de petites entreprises savent déjà ce que coûte un mauvais design." },
         { size: "base", text: "La première impression qui ne convainc pas. Le client qui choisit quelqu'un d'autre. La marque qui semble temporaire pendant qu'ils attendent le « bon moment » pour investir." },

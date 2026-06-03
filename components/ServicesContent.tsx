@@ -17,7 +17,7 @@ export default function ServicesContent() {
           <span className="section-label block mb-5">{s.label}</span>
           <h1 className="font-display font-bold tracking-display leading-[0.92] text-ink max-w-3xl"
             style={{ fontSize: "clamp(2.8rem, 7vw, 7rem)" }}>
-            {s.heading[0]}<br />{s.heading[1]}<br />{s.heading[2]}
+            {s.heading[0]}<br />{s.heading[1]}<br /><span className="text-coral">{s.heading[2]}</span>
           </h1>
           <p className="font-body text-lg text-ink/50 leading-relaxed mt-6 max-w-xl">{s.sub}</p>
         </div>
