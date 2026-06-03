@@ -62,7 +62,7 @@ export default function ProblemSection() {
               ].map(({ num, label }) => (
                 <div key={label}>
                   <div className="font-display font-bold text-3xl text-coral tracking-display">{num}</div>
-                  <div className="font-mono text-[0.65rem] text-muted uppercase tracking-wider mt-1">{label}</div>
+                  <div className="font-mono text-[0.85rem] text-muted uppercase tracking-wider mt-1">{label}</div>
                 </div>
               ))}
             </div>
