@@ -20,7 +20,7 @@ export default function CTAStrip({ variant = "default", btnHref = "/contact", da
 
   if (dark) {
     return (
-      <section className="bg-ink grain py-24 lg:py-28">
+      <section className="bg-ink grain py-12 md:py-16 lg:py-28">
         <div className="max-w-[1600px] mx-auto px-8 md:px-12 lg:px-16">
           <motion.div
             initial={{ y: 20 }} whileInView={{ y: 0 }}
@@ -40,7 +40,7 @@ export default function CTAStrip({ variant = "default", btnHref = "/contact", da
   }
 
   return (
-    <section className="bg-coral grain py-24 lg:py-28 overflow-hidden relative">
+    <section className="bg-coral grain py-12 md:py-16 lg:py-28 overflow-hidden relative">
       <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-white/5 pointer-events-none" aria-hidden />
       <div className="absolute -bottom-16 -left-16 w-48 h-48 rounded-full bg-white/5 pointer-events-none" aria-hidden />
       <div className="max-w-[1600px] mx-auto px-8 md:px-12 lg:px-16 relative z-10">

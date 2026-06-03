@@ -19,7 +19,7 @@ export default function SelectedWork() {
   const sw = tr.selectedWork;
 
   return (
-    <section className="bg-chalk py-28 lg:py-36">
+    <section className="bg-chalk py-14 md:py-20 lg:py-36">
       <div className="max-w-[1600px] mx-auto px-8 md:px-12 lg:px-16">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-16 pb-8 border-b border-black/8">
           <div>

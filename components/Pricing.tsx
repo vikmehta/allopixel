@@ -14,7 +14,7 @@ export default function Pricing() {
   const p = tr.pricing;
 
   return (
-    <section className="bg-chalk py-28 lg:py-36">
+    <section className="bg-chalk py-14 md:py-20 lg:py-36">
       <div className="max-w-[1600px] mx-auto px-8 md:px-12 lg:px-16">
         <div className="mb-16">
           <span className="section-label block mb-5">{p.label}</span>
