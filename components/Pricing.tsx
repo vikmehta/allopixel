@@ -6,7 +6,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
 const vp = { once: true, amount: 0 } as const;
-const featured = [false, false, true, false];
+const featured = [false, false, false, true, false];
 
 export default function Pricing() {
   const { tr } = useLanguage();
@@ -28,7 +28,7 @@ export default function Pricing() {
           <p className="font-body text-base text-chalk/50 mt-5 max-w-2xl leading-relaxed">{p.sub}</p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
           {p.tiers.map((tier, i) => (
             <motion.div key={tier.name}
               initial={{ y: 28 }} whileInView={{ y: 0 }}

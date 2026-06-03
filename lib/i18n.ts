@@ -61,15 +61,16 @@ const translations = {
     pricing: {
       label: "Website Packages",
       heading: ["Honest pricing.", "Always."],
-      sub: "From a simple 5-page site to a full custom build — we develop fast, professional websites that work as hard as you do. No templates. No shortcuts.",
+      sub: "From a quick landing page to a full custom build — we build on whatever platform fits your business: Next.js, WordPress, Shopify, or Wix. Fast, professional, and built to convert.",
       mostPopular: "Most popular", getStarted: "Get started",
       customNote: "Prices are starting points — every project is different.", customLink: "Send us a message",
       customSuffix: "and we'll build a quote around your specific needs.",
       tiers: [
         { name: "Site Care", price: "$99", period: "/mth", tagline: "For clients who want their site looked after", features: ["Monthly content & text updates", "Security & plugin updates", "Performance monitoring", "Priority email support"] },
-        { name: "Site Starter", price: "$799", period: "", tagline: "For small businesses going online for the first time", features: ["Custom design (desktop + mobile)", "Up to 5 pages", "Contact form & lead capture", "Basic SEO setup", "English & French available", "WordPress or Next.js"] },
-        { name: "Site Pro", price: "$1,999", period: "", tagline: "For businesses that need more room to grow", features: ["Everything in Site Starter", "Up to 12 pages", "Blog or news section", "Advanced SEO configuration", "Google Analytics setup", "30 days post-launch support"] },
-        { name: "Site Complete", price: "$3,500", period: "+", tagline: "For brands ready to build something serious", features: ["Everything in Site Pro", "Unlimited pages", "E-commerce or booking integration", "Custom animations & interactions", "Priority turnaround", "60 days post-launch support"] },
+        { name: "Site Landing", price: "$399", period: "", tagline: "For businesses that need one great page", features: ["Single page design (desktop + mobile)", "Conversion-focused layout", "Contact form or call-to-action", "Basic SEO setup", "Fast delivery"] },
+        { name: "Site Essential", price: "$899", period: "", tagline: "For small businesses going online for the first time", features: ["Custom design (desktop + mobile)", "Up to 5 pages", "Contact form & lead capture", "Basic SEO setup", "English & French available", "Next.js, WordPress, Shopify or Wix"] },
+        { name: "Site Pro", price: "$1,999", period: "", tagline: "For businesses that need more room to grow", features: ["Everything in Site Essential", "Up to 12 pages", "Blog or news section", "Advanced SEO configuration", "Google Analytics setup", "30 days post-launch support"] },
+        { name: "Site Complete", price: "$2,999", period: "", tagline: "For brands ready to build something serious", features: ["Everything in Site Pro", "Unlimited pages", "E-commerce or booking integration", "Custom animations & interactions", "Priority turnaround", "60 days post-launch support"] },
       ],
     },
     cta: {
@@ -213,15 +214,16 @@ const translations = {
     pricing: {
       label: "Forfaits Web",
       heading: ["Des prix honnêtes.", "Toujours."],
-      sub: "D'un simple site de 5 pages à une création sur mesure complète — nous développons des sites web rapides et professionnels qui travaillent aussi fort que vous. Pas de modèles. Pas de raccourcis.",
+      sub: "D'une page d'atterrissage à une création sur mesure complète — nous construisons sur la plateforme qui convient à votre entreprise : Next.js, WordPress, Shopify ou Wix. Rapide, professionnel et conçu pour convertir.",
       mostPopular: "Le plus populaire", getStarted: "Commencer",
       customNote: "Les prix sont des points de départ — chaque projet est différent.", customLink: "Envoyez-nous un message",
       customSuffix: "et nous préparerons un devis adapté à vos besoins.",
       tiers: [
         { name: "Site Care", price: "99 $", period: "/mois", tagline: "Pour les clients qui veulent leur site entre de bonnes mains", features: ["Mises à jour mensuelles du contenu", "Mises à jour de sécurité et plugiciels", "Surveillance des performances", "Soutien prioritaire par courriel"] },
-        { name: "Site Starter", price: "799 $", period: "", tagline: "Pour les petites entreprises qui se lancent en ligne", features: ["Conception sur mesure (bureau + mobile)", "Jusqu'à 5 pages", "Formulaire de contact et capture de prospects", "Configuration SEO de base", "Anglais et français disponibles", "WordPress ou Next.js"] },
-        { name: "Site Pro", price: "1 999 $", period: "", tagline: "Pour les entreprises qui ont besoin de plus d'espace pour grandir", features: ["Tout ce qui est dans Site Starter", "Jusqu'à 12 pages", "Section blogue ou actualités", "Configuration SEO avancée", "Configuration Google Analytics", "30 jours de soutien post-lancement"] },
-        { name: "Site Complete", price: "3 500 $", period: "+", tagline: "Pour les marques prêtes à construire quelque chose de sérieux", features: ["Tout ce qui est dans Site Pro", "Pages illimitées", "Intégration e-commerce ou réservation", "Animations et interactions personnalisées", "Délai prioritaire", "60 jours de soutien post-lancement"] },
+        { name: "Site Landing", price: "399 $", period: "", tagline: "Pour les entreprises qui ont besoin d'une seule grande page", features: ["Conception d'une page (bureau + mobile)", "Mise en page orientée conversion", "Formulaire de contact ou appel à l'action", "Configuration SEO de base", "Livraison rapide"] },
+        { name: "Site Essential", price: "899 $", period: "", tagline: "Pour les petites entreprises qui se lancent en ligne", features: ["Conception sur mesure (bureau + mobile)", "Jusqu'à 5 pages", "Formulaire de contact et capture de prospects", "Configuration SEO de base", "Anglais et français disponibles", "Next.js, WordPress, Shopify ou Wix"] },
+        { name: "Site Pro", price: "1 999 $", period: "", tagline: "Pour les entreprises qui ont besoin de plus d'espace pour grandir", features: ["Tout ce qui est dans Site Essential", "Jusqu'à 12 pages", "Section blogue ou actualités", "Configuration SEO avancée", "Configuration Google Analytics", "30 jours de soutien post-lancement"] },
+        { name: "Site Complete", price: "2 999 $", period: "", tagline: "Pour les marques prêtes à construire quelque chose de sérieux", features: ["Tout ce qui est dans Site Pro", "Pages illimitées", "Intégration e-commerce ou réservation", "Animations et interactions personnalisées", "Délai prioritaire", "60 jours de soutien post-lancement"] },
       ],
     },
     cta: {
