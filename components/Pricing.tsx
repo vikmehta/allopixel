@@ -14,10 +14,10 @@ export default function Pricing() {
   const p = tr.pricing;
 
   return (
-    <section className="bg-chalk py-14 md:py-20 lg:py-36">
+    <section className="bg-coral grain py-14 md:py-20 lg:py-36">
       <div className="max-w-[1600px] mx-auto px-8 md:px-12 lg:px-16">
         <div className="mb-16">
-          <span className="section-label block mb-5">{p.label}</span>
+          <span className="font-mono text-[0.85rem] uppercase tracking-widest text-ink/60 block mb-5">{p.label}</span>
           <motion.h2
             initial={{ y: 20 }} whileInView={{ y: 0 }}
             viewport={vp} transition={{ duration: 0.65, ease }}
@@ -26,7 +26,7 @@ export default function Pricing() {
           >
             {p.heading[0]}<br />{p.heading[1]}
           </motion.h2>
-          <p className="font-body text-ink/45 mt-4">{p.sub}</p>
+          <p className="font-body text-ink/60 mt-4">{p.sub}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 items-start">
@@ -34,15 +34,15 @@ export default function Pricing() {
             <motion.div key={tier.name}
               initial={{ y: 28 }} whileInView={{ y: 0 }}
               viewport={vp} transition={{ duration: 0.6, delay: i * 0.1, ease }}
-              className={`relative flex flex-col p-8 transition-all duration-300 ${
+              className={`relative flex flex-col p-8 bg-chalk transition-all duration-300 ${
                 featured[i]
-                  ? "border border-ink bg-chalk md:-mt-4 md:mb-4"
-                  : "border border-black/20 hover:border-black/40"
+                  ? "border border-ink md:-mt-4 md:mb-4"
+                  : "border border-ink/15 hover:border-ink/30"
               }`}
             >
               {featured[i] && (
                 <div className="absolute -top-3 left-6">
-                  <span className="bg-coral text-ink font-mono text-[0.85rem] uppercase tracking-widest px-3 py-1">
+                  <span className="bg-ink text-chalk font-mono text-[0.85rem] uppercase tracking-widest px-3 py-1">
                     {p.mostPopular}
                   </span>
                 </div>
@@ -69,9 +69,9 @@ export default function Pricing() {
           ))}
         </div>
 
-        <p className="font-body text-sm text-ink/35 text-center mt-10">
+        <p className="font-body text-sm text-ink/60 text-center mt-10">
           {p.customNote}{" "}
-          <Link href="/contact" className="text-coral hover:underline">{p.customLink}</Link>
+          <Link href="/contact" className="text-ink font-medium hover:underline">{p.customLink}</Link>
           {" "}{p.customSuffix}
         </p>
       </div>
