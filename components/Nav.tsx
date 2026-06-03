@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Nav() {
@@ -12,8 +13,7 @@ export default function Nav() {
   const { lang, toggle, tr } = useLanguage();
   const onDark = pathname === "/contact" && !scrolled;
 
-  // Track previous pathname so we only close menu on real navigation,
-  // not on the null→"/" transition that fires during hydration on mobile.
+  // Ref-based guard: only close menu on real navigation, not hydration transitions
   const prevPathname = useRef(pathname);
   useEffect(() => {
     if (pathname && prevPathname.current !== pathname) {
@@ -82,70 +82,62 @@ export default function Nav() {
             </button>
           </div>
 
-          {/* Mobile hamburger — touch-action:manipulation removes 300ms iOS delay */}
+          {/* Mobile hamburger */}
           <button
             onClick={() => setOpen(!open)}
             style={{ touchAction: "manipulation" }}
-            className={`md:hidden flex flex-col justify-center gap-[5px] w-11 h-11 -mr-2 cursor-pointer ${onDark ? "" : ""}`}
+            className="md:hidden flex flex-col gap-[5px] w-11 h-11 justify-center -mr-2"
             aria-label={open ? tr.nav.closeMenu : tr.nav.openMenu}
             aria-expanded={open}
           >
-            <span className={`block h-[1.5px] w-6 transition-all duration-200 origin-center ${open ? "rotate-45 translate-y-[6.5px]" : ""} ${onDark ? "bg-chalk" : "bg-ink"}`} />
-            <span className={`block h-[1.5px] w-6 transition-all duration-200 ${open ? "opacity-0" : "opacity-100"} ${onDark ? "bg-chalk" : "bg-ink"}`} />
-            <span className={`block h-[1.5px] w-6 transition-all duration-200 origin-center ${open ? "-rotate-45 -translate-y-[6.5px]" : ""} ${onDark ? "bg-chalk" : "bg-ink"}`} />
+            {[0, 1, 2].map(i => (
+              <motion.span key={i}
+                animate={
+                  i === 0 ? (open ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }) :
+                  i === 1 ? (open ? { opacity: 0 } : { opacity: 1 }) :
+                  (open ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 })
+                }
+                transition={{ duration: 0.2 }}
+                className={`block h-px w-6 ${onDark ? "bg-chalk" : "bg-ink"}`}
+              />
+            ))}
           </button>
         </nav>
       </header>
 
-      {/* Mobile menu overlay — no Framer Motion, conditional render only */}
-      {open && (
-        <div
-          className="fixed inset-0 z-[60] bg-chalk flex flex-col px-8 pt-20 pb-10"
-          style={{ touchAction: "pan-y" }}
-        >
-          {/* Close button */}
-          <button
-            onClick={() => setOpen(false)}
-            style={{ touchAction: "manipulation" }}
-            className="absolute top-4 right-6 w-11 h-11 flex items-center justify-center text-ink/50 hover:text-ink cursor-pointer"
-            aria-label={tr.nav.closeMenu}
+      {/* Mobile menu */}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.28 }}
+            className="fixed inset-0 z-[60] bg-chalk flex flex-col px-8 pt-24 pb-10"
           >
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden>
-              <path d="M2 2l16 16M18 2L2 18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-            </svg>
-          </button>
-
-          <div className="flex-1 flex flex-col justify-center gap-6">
-            {links.map(({ href, label }) => (
-              <Link
-                key={href}
-                href={href}
-                className="font-display font-bold text-5xl tracking-display text-ink hover:text-coral transition-colors"
-                onClick={() => setOpen(false)}
-              >
-                {label}
-              </Link>
-            ))}
-            <div className="flex gap-4 items-center mt-4">
-              <Link href="/contact" className="btn btn-ink" onClick={() => setOpen(false)}>
-                {tr.nav.cta}
-              </Link>
-              <button
-                onClick={() => { toggle(); setOpen(false); }}
-                style={{ touchAction: "manipulation" }}
-                className="font-mono text-[0.7rem] uppercase tracking-[0.15em] text-ink/40 border border-black/15 hover:text-ink hover:border-black/30 transition-colors px-2.5 py-2 cursor-pointer"
-                aria-label={lang === "en" ? "Passer en français" : "Switch to English"}
-              >
-                {lang === "en" ? "FR" : "EN"}
-              </button>
+            <div className="flex-1 flex flex-col justify-center gap-8">
+              {links.map(({ href, label }, i) => (
+                <motion.div key={href} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: i * 0.06 }}>
+                  <Link href={href} className="font-display font-bold text-5xl tracking-display text-ink hover:text-coral transition-colors">
+                    {label}
+                  </Link>
+                </motion.div>
+              ))}
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.25 }} className="flex gap-4 items-center mt-4">
+                <Link href="/contact" className="btn btn-ink" onClick={() => setOpen(false)}>{tr.nav.cta}</Link>
+                <button
+                  onClick={() => { toggle(); setOpen(false); }}
+                  style={{ touchAction: "manipulation" }}
+                  className="font-mono text-[0.7rem] uppercase tracking-[0.15em] text-ink/40 border border-black/15 hover:text-ink hover:border-black/30 transition-colors px-2.5 py-2"
+                >
+                  {lang === "en" ? "FR" : "EN"}
+                </button>
+              </motion.div>
             </div>
-          </div>
-
-          <p className="font-mono text-[0.85rem] text-ink/30 uppercase tracking-widest">
-            info.allopixel@gmail.com · {tr.footer.location}
-          </p>
-        </div>
-      )}
+            <p className="font-mono text-[0.85rem] text-ink/30 uppercase tracking-widest">
+              info.allopixel@gmail.com · {tr.footer.location}
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
