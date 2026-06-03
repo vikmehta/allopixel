@@ -47,10 +47,22 @@ export default function Pricing() {
                 </div>
               )}
               <h3 className="font-display font-bold text-xl tracking-display text-ink">{tier.name}</h3>
-              <div className="flex items-baseline gap-1 mt-4 mb-1">
-                <span className="font-display font-bold text-4xl md:text-5xl tracking-display text-ink leading-none">{tier.price}</span>
+              <div className="flex items-baseline gap-0.5 mt-4 mb-5">
+                {tier.price.startsWith('$') ? (
+                  <>
+                    <span className="font-body font-semibold text-xl text-ink/50 self-start mt-1.5">$</span>
+                    <span className="font-display font-bold text-4xl md:text-5xl tracking-display text-ink leading-none">{tier.price.slice(1)}</span>
+                  </>
+                ) : tier.price.endsWith('$') ? (
+                  <>
+                    <span className="font-display font-bold text-4xl md:text-5xl tracking-display text-ink leading-none">{tier.price.slice(0, -1).trim()}</span>
+                    <span className="font-body font-semibold text-xl text-ink/50 self-start mt-1.5"> $</span>
+                  </>
+                ) : (
+                  <span className="font-display font-bold text-4xl md:text-5xl tracking-display text-ink leading-none">{tier.price}</span>
+                )}
                 {tier.period && (
-                  <span className="font-body text-base text-ink/40">{tier.period}</span>
+                  <span className="font-body text-base text-ink/40 ml-0.5">{tier.period}</span>
                 )}
               </div>
               <p className="font-body text-sm text-ink/45 mb-6 leading-snug">{tier.tagline}</p>
