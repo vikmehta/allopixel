@@ -27,7 +27,7 @@ export default function Testimonials() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-y-10 md:gap-y-0">
           {testimonials.map((item, i) => (
             <motion.div key={item.name}
               initial={{ y: 24 }} whileInView={{ y: 0 }}
