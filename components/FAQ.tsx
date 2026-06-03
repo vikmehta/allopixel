@@ -10,7 +10,7 @@ export default function FAQ() {
   const f = tr.faq;
 
   return (
-    <section className="bg-chalk py-14 md:py-20 lg:py-36">
+    <section className="py-14 md:py-20 lg:py-36" style={{ background: "#FAF3EA" }}>
       <div className="max-w-3xl mx-auto px-6 md:px-12">
         <div className="mb-14">
           <span className="section-label block mb-5">{f.label}</span>

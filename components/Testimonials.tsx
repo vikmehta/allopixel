@@ -17,7 +17,7 @@ export default function Testimonials() {
   const t = tr.testimonials;
 
   return (
-    <section className="bg-chalk py-14 md:py-20 lg:py-36">
+    <section className="py-14 md:py-20 lg:py-36" style={{ background: "#FAF3EA" }}>
       <div className="max-w-[1600px] mx-auto px-8 md:px-12 lg:px-16">
         <div className="mb-16">
           <span className="section-label block mb-5">{t.label}</span>

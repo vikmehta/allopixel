@@ -55,18 +55,18 @@ export default function AboutContent() {
       </section>
 
       {/* Values */}
-      <section className="py-20 bg-chalk">
+      <section className="py-20 bg-ink grain">
         <div className="max-w-[1600px] mx-auto px-8 md:px-12 lg:px-16">
-          <span className="section-label block mb-5">{a.valuesLabel}</span>
-          <h2 className="font-display font-bold tracking-display leading-[0.92] text-ink mb-16"
+          <span className="font-mono text-[0.85rem] uppercase tracking-widest text-chalk/40 block mb-5">{a.valuesLabel}</span>
+          <h2 className="font-display font-bold tracking-display leading-[0.92] text-chalk mb-16"
             style={{ fontSize: "clamp(2rem, 4vw, 4rem)" }}>
             {a.valuesHeading}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-0">
             {a.values.map((v, i) => (
-              <div key={v.title} className={`border-t border-black/10 pt-8 pb-8 ${i % 2 === 0 ? "sm:pr-12" : "sm:pl-12 sm:border-l sm:border-black/10"}`}>
-                <h3 className="font-display font-semibold tracking-display text-xl text-ink mb-3">{v.title}</h3>
-                <p className="font-body text-sm text-ink/55 leading-relaxed">{v.desc}</p>
+              <div key={v.title} className={`border-t border-white/10 pt-8 pb-8 ${i % 2 === 0 ? "sm:pr-12" : "sm:pl-12 sm:border-l sm:border-white/10"}`}>
+                <h3 className="font-display font-semibold tracking-display text-xl text-chalk mb-3">{v.title}</h3>
+                <p className="font-body text-sm text-chalk/55 leading-relaxed">{v.desc}</p>
               </div>
             ))}
           </div>
