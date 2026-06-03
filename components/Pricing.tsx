@@ -6,8 +6,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
 const vp = { once: true, amount: 0 } as const;
-const prices = ["$299", "$799", "$1,499"];
-const featured = [false, true, false];
+const featured = [false, false, true, false];
 
 export default function Pricing() {
   const { tr } = useLanguage();
@@ -26,18 +25,18 @@ export default function Pricing() {
           >
             {p.heading[0]}<br />{p.heading[1]}
           </motion.h2>
-          <p className="font-body text-chalk/45 mt-4">{p.sub}</p>
+          <p className="font-body text-base text-chalk/50 mt-5 max-w-2xl leading-relaxed">{p.sub}</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 items-start">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 items-start">
           {p.tiers.map((tier, i) => (
             <motion.div key={tier.name}
               initial={{ y: 28 }} whileInView={{ y: 0 }}
-              viewport={vp} transition={{ duration: 0.6, delay: i * 0.1, ease }}
+              viewport={vp} transition={{ duration: 0.6, delay: i * 0.08, ease }}
               className={`relative flex flex-col p-8 bg-chalk transition-all duration-300 ${
                 featured[i]
-                  ? "border border-ink md:-mt-4 md:mb-4"
-                  : "border border-ink/15 hover:border-ink/30"
+                  ? "border border-chalk lg:-mt-4 lg:mb-4"
+                  : "border border-chalk/20 hover:border-chalk/40"
               }`}
             >
               {featured[i] && (
@@ -47,16 +46,18 @@ export default function Pricing() {
                   </span>
                 </div>
               )}
-              <h3 className="font-display font-bold text-2xl tracking-display text-ink">{tier.name}</h3>
+              <h3 className="font-display font-bold text-xl tracking-display text-ink">{tier.name}</h3>
               <div className="flex items-baseline gap-1 mt-4 mb-1">
-                <span className="font-display font-bold text-5xl md:text-6xl tracking-display text-ink leading-none">{prices[i]}</span>
-                <span className="font-body text-xl text-ink/30">+</span>
+                <span className="font-display font-bold text-4xl md:text-5xl tracking-display text-ink leading-none">{tier.price}</span>
+                {tier.period && (
+                  <span className="font-body text-base text-ink/40">{tier.period}</span>
+                )}
               </div>
-              <p className="font-body text-sm text-ink/45 mb-6">{tier.tagline}</p>
+              <p className="font-body text-sm text-ink/45 mb-6 leading-snug">{tier.tagline}</p>
               <ul className="space-y-2.5 mb-8 flex-1">
                 {tier.features.map((f) => (
                   <li key={f} className="flex items-start gap-3">
-                    <span className="text-coral mt-0.5 text-xs" aria-hidden>✓</span>
+                    <span className="text-coral mt-0.5 text-xs shrink-0" aria-hidden>✓</span>
                     <span className="font-body text-sm text-ink/60">{f}</span>
                   </li>
                 ))}
