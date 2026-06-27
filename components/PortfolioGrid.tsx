@@ -88,8 +88,6 @@ export default function PortfolioGrid() {
                 {/* Info */}
                 <div className="p-6 border-t border-black/8">
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="font-mono text-[0.85rem] text-ink/30 uppercase tracking-wider">{p.year}</span>
-                    <span className="w-px h-3 bg-black/15" />
                     {p.tags.map(t => (
                       <span key={t} className="font-mono text-[0.85rem] text-coral uppercase tracking-wider">{t}</span>
                     ))}
