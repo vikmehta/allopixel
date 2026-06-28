@@ -55,7 +55,7 @@ export default function SelectedWork() {
                   <div className={`md:col-span-7 ${!isEven ? "md:order-2" : ""}`}>
                     <div className="relative overflow-hidden aspect-[16/10] rounded-sm">
                       {p.image ? (
-                        <Image src={p.image} alt={p.name} fill className="object-cover object-top grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105 transition-all duration-700" />
+                        <Image src={p.image} alt={p.name} fill sizes="(max-width: 768px) 100vw, (max-width: 1600px) 58vw, 933px" priority={i === 0} className="object-cover object-top grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105 transition-all duration-700" />
                       ) : (
                         <div className="absolute inset-0 grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105 transition-all duration-700" style={{ background: p.gradient }} />
                       )}

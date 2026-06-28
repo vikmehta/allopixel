@@ -64,7 +64,7 @@ export default function PortfolioGrid() {
       {/* Grid */}
       <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <AnimatePresence mode="popLayout">
-          {filtered.map((p) => (
+          {filtered.map((p, i) => (
             <motion.div key={p.id} layout
               initial={{ scale: 0.97 }}
               animate={{ scale: 1 }}
@@ -81,6 +81,8 @@ export default function PortfolioGrid() {
                       src={p.image}
                       alt={p.name}
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1600px) 50vw, 800px"
+                      priority={i === 0}
                       className="object-cover object-top grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105 transition-all duration-[400ms]"
                     />
                   ) : (
