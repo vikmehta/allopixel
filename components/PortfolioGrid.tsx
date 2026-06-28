@@ -28,6 +28,7 @@ const projects: Project[] = [
   { id: 3, name: "Jess Blackwell", client: "Film & Creative", tags: ["Web Design", "Portfolio"], year: "2024", gradient: "linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 50%, #2A2520 100%)", image: "/work-jessblackwell.jpeg", url: "https://www.jessblackwell.com/", desc: "Cinematic portfolio for a Toronto-based filmmaker." },
   { id: 4, name: "Reno Pro Plus", client: "Home Renovation", tags: ["Web Design"], year: "2024", gradient: "linear-gradient(135deg, #0D1525 0%, #1A2840 50%, #253A5A 100%)", image: "/work-renoproplus.jpeg", url: "https://renoproplus.com/", desc: "Home renovation contractor serving Laval & Montréal." },
   { id: 5, name: "Dalmaa", client: "Food & Recipe Blog", tags: ["Web Design", "Food"], year: "2025", gradient: "linear-gradient(135deg, #1A0D05 0%, #2E1A0A 50%, #4A2C10 100%)", image: "/work-dalmaa.png", url: "https://dalmaa.vercel.app/", desc: "Recipe blog celebrating Indian and continental cuisine." },
+  { id: 7, name: "Gloss by Mia", client: "Beauty & Nail Studio", tags: ["Web Design"], year: "2025", gradient: "linear-gradient(135deg, #0D0A14 0%, #1A1025 50%, #2A1A40 100%)", image: "/work-nails.png", url: "https://nailsalon-sigma.vercel.app/", desc: "Dark, glamorous website for a premium nail art studio in Montréal." },
 ];
 
 const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
@@ -80,10 +81,10 @@ export default function PortfolioGrid() {
                       src={p.image}
                       alt={p.name}
                       fill
-                      className="object-cover object-top grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105 transition-all duration-700"
+                      className="object-cover object-top grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105 transition-all duration-[400ms]"
                     />
                   ) : (
-                    <div className="absolute inset-0 grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105 transition-all duration-700"
+                    <div className="absolute inset-0 grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105 transition-all duration-[400ms]"
                       style={{ background: p.gradient }} />
                   )}
                 </div>
