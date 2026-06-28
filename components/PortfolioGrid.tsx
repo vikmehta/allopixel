@@ -22,6 +22,7 @@ type Project = {
 };
 
 const projects: Project[] = [
+  { id: 6, name: "Poissonnerie MOJ", client: "Food & Seafood Market", tags: ["Web Design", "Food"], year: "2025", gradient: "linear-gradient(135deg, #061E2C 0%, #0D3A52 50%, #1A6080 100%)", image: "/work-moj.png", url: "https://moj-three.vercel.app/", desc: "Bilingual website for a family-run fresh seafood market in Châteauguay, QC." },
   { id: 1, name: "In Bloom Events", client: "Events & Networking", tags: ["Web Design", "Events"], year: "2025", gradient: "linear-gradient(135deg, #2A0F18 0%, #4A1F30 50%, #7A3A50 100%)", image: "/work-inbloom.jpeg", url: "https://www.inbloomevents.ca/", desc: "Luxury women's empowerment event website." },
   { id: 2, name: "Blue Rabbit Therapy", client: "Health & Wellness", tags: ["Web Design"], year: "2024", gradient: "linear-gradient(135deg, #0A1520 0%, #142538 50%, #1E3A58 100%)", image: "/work-bluerabbit.png", url: "https://bluerabbittherapy.com/", desc: "Virtual psychotherapy practice across Ontario." },
   { id: 3, name: "Jess Blackwell", client: "Film & Creative", tags: ["Web Design", "Portfolio"], year: "2024", gradient: "linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 50%, #2A2520 100%)", image: "/work-jessblackwell.jpeg", url: "https://www.jessblackwell.com/", desc: "Cinematic portfolio for a Toronto-based filmmaker." },
@@ -68,9 +69,10 @@ export default function PortfolioGrid() {
               animate={{ scale: 1 }}
               exit={{ scale: 0.97, opacity: 0 }}
               transition={{ duration: 0.35, ease }}
+              whileHover={{ y: -4, transition: { duration: 0.3, ease } }}
             >
               <a href={p.url} target="_blank" rel="noopener noreferrer"
-                className="group block border border-black/10 hover:border-black/30 hover:shadow-xl hover:-translate-y-1 transition-[border-color,box-shadow,transform] duration-300">
+                className="group block border border-black/10 hover:border-black/30 hover:shadow-xl transition-[border-color,box-shadow] duration-300">
                 {/* Image */}
                 <div className="relative overflow-hidden aspect-[16/10]">
                   {p.image ? (
