@@ -42,6 +42,7 @@ export const metadata: Metadata = {
     title: "Allôpixel — Affordable Brand & Web Design",
     description: "Brand identity, web design, and creative direction for small businesses — without the agency price tag.",
   },
+  twitter: { card: "summary_large_image" },
   robots: { index: true, follow: true },
 };
 
@@ -55,6 +56,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           description: "Boutique creative studio offering brand identity, web design, and creative direction for small businesses.",
           address: { "@type": "PostalAddress", addressLocality: "Montréal", addressRegion: "QC", addressCountry: "CA" },
           priceRange: "$$",
+          image: "https://allopixel.com/opengraph-image.png",
+          logo: "https://allopixel.com/logo-horizontal.svg",
+          sameAs: ["https://www.instagram.com/allopixel/", "https://www.facebook.com/AlloPixel/"],
         })}} />
       </head>
       <body className="bg-chalk text-ink antialiased font-body" suppressHydrationWarning>

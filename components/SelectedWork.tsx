@@ -9,9 +9,9 @@ const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
 const vp = { once: true, amount: 0.05 } as const;
 
 const projects = [
-  { id: 6, name: "Poissonnerie MOJ", year: "2025", category: "Web Design", client: "Food & Seafood Market", desc: "A bilingual website for a family-run fresh seafood market serving the Châteauguay community in both English and French.", gradient: "linear-gradient(135deg, #061E2C 0%, #0D3A52 45%, #1A6080 100%)", image: "/work-moj.png", url: "https://moj-three.vercel.app/" },
+  { id: 6, name: "Poissonnerie MOJ", year: "2025", category: "Web Design", client: "Food & Seafood Market", desc: "A bilingual website for a family-run fresh seafood market serving the Châteauguay community in both English and French.", gradient: "linear-gradient(135deg, #061E2C 0%, #0D3A52 45%, #1A6080 100%)", image: "/work-moj.webp", url: "https://moj-three.vercel.app/" },
   { id: 1, name: "In Bloom Events", year: "2025", category: "Web Design", client: "Events & Networking", desc: "An elevated event website for a luxury women's empowerment and networking experience in Québec.", gradient: "linear-gradient(135deg, #2A0F18 0%, #4A1F30 45%, #7A3A50 100%)", image: "/work-inbloom.jpeg", url: "https://www.inbloomevents.ca/" },
-  { id: 2, name: "Blue Rabbit Therapy", year: "2024", category: "Web Design", client: "Health & Wellness", desc: "A calm, trust-first website for a virtual psychotherapy practice serving clients across Ontario.", gradient: "linear-gradient(135deg, #0A1520 0%, #142538 45%, #1E3A58 100%)", image: "/work-bluerabbit.png", url: "https://bluerabbittherapy.com/" },
+  { id: 2, name: "Blue Rabbit Therapy", year: "2024", category: "Web Design", client: "Health & Wellness", desc: "A calm, trust-first website for a virtual psychotherapy practice serving clients across Ontario.", gradient: "linear-gradient(135deg, #0A1520 0%, #142538 45%, #1E3A58 100%)", image: "/work-bluerabbit.webp", url: "https://bluerabbittherapy.com/" },
   { id: 3, name: "Jess Blackwell", year: "2024", category: "Web Design", client: "Film & Creative", desc: "A minimal, cinematic portfolio for a Toronto-based filmmaker and content creator.", gradient: "linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 45%, #2A2520 100%)", image: "/work-jessblackwell.jpeg", url: "https://www.jessblackwell.com/" },
 ];
 
