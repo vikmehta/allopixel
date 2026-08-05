@@ -19,6 +19,7 @@ type Project = {
   image: string;
   url: string;
   desc: string;
+  imgPosition?: string;
 };
 
 const projects: Project[] = [
@@ -29,6 +30,7 @@ const projects: Project[] = [
   { id: 4, name: "Reno Pro Plus", client: "Home Renovation", tags: ["Web Design"], year: "2024", gradient: "linear-gradient(135deg, #0D1525 0%, #1A2840 50%, #253A5A 100%)", image: "/work-renoproplus.jpeg", url: "https://renoproplus.com/", desc: "Home renovation contractor serving Laval & Montréal." },
   { id: 5, name: "Dalmaa", client: "Food & Recipe Blog", tags: ["Web Design", "Food"], year: "2025", gradient: "linear-gradient(135deg, #1A0D05 0%, #2E1A0A 50%, #4A2C10 100%)", image: "/work-dalmaa.webp", url: "https://dalmaa.vercel.app/", desc: "Recipe blog celebrating Indian and continental cuisine." },
   { id: 7, name: "Gloss by Mia", client: "Beauty & Nail Studio", tags: ["Web Design"], year: "2025", gradient: "linear-gradient(135deg, #0D0A14 0%, #1A1025 50%, #2A1A40 100%)", image: "/work-nails.webp", url: "https://nailsalon-sigma.vercel.app/", desc: "Dark, glamorous website for a premium nail art studio in Montréal." },
+  { id: 8, name: "Sourcils & Beauté", client: "Beauty & Brow Bar", tags: ["Web Design"], year: "2025", gradient: "linear-gradient(135deg, #1A1512 0%, #2E241E 50%, #4A3A30 100%)", image: "/work-sourcils.webp", url: "https://sourcil.vercel.app/", desc: "Editorial, women-only brow and beauty bar website with a moody, refined aesthetic.", imgPosition: "object-left-top" },
 ];
 
 const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
@@ -83,7 +85,7 @@ export default function PortfolioGrid() {
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1600px) 50vw, 800px"
                       priority={i === 0}
-                      className="object-cover object-top grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105 transition-all duration-[400ms]"
+                      className={`object-cover ${p.imgPosition ?? "object-top"} grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105 transition-all duration-[400ms]`}
                     />
                   ) : (
                     <div className="absolute inset-0 grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105 transition-all duration-[400ms]"
