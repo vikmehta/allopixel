@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { PROMO_CODE } from "@/lib/promo";
+import { PROMO_CODE, usePromoActive } from "@/lib/promo";
 
 const DISMISS_KEY = "inbloom-banner-dismissed";
 
@@ -11,6 +11,11 @@ export default function EventBanner() {
   const [dismissed, setDismissed] = useState(true);
   const ref = useRef<HTMLDivElement>(null);
   const { lang } = useLanguage();
+
+  // Runs on every route change (even while the banner itself is dismissed/hidden)
+  // so the promo code gets captured into localStorage as soon as any page shows it
+  // in the URL — not just the pages that render pricing.
+  usePromoActive();
 
   useEffect(() => {
     setDismissed(localStorage.getItem(DISMISS_KEY) === "1");
