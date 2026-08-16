@@ -46,7 +46,7 @@ export default function Nav() {
         {tr.nav.skipToContent}
       </a>
 
-      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      <header style={{ top: "var(--banner-h, 0px)" }} className={`fixed left-0 right-0 z-50 transition-all duration-300 ${
         scrolled ? "bg-chalk/92 backdrop-blur-md border-b border-black/6" : "bg-transparent"
       }`}>
         <nav className="max-w-[1600px] mx-auto px-8 md:px-12 lg:px-16 h-16 flex items-center justify-between">
