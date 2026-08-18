@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function FAQ() {
@@ -37,17 +37,15 @@ export default function FAQ() {
                   aria-hidden
                 >+</motion.span>
               </button>
-              <AnimatePresence initial={false}>
-                {open === i && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                  >
-                    <p className="font-body text-sm text-ink/55 leading-relaxed pb-6">{faq.a}</p>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              <motion.div
+                initial={false}
+                animate={{ height: open === i ? "auto" : 0, opacity: open === i ? 1 : 0 }}
+                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                style={{ overflow: "hidden" }}
+                aria-hidden={open !== i}
+              >
+                <p className="font-body text-sm text-ink/55 leading-relaxed pb-6">{faq.a}</p>
+              </motion.div>
             </div>
           ))}
           <div className="rule" />

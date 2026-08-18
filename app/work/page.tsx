@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Work",
   description: "Selected projects by AllôPixel — brand identities, websites, and creative direction for small businesses, artists, and individuals.",
   alternates: { canonical: "https://allopixel.com/work" },
+  openGraph: { url: "https://allopixel.com/work" },
 };
 
 export default function WorkPage() {
