@@ -3,7 +3,6 @@ import { Playfair_Display, DM_Sans, DM_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import EventBanner from "@/components/EventBanner";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 
 const playfair = Playfair_Display({
@@ -64,7 +63,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="bg-chalk text-ink antialiased font-body" suppressHydrationWarning>
         <LanguageProvider>
-          <EventBanner />
           <Nav />
           <main id="main-content">{children}</main>
           <Footer />

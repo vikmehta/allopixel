@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { usePromoActive, PROMO_CODE } from "@/lib/promo";
 
 const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
 const vp = { once: true, amount: 0 } as const;
@@ -32,7 +31,6 @@ function PriceDigits({ price, size }: { price: string; size: string }) {
 export default function Pricing() {
   const { tr } = useLanguage();
   const p = tr.pricing;
-  const promoActive = usePromoActive();
 
   return (
     <section className="bg-ink grain py-14 md:py-20 lg:py-36">
@@ -69,29 +67,12 @@ export default function Pricing() {
                 </div>
               )}
               <h3 className="font-display font-bold text-xl tracking-display text-ink">{tier.name}</h3>
-              {promoActive && tier.promoPrice ? (
-                <div className="mt-4 mb-5">
-                  <div className="flex items-baseline gap-2">
-                    <span className="flex items-baseline gap-0.5 text-ink/35 line-through decoration-2">
-                      <PriceDigits price={tier.price} size="sm" />
-                    </span>
-                    <span className="font-mono text-[0.75rem] uppercase tracking-widest text-coral">{PROMO_CODE}</span>
-                  </div>
-                  <div className="flex items-baseline gap-0.5 mt-1">
-                    <PriceDigits price={tier.promoPrice} size="lg" />
-                    {tier.period && (
-                      <span className="font-body text-base text-ink/40 ml-0.5">{tier.period}</span>
-                    )}
-                  </div>
-                </div>
-              ) : (
-                <div className="flex items-baseline gap-0.5 mt-4 mb-5">
-                  <PriceDigits price={tier.price} size="lg" />
-                  {tier.period && (
-                    <span className="font-body text-base text-ink/40 ml-0.5">{tier.period}</span>
-                  )}
-                </div>
-              )}
+              <div className="flex items-baseline gap-0.5 mt-4 mb-5">
+                <PriceDigits price={tier.price} size="lg" />
+                {tier.period && (
+                  <span className="font-body text-base text-ink/40 ml-0.5">{tier.period}</span>
+                )}
+              </div>
               <p className="font-body text-sm text-ink/45 mb-6 leading-snug">{tier.tagline}</p>
               <ul className="space-y-2.5 mb-8 flex-1">
                 {tier.features.map((f) => (

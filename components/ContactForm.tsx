@@ -1,19 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { PROMO_CODE } from "@/lib/promo";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
-  const [promoCode, setPromoCode] = useState("");
-  const { tr, lang } = useLanguage();
+  const { tr } = useLanguage();
   const f = tr.contact.form;
-
-  useEffect(() => {
-    const promo = new URLSearchParams(window.location.search).get("promo");
-    if (promo) setPromoCode(promo);
-  }, []);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -59,16 +52,6 @@ export default function ContactForm() {
           <option value="" style={{ background: "#111" }}>{f.budgetPlaceholder}</option>
           {f.budgets.map(o => <option key={o} value={o} style={{ background: "#111" }}>{o}</option>)}
         </select>
-      </div>
-
-      <div>
-        <label htmlFor="promo-code" className="font-mono text-[0.85rem] uppercase tracking-widest text-coral block mb-3">
-          {lang === "fr" ? "Code promo (optionnel)" : "Promo code (optional)"}
-        </label>
-        <input id="promo-code" name="promo_code" type="text" value={promoCode}
-          onChange={(e) => setPromoCode(e.target.value)}
-          placeholder={lang === "fr" ? `ex. ${PROMO_CODE}` : `e.g. ${PROMO_CODE}`}
-          className={inputClass} />
       </div>
 
       <div>
