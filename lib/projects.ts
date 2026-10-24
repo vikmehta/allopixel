@@ -139,50 +139,98 @@ export const projects: Project[] = [
   {
     id: 6, slug: "poissonnerie-moj", name: "Poissonnerie MOJ", client: "Food & Seafood Market", tags: ["Web Design", "Food"], year: "2025",
     gradient: "linear-gradient(135deg, #061E2C 0%, #0D3A52 45%, #1A6080 100%)", image: "/work-moj.webp", url: "https://moj-three.vercel.app/", featured: true,
-    desc: "A bilingual website for a family-run fresh seafood market serving the Châteauguay community in both English and French.",
-    descShort: "Bilingual website for a family-run fresh seafood market in Châteauguay, QC.",
+    desc: {
+      en: "A warm, bilingual storefront for a family-run seafood market, bringing the daily catch and the takeout kitchen to the Châteauguay community.",
+      fr: "Une vitrine chaleureuse et bilingue pour une poissonnerie familiale, qui met en valeur l'arrivage du jour et la cuisine à emporter pour la communauté de Châteauguay.",
+    },
+    descShort: {
+      en: "A warm, bilingual storefront for a family-run seafood market in Châteauguay.",
+      fr: "Une vitrine chaleureuse et bilingue pour une poissonnerie familiale de Châteauguay.",
+    },
   },
   {
     id: 1, slug: "in-bloom-events", name: "In Bloom Events", client: "Events & Networking", tags: ["Web Design", "Events"], year: "2025",
     gradient: "linear-gradient(135deg, #2A0F18 0%, #4A1F30 45%, #7A3A50 100%)", image: "/work-inbloom.jpeg", url: "https://www.inbloomevents.ca/", featured: true,
-    desc: "An elevated event website for a luxury women's empowerment and networking experience in Québec.",
-    descShort: "Luxury women's empowerment event website.",
+    desc: {
+      en: "An elegant website for a women's empowerment and networking experience in Québec, designed to feel as elevated as the event itself.",
+      fr: "Un site élégant pour une expérience de réseautage et d'inspiration au féminin au Québec, à la hauteur de l'événement lui-même.",
+    },
+    descShort: {
+      en: "An elegant, bilingual event website for a women's empowerment and networking experience.",
+      fr: "Un site d'événement élégant et bilingue pour une expérience de réseautage au féminin.",
+    },
   },
   {
     id: 2, slug: "blue-rabbit-therapy", name: "Blue Rabbit Therapy", client: "Health & Wellness", tags: ["Web Design"], year: "2024",
     gradient: "linear-gradient(135deg, #0A1520 0%, #142538 45%, #1E3A58 100%)", image: "/work-bluerabbit.webp", url: "https://bluerabbittherapy.com/", featured: true,
-    desc: "A calm, trust-first website for a virtual psychotherapy practice serving clients across Ontario.",
-    descShort: "Virtual psychotherapy practice across Ontario.",
+    desc: {
+      en: "A calm, reassuring website for a virtual psychotherapy practice, guiding clients across Ontario from first consult to first session.",
+      fr: "Un site apaisant et rassurant pour une pratique de psychothérapie virtuelle, qui accompagne les clients de l'Ontario de la première consultation à la première séance.",
+    },
+    descShort: {
+      en: "A reassuring digital home for a virtual psychotherapy practice across Ontario.",
+      fr: "Une présence numérique rassurante pour une pratique de psychothérapie virtuelle en Ontario.",
+    },
   },
   {
     id: 3, slug: "jess-blackwell", name: "Jess Blackwell", client: "Film & Creative", tags: ["Web Design", "Portfolio"], year: "2024",
     gradient: "linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 45%, #2A2520 100%)", image: "/work-jessblackwell.jpeg", url: "https://www.jessblackwell.com/",
-    desc: "A minimal, cinematic portfolio for a Toronto-based filmmaker and content creator.",
-    descShort: "Cinematic portfolio for a Toronto-based filmmaker.",
+    desc: {
+      en: "A restrained, cinematic portfolio for a Toronto filmmaker, designed to let the work lead.",
+      fr: "Un portfolio sobre et cinématographique pour une personne cinéaste de Toronto, conçu pour laisser l'œuvre au premier plan.",
+    },
+    descShort: {
+      en: "A restrained, cinematic portfolio for a Toronto filmmaker, designed to let the work lead.",
+      fr: "Un portfolio sobre et cinématographique pour une personne cinéaste de Toronto, conçu pour laisser l'œuvre au premier plan.",
+    },
   },
   {
     id: 4, slug: "reno-pro-plus", name: "Reno Pro Plus", client: "Home Renovation", tags: ["Web Design"], year: "2024",
     gradient: "linear-gradient(135deg, #0D1525 0%, #1A2840 50%, #253A5A 100%)", image: "/work-renoproplus.jpeg", url: "https://renoproplus.com/",
-    desc: "Home renovation contractor serving Laval & Montréal.",
-    descShort: "Home renovation contractor serving Laval & Montréal.",
+    desc: {
+      en: "A clear, confident website for a renovation company serving Laval and Montréal, built to turn a first look into a quote request.",
+      fr: "Un site clair et assuré pour une entreprise de rénovation de Laval et Montréal, conçu pour transformer un premier regard en demande de soumission.",
+    },
+    descShort: {
+      en: "A clear, confident website for a renovation company serving Laval and Montréal, built to turn a first look into a quote request.",
+      fr: "Un site clair et assuré pour une entreprise de rénovation de Laval et Montréal, conçu pour transformer un premier regard en demande de soumission.",
+    },
   },
   {
     id: 5, slug: "dalmaa", name: "Dalmaa", client: "Food & Recipe Blog", tags: ["Web Design", "Food"], year: "2025",
     gradient: "linear-gradient(135deg, #1A0D05 0%, #2E1A0A 50%, #4A2C10 100%)", image: "/work-dalmaa.webp", url: "https://dalmaa.vercel.app/",
-    desc: "Recipe blog celebrating Indian and continental cuisine.",
-    descShort: "Recipe blog celebrating Indian and continental cuisine.",
+    desc: {
+      en: "A warm, image-led recipe notebook celebrating Indian and continental cooking.",
+      fr: "Un carnet de recettes chaleureux, porté par l'image, qui célèbre la cuisine indienne et continentale.",
+    },
+    descShort: {
+      en: "A warm, image-led recipe notebook celebrating Indian and continental cooking.",
+      fr: "Un carnet de recettes chaleureux, porté par l'image, qui célèbre la cuisine indienne et continentale.",
+    },
   },
   {
     id: 7, slug: "gloss-by-mia", name: "Gloss by Mia", client: "Beauty & Nail Studio", tags: ["Web Design"], year: "2025",
     gradient: "linear-gradient(135deg, #0D0A14 0%, #1A1025 50%, #2A1A40 100%)", image: "/work-nails.webp", url: "https://nailsalon-sigma.vercel.app/",
-    desc: "Dark, glamorous website for a premium nail art studio in Montréal.",
-    descShort: "Dark, glamorous website for a premium nail art studio in Montréal.",
+    desc: {
+      en: "A dark, glamorous showcase for a premium nail art studio in Montréal, with a filterable gallery and booking built in.",
+      fr: "Une vitrine sombre et glamour pour un studio d'art des ongles haut de gamme à Montréal, avec galerie filtrable et réservation intégrée.",
+    },
+    descShort: {
+      en: "A dark, glamorous showcase for a premium nail art studio in Montréal, with a filterable gallery and booking built in.",
+      fr: "Une vitrine sombre et glamour pour un studio d'art des ongles haut de gamme à Montréal, avec galerie filtrable et réservation intégrée.",
+    },
   },
   {
     id: 8, slug: "sourcils-et-beaute", name: "Sourcils & Beauté", client: "Beauty & Brow Bar", tags: ["Web Design"], year: "2025",
     gradient: "linear-gradient(135deg, #1A1512 0%, #2E241E 50%, #4A3A30 100%)", image: "/work-sourcils.webp", url: "https://sourcil.vercel.app/", imgPosition: "object-left-top",
-    desc: "Editorial, women-only brow and beauty bar website with a moody, refined aesthetic.",
-    descShort: "Editorial, women-only brow and beauty bar website with a moody, refined aesthetic.",
+    desc: {
+      en: "An editorial, refined website for a women-only beauty sanctuary in Montréal, composed around the ritual of care.",
+      fr: "Un site éditorial et raffiné pour un sanctuaire de beauté exclusivement féminin à Montréal, composé autour du rituel de soin.",
+    },
+    descShort: {
+      en: "An editorial, refined website for a women-only beauty sanctuary in Montréal, composed around the ritual of care.",
+      fr: "Un site éditorial et raffiné pour un sanctuaire de beauté exclusivement féminin à Montréal, composé autour du rituel de soin.",
+    },
   },
 ];
 
