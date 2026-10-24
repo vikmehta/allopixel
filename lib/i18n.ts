@@ -16,7 +16,20 @@ const translations = {
     selectedWork: {
       label: "Selected work",
       heading: ["Work that speaks", "for itself."],
-      viewAll: "View all", viewProject: "View project",
+      viewAll: "View all",
+    },
+    caseStudy: {
+      button: "Case study", visitSite: "Visit site", visitLive: "Visit live site",
+      label: "Case study", sector: "Sector", discipline: "Discipline", year: "Year",
+      brief: "The brief", approach: "The approach", experience: "The experience", evolution: "Evolution",
+      evolutionNote: "A look at where the practice began online, and where it stands today.",
+      capabilities: "Capabilities", outcome: "The result",
+      original: "The original site", current: "The new site",
+      hintHover: "Hover to explore the full page", hintTap: "Tap to explore the full page",
+      exploreLabel: "Explore the full page", pagesLabel: "Pages",
+      gallery: "Gallery", metrics: "By the numbers",
+      ctaHeading: "Let's build something worthy of your work.", ctaSub: "Tell us about your project. We'll reply within 24 hours.",
+      ctaBtn: "Start a conversation", back: "All work", next: "Next case study",
     },
     services: {
       label: "What we do",
@@ -169,7 +182,20 @@ const translations = {
     selectedWork: {
       label: "Projets sélectionnés",
       heading: ["Un travail qui", "parle de lui-même."],
-      viewAll: "Voir tout", viewProject: "Voir le projet",
+      viewAll: "Voir tout",
+    },
+    caseStudy: {
+      button: "Étude de cas", visitSite: "Voir le site", visitLive: "Voir le site en ligne",
+      label: "Étude de cas", sector: "Secteur", discipline: "Discipline", year: "Année",
+      brief: "Le mandat", approach: "L'approche", experience: "L'expérience", evolution: "Évolution",
+      evolutionNote: "Un regard sur les débuts de la pratique en ligne, et sur sa présence aujourd'hui.",
+      capabilities: "Savoir-faire", outcome: "Le résultat",
+      original: "Le site d'origine", current: "Le nouveau site",
+      hintHover: "Survolez pour explorer la page en entier", hintTap: "Touchez pour explorer la page en entier",
+      exploreLabel: "Explorer la page en entier", pagesLabel: "Pages",
+      gallery: "Galerie", metrics: "En chiffres",
+      ctaHeading: "Créons quelque chose à la hauteur de votre travail.", ctaSub: "Parlez-nous de votre projet. Nous vous répondrons dans les 24 heures.",
+      ctaBtn: "Démarrer la conversation", back: "Tous les projets", next: "Étude de cas suivante",
     },
     services: {
       label: "Ce que nous faisons",
