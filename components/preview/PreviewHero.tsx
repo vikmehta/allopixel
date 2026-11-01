@@ -179,9 +179,6 @@ export default function PreviewHero() {
           }}
         >
           {[
-            { num: "100+", label: "Projects delivered" },
-            { num: "5★", label: "Average rating" },
-            { num: "48hr", label: "First draft turnaround" },
             { num: "Free", label: "Discovery call" },
           ].map(({ num, label }) => (
             <div key={label}>
