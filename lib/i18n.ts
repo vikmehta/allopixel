@@ -46,6 +46,7 @@ const translations = {
     },
     testimonials: {
       label: "Kind words", heading: "Our clients say it best.",
+      more: "Read more", less: "Show less", note: "Shared by clients we have worked with, in their own words.",
     },
     process: {
       label: "How we work",
@@ -212,6 +213,7 @@ const translations = {
     },
     testimonials: {
       label: "Ils nous font confiance", heading: "Nos clients parlent mieux que nous.",
+      more: "Lire la suite", less: "Réduire", note: "Témoignages de clients, dans leurs propres mots (publiés en anglais).",
     },
     process: {
       label: "Notre processus",
