@@ -137,6 +137,30 @@ export const projects: Project[] = [
     },
   },
   {
+    id: 11, slug: "dansefitlife", name: "DanseFitLife", client: "Dance & Fitness Studio", tags: ["Web Design"], year: "2026",
+    gradient: "linear-gradient(135deg, #2A0A22 0%, #5A1A48 50%, #B0357F 100%)", image: "/work-danse.webp", url: "https://danse-soft-glow.vercel.app/", featured: true,
+    desc: {
+      en: "A glowing new home for a Montréal burlesque-style dance-fitness studio, built around the warmth of the room and an easy path to book a class or plan a private event.",
+      fr: "Une nouvelle vitrine lumineuse pour un studio de danse-fitness de style burlesque à Montréal, façonnée par la chaleur de l'espace et une façon simple de réserver un cours ou de planifier un événement privé.",
+    },
+    descShort: {
+      en: "A glowing new website for a Montréal dance-fitness studio, with easy class booking.",
+      fr: "Un nouveau site lumineux pour un studio de danse-fitness montréalais, avec réservation de cours simplifiée.",
+    },
+  },
+  {
+    id: 10, slug: "fearless-and-feminine", name: "Fearless & Feminine", client: "Online Boutique & Brand", tags: ["Web Design"], year: "2026",
+    gradient: "linear-gradient(135deg, #3A2E22 0%, #7A5E32 50%, #B8860B 100%)", image: "/work-fearless.webp", url: "https://www.fearlessnfeminine.com/", featured: true,
+    desc: {
+      en: "An elegant online boutique and brand home for a gifting company, pairing a soft, editorial look with a store that makes finding something personal for her effortless.",
+      fr: "Une boutique en ligne élégante et un espace de marque pour une entreprise de cadeaux, alliant un style éditorial doux à une boutique qui facilite le choix d'un présent personnel.",
+    },
+    descShort: {
+      en: "An elegant online store and brand home for a women's gifting company.",
+      fr: "Une boutique en ligne élégante et un espace de marque pour une entreprise de cadeaux destinés aux femmes.",
+    },
+  },
+  {
     id: 6, slug: "poissonnerie-moj", name: "Poissonnerie MOJ", client: "Food & Seafood Market", tags: ["Web Design", "Food"], year: "2025",
     gradient: "linear-gradient(135deg, #061E2C 0%, #0D3A52 45%, #1A6080 100%)", image: "/work-moj.webp", url: "https://moj-three.vercel.app/", featured: true,
     desc: {
