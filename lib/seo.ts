@@ -71,6 +71,31 @@ const pages: Record<PageKey, Record<Lang, { title: string; description: string }
   },
 };
 
+/** Keyword lists. Google ignores the keywords tag, but Bing and some directories still read it. Chosen from the keyword research (agence web, web design + place, prix, refonte, boutique en ligne). */
+const keywords: Record<PageKey, Record<Lang, string[]>> = {
+  home: {
+    en: ["web design South Shore", "web design Montérégie", "web designer Châteauguay", "small business website", "affordable web design", "website design Sainte-Martine", "web design studio Quebec", "online store Shopify"],
+    fr: ["création de site web Rive-Sud", "création de site web Montérégie", "studio web Sainte-Martine", "agence web Rive-Sud", "site web petite entreprise", "création de site web professionnel", "site web abordable", "boutique en ligne Shopify"],
+  },
+  services: {
+    en: ["web design pricing", "website cost Quebec", "website packages", "landing page design", "small business website", "online store setup", "website redesign", "branding for small business"],
+    fr: ["prix site web", "tarifs création de site web", "forfait site web", "page d'atterrissage", "site web petite entreprise", "boutique en ligne", "refonte de site web", "image de marque petite entreprise"],
+  },
+  work: {
+    en: ["web design portfolio", "small business websites", "website examples", "web designer portfolio Quebec", "therapist website design", "Shopify store design"],
+    fr: ["portfolio conception web", "réalisations sites web", "exemples de sites web", "site web pour thérapeute", "création de boutique en ligne", "studio web Québec"],
+  },
+  about: {
+    en: ["web design studio Sainte-Martine", "web designer South Shore", "web design Montérégie", "small web design studio", "branding studio Quebec"],
+    fr: ["studio web Sainte-Martine", "concepteur web Rive-Sud", "création de site web Montérégie", "petit studio web", "studio d'image de marque Québec"],
+  },
+  contact: {
+    en: ["web designer Châteauguay", "web designer Beauharnois", "web designer Saint-Rémi", "free web design consultation", "website quote Quebec", "web design South Shore"],
+    fr: ["création de site web Châteauguay", "création de site web Beauharnois", "création de site web Saint-Rémi", "consultation gratuite site web", "soumission site web", "concepteur web Rive-Sud"],
+  },
+  privacy: { en: [], fr: [] },
+};
+
 export const ogLocale: Record<Lang, string> = { en: "en_CA", fr: "fr_CA" };
 
 /** Share images live in /public/og (not as app/ metadata files, which break on Vercel inside [lang]). */
@@ -131,6 +156,7 @@ export function pageMetadata(lang: Lang, key: PageKey): Metadata {
   return {
     title: key === "home" ? { absolute: title } : title,
     description,
+    ...(keywords[key][lang].length > 0 && { keywords: keywords[key][lang] }),
     alternates,
     openGraph: { type: "website", url: alternates.canonical, siteName: "AllôPixel", locale: ogLocale[lang], images: [ogImage(lang, key)] },
     twitter: { card: "summary_large_image", images: [ogImage(lang, key).url] },
