@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Playfair_Display, DM_Sans, DM_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
@@ -27,6 +27,10 @@ const dmMono = DM_Mono({
   display: "swap",
   weight: ["300", "400", "500"],
 });
+
+export const viewport: Viewport = {
+  themeColor: "#092724",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://allopixel.com"),
