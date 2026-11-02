@@ -57,8 +57,9 @@ const testimonials: Testimonial[] = [
     quote: [
       "I have been using the services of JP for a little over 8 months now to monitor/post my social media. I have received many comments from clients, friends, and family about the quality and wholesomeness of the posts that JP has made. JP is very easy to work with which is important in a demanding environment.",
     ],
-    name: "A.T.",
-    role: "Social media client",
+    name: "Andy Tulloch",
+    role: "Realtor",
+    org: "Century 21 Heritage House",
   },
 ];
 
