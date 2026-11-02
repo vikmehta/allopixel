@@ -13,7 +13,7 @@ type Testimonial = {
   quote: string[]; // full text, verbatim, one entry per paragraph
   name: string;
   role: string;
-  org: string;
+  org?: string;
   creds?: string;
 };
 
@@ -51,6 +51,15 @@ const testimonials: Testimonial[] = [
     org: "Blue Rabbit Therapy",
     creds: "B.A. Psych., MACP., PsyD., R.S.W., C.C.C., RP, Certified Level 1 TEAM* Practitioner",
   },
+  {
+    id: "social-media-client",
+    pull: "The quality and wholesomeness of the posts.",
+    quote: [
+      "I have been using the services of JP for a little over 8 months now to monitor/post my social media. I have received many comments from clients, friends, and family about the quality and wholesomeness of the posts that JP has made. JP is very easy to work with which is important in a demanding environment.",
+    ],
+    name: "A.T.",
+    role: "Social media client",
+  },
 ];
 
 function Card({ item, index }: { item: Testimonial; index: number }) {
@@ -87,7 +96,7 @@ function Card({ item, index }: { item: Testimonial; index: number }) {
       <figcaption className="pt-8">
         <div className="font-display font-semibold text-xl tracking-display text-ink">{item.name}</div>
         <div className="font-mono text-[0.85rem] text-ink/50 uppercase tracking-wider mt-1">{item.role}</div>
-        <div className="font-mono text-[0.85rem] text-coral uppercase tracking-wider mt-0.5">{item.org}</div>
+        {item.org && <div className="font-mono text-[0.85rem] text-coral uppercase tracking-wider mt-0.5">{item.org}</div>}
         {item.creds && <div className="font-body text-sm text-ink/50 mt-2 leading-snug">{item.creds}</div>}
       </figcaption>
     </motion.figure>
@@ -109,7 +118,7 @@ export default function Testimonials() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-10 lg:gap-x-14 gap-y-12 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 lg:gap-x-16 gap-y-12 items-start">
           {testimonials.map((item, i) => <Card key={item.id} item={item} index={i} />)}
         </div>
 
