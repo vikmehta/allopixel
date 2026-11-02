@@ -4,19 +4,14 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { projects, hasCaseStudy, localize, type CatKey } from "@/lib/projects";
+import { projects, hasCaseStudy, localize, catKeys, catLabels, type CatKey } from "@/lib/projects";
 import CaseStudyButton from "@/components/CaseStudyButton";
-
-const catKeys: CatKey[] = ["All", "Web Design", "Events", "Portfolio", "Food"];
 
 const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
 export default function PortfolioGrid() {
   const [activeKey, setActiveKey] = useState<CatKey>("All");
   const { tr, lang } = useLanguage();
-
-  // Map translated filter labels to their keys
-  const filterLabels = tr.work.filters;
 
   const filtered = activeKey === "All"
     ? projects
@@ -26,7 +21,7 @@ export default function PortfolioGrid() {
     <div>
       {/* Filters */}
       <div className="flex flex-wrap gap-2 mb-12">
-        {catKeys.map((key, i) => (
+        {catKeys.map(key => (
           <button key={key} onClick={() => setActiveKey(key)}
             className={`font-mono text-[0.85rem] uppercase tracking-[0.15em] px-4 py-2.5 border transition-all duration-200 ${
               activeKey === key
@@ -34,7 +29,7 @@ export default function PortfolioGrid() {
                 : "bg-transparent text-ink/45 border-black/15 hover:border-black/40 hover:text-ink"
             }`}
           >
-            {filterLabels[i]}
+            {localize(catLabels[key], lang)}
           </button>
         ))}
       </div>
@@ -69,10 +64,10 @@ export default function PortfolioGrid() {
                 </div>
                 {/* Info */}
                 <div className="p-6 border-t border-black/8">
-                  <div className="flex items-center gap-2 mb-3">
-                    {p.tags.map(t => (
-                      <span key={t} className="font-mono text-[0.85rem] text-coral uppercase tracking-wider">{t}</span>
-                    ))}
+                  <div className="mb-3">
+                    <span className="font-mono text-[0.85rem] text-coral uppercase tracking-wider">
+                      {p.tags.map(t => localize(catLabels[t], lang)).join(" · ")}
+                    </span>
                   </div>
                   <h3 className="font-display font-semibold tracking-display text-ink text-2xl mb-1">{p.name}</h3>
                   <p className="font-body text-sm text-ink/40 mb-2">{localize(p.client, lang)}</p>

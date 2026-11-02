@@ -154,7 +154,6 @@ const translations = {
       label: "Portfolio",
       heading: ["Work that speaks", "for itself."],
       sub: "Every project here was designed to help a brand show up clearly, consistently, and memorably.",
-      filters: ["All", "Web Design", "Events", "Portfolio", "Food"],
     },
     servicesPage: {
       label: "Services",
@@ -215,7 +214,7 @@ const translations = {
     },
     testimonials: {
       label: "Ils nous font confiance", heading: "Nos clients parlent mieux que nous.",
-      more: "Lire la suite", less: "Réduire", note: "Témoignages de clients, dans leurs propres mots (publiés en anglais).",
+      more: "Lire la suite", less: "Réduire", note: "Témoignages de clients, dans leurs propres mots (traduits de l'anglais).",
     },
     process: {
       label: "Notre processus",
@@ -323,7 +322,6 @@ const translations = {
       label: "Portfolio",
       heading: ["Un travail qui", "parle de lui-même."],
       sub: "Chaque projet ici a été conçu pour aider une marque à se présenter clairement, de manière cohérente et mémorable.",
-      filters: ["Tous", "Conception Web", "Événements", "Portfolio", "Alimentation"],
     },
     servicesPage: {
       label: "Services",
