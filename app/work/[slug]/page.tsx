@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: PageProps<"/work/[slug]">): P
   const { caseStudy: c } = project;
   const url = `${base}/work/${project.slug}`;
   const title = `${project.name} — Case study`;
-  const description = `${c.tagline.en} A case study from Allôpixel: ${c.services.map(s => s.en.toLowerCase()).join(", ")}.`;
+  const description = `${c.tagline.en} A case study from AllôPixel: ${c.services.map(s => s.en.toLowerCase()).join(", ")}.`;
 
   return {
     title,
@@ -49,7 +49,7 @@ export default async function CaseStudyPage({ params }: PageProps<"/work/[slug]"
         url: `${base}/work/${project.slug}`,
         image: `${base}${project.caseStudy.cover.src}`,
         dateCreated: project.caseStudy.year ?? project.year,
-        creator: { "@type": "Organization", name: "Allôpixel", url: base },
+        creator: { "@type": "Organization", name: "AllôPixel", url: base },
         about: project.url,
       })}} />
       <CaseStudyContent project={project} next={next} />
