@@ -1,26 +1,29 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/LocaleLink";
+import NextLink from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { stripLocale } from "@/lib/locale";
 
 export default function Nav() {
-  const pathname = usePathname();
+  const rawPathname = usePathname() || "/";
+  const pathname = stripLocale(rawPathname); // page path without the language prefix
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const { lang, toggle, tr } = useLanguage();
+  const { lang, altHref, tr } = useLanguage();
   const onDark = pathname === "/contact" && !scrolled;
 
   // Ref-based guard: only close menu on real navigation, not hydration transitions
-  const prevPathname = useRef(pathname);
+  const prevPathname = useRef(rawPathname);
   useEffect(() => {
-    if (pathname && prevPathname.current !== pathname) {
-      prevPathname.current = pathname;
+    if (prevPathname.current !== rawPathname) {
+      prevPathname.current = rawPathname;
       setOpen(false);
     }
-  }, [pathname]);
+  }, [rawPathname]);
 
   const links = [
     { href: "/", label: tr.nav.home },
@@ -69,8 +72,10 @@ export default function Nav() {
             <Link href="/contact" className={`btn py-2 px-5 ${onDark ? "btn-primary" : "btn-ink"}`}>
               {tr.nav.cta}
             </Link>
-            <button
-              onClick={toggle}
+            <NextLink
+              href={altHref}
+              hrefLang={lang === "en" ? "fr-CA" : "en-CA"}
+              lang={lang === "en" ? "fr" : "en"}
               className={`font-mono text-[0.7rem] uppercase tracking-[0.15em] transition-colors duration-200 border px-2.5 py-1 ${
                 onDark
                   ? "text-chalk/55 border-chalk/20 hover:text-chalk hover:border-chalk/40"
@@ -79,7 +84,7 @@ export default function Nav() {
               aria-label={lang === "en" ? "Passer en français" : "Switch to English"}
             >
               {lang === "en" ? "FR" : "EN"}
-            </button>
+            </NextLink>
           </div>
 
           {/* Mobile hamburger */}
@@ -123,13 +128,16 @@ export default function Nav() {
               ))}
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.25 }} className="flex gap-4 items-center mt-4">
                 <Link href="/contact" className="btn btn-ink" onClick={() => setOpen(false)}>{tr.nav.cta}</Link>
-                <button
-                  onClick={() => { toggle(); setOpen(false); }}
+                <NextLink
+                  href={altHref}
+                  hrefLang={lang === "en" ? "fr-CA" : "en-CA"}
+                  lang={lang === "en" ? "fr" : "en"}
+                  onClick={() => setOpen(false)}
                   style={{ touchAction: "manipulation" }}
                   className="font-mono text-[0.7rem] uppercase tracking-[0.15em] text-ink/40 border border-black/15 hover:text-ink hover:border-black/30 transition-colors px-2.5 py-2"
                 >
                   {lang === "en" ? "FR" : "EN"}
-                </button>
+                </NextLink>
               </motion.div>
             </div>
             <p className="font-mono text-[0.85rem] text-ink/30 uppercase tracking-widest">

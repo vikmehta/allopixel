@@ -1,31 +1,28 @@
 "use client";
 
-import { createContext, useContext, useState, useEffect, ReactNode } from "react";
+import { createContext, useContext, ReactNode } from "react";
+import { usePathname } from "next/navigation";
 import translations, { Lang, Translations } from "@/lib/i18n";
+import { otherLangPath } from "@/lib/locale";
 
 type LanguageContextType = {
   lang: Lang;
-  toggle: () => void;
+  /** URL of the current page in the other language. */
+  altHref: string;
   tr: Translations;
 };
 
 const LanguageContext = createContext<LanguageContextType>({
   lang: "en",
-  toggle: () => {},
+  altHref: "/fr",
   tr: translations.en,
 });
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLang] = useState<Lang>("en");
-
-  useEffect(() => {
-    document.documentElement.lang = lang;
-  }, [lang]);
-
-  const toggle = () => setLang(l => l === "en" ? "fr" : "en");
-
+/** The language comes from the URL (/ = English, /fr = French), set by the server layout. */
+export function LanguageProvider({ lang, children }: { lang: Lang; children: ReactNode }) {
+  const pathname = usePathname() || "/";
   return (
-    <LanguageContext.Provider value={{ lang, toggle, tr: translations[lang] }}>
+    <LanguageContext.Provider value={{ lang, altHref: otherLangPath(lang, pathname), tr: translations[lang] }}>
       {children}
     </LanguageContext.Provider>
   );

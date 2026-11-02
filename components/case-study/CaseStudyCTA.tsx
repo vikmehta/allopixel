@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/LocaleLink";
 import { useLanguage } from "@/contexts/LanguageContext";
 import type { Project } from "@/lib/projects";
 

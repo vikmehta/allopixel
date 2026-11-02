@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/components/LocaleLink";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 /** Internal link to /work/[slug]. Sits above the card's stretched "Visit site" link. */
