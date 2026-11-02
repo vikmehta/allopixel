@@ -11,10 +11,10 @@ export default function Marquee() {
       <div className="flex whitespace-nowrap animate-marquee">
         {items.map((item, i) => (
           <span key={i} className="inline-flex items-center gap-5 mx-2">
-            <span className="font-mono text-[0.85rem] font-medium text-white uppercase tracking-[0.2em]">
+            <span className="font-mono text-[0.85rem] font-medium text-ink uppercase tracking-[0.2em]">
               {item}
             </span>
-            <span className="text-white/30">·</span>
+            <span className="text-ink/65">·</span>
           </span>
         ))}
       </div>

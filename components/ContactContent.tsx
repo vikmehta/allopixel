@@ -14,23 +14,23 @@ export default function ContactContent() {
 
           {/* Left — info */}
           <div>
-            <span className="font-mono text-[0.85rem] uppercase tracking-widest text-chalk/45 block mb-6">{c.label}</span>
+            <span className="font-mono text-[0.85rem] uppercase tracking-widest text-chalk/60 block mb-6">{c.label}</span>
             <h1 className="font-display font-bold tracking-display leading-[0.92] text-chalk mb-8"
               style={{ fontSize: "clamp(2.5rem, 6vw, 5.5rem)" }}>
               {c.heading[0]} <span className="text-coral">{c.heading[1]}</span>
             </h1>
-            <p className="font-body text-lg text-chalk/45 leading-relaxed mb-12">{c.sub}</p>
+            <p className="font-body text-lg text-chalk/60 leading-relaxed mb-12">{c.sub}</p>
 
             {/* What happens next */}
             <div className="mb-12">
-              <p className="font-mono text-[0.85rem] uppercase tracking-widest text-chalk/30 mb-6">{c.whatNext}</p>
+              <p className="font-mono text-[0.85rem] uppercase tracking-widest text-chalk/60 mb-6">{c.whatNext}</p>
               <div className="space-y-6">
                 {c.steps.map((step, i) => (
                   <div key={i} className="flex gap-5">
                     <span className="font-mono text-[0.65rem] text-coral uppercase tracking-wider mt-0.5 shrink-0">0{i + 1}</span>
                     <div>
                       <p className="font-body text-sm font-medium text-chalk/80">{step.title}</p>
-                      <p className="font-body text-sm text-chalk/35 mt-0.5">{step.desc}</p>
+                      <p className="font-body text-sm text-chalk/60 mt-0.5">{step.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -40,14 +40,14 @@ export default function ContactContent() {
             {/* Contact details */}
             <div className="border-t border-white/8 pt-8 space-y-4">
               <div>
-                <p className="font-mono text-[0.85rem] uppercase tracking-widest text-chalk/30 mb-1.5">{c.emailLabel}</p>
-                <a href="mailto:info.allopixel@gmail.com" className="font-body text-sm text-chalk/55 hover:text-coral transition-colors">
+                <p className="font-mono text-[0.85rem] uppercase tracking-widest text-chalk/60 mb-1.5">{c.emailLabel}</p>
+                <a href="mailto:info.allopixel@gmail.com" className="font-body text-sm text-chalk/60 hover:text-coral transition-colors">
                   info.allopixel@gmail.com
                 </a>
               </div>
               <div>
-                <p className="font-mono text-[0.85rem] uppercase tracking-widest text-chalk/30 mb-1.5">{c.locationLabel}</p>
-                <p className="font-body text-sm text-chalk/55">{c.location}</p>
+                <p className="font-mono text-[0.85rem] uppercase tracking-widest text-chalk/60 mb-1.5">{c.locationLabel}</p>
+                <p className="font-body text-sm text-chalk/60">{c.location}</p>
               </div>
             </div>
           </div>

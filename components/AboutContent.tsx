@@ -31,7 +31,7 @@ export default function AboutContent() {
                 <p key={i} className={
                   p.size === "lg" ? "font-body text-lg text-ink/70 leading-relaxed" :
                   p.size === "lg-bold" ? "font-body text-lg text-ink/70 leading-relaxed font-medium" :
-                  "font-body text-base text-ink/50 leading-relaxed"
+                  "font-body text-base text-ink/65 leading-relaxed"
                 }>
                   {p.text}
                 </p>
@@ -45,7 +45,7 @@ export default function AboutContent() {
                 style={{ fontSize: "clamp(8rem, 20vw, 16rem)", lineHeight: 1 }}
                 aria-hidden>ô</span>
               <div className="absolute bottom-8 left-8 right-8">
-                <p className="font-display font-semibold text-xl text-ink/60 tracking-display">
+                <p className="font-display font-semibold text-xl text-ink/65 tracking-display">
                   {a.visualQuote[0]}<br />{a.visualQuote[1]}
                 </p>
               </div>
@@ -57,7 +57,7 @@ export default function AboutContent() {
       {/* Values */}
       <section className="py-20 bg-ink grain">
         <div className="max-w-[1600px] mx-auto px-8 md:px-12 lg:px-16">
-          <span className="font-mono text-[0.85rem] uppercase tracking-widest text-chalk/40 block mb-5">{a.valuesLabel}</span>
+          <span className="font-mono text-[0.85rem] uppercase tracking-widest text-chalk/60 block mb-5">{a.valuesLabel}</span>
           <h2 className="font-display font-bold tracking-display leading-[0.92] text-chalk mb-16"
             style={{ fontSize: "clamp(2rem, 4vw, 4rem)" }}>
             {a.valuesHeading}
@@ -66,7 +66,7 @@ export default function AboutContent() {
             {a.values.map((v, i) => (
               <div key={v.title} className={`border-t border-white/10 pt-8 pb-8 ${i % 2 === 0 ? "sm:pr-12" : "sm:pl-12 sm:border-l sm:border-white/10"}`}>
                 <h3 className="font-display font-semibold tracking-display text-xl text-chalk mb-3">{v.title}</h3>
-                <p className="font-body text-sm text-chalk/55 leading-relaxed">{v.desc}</p>
+                <p className="font-body text-sm text-chalk/60 leading-relaxed">{v.desc}</p>
               </div>
             ))}
           </div>

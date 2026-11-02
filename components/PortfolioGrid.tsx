@@ -26,7 +26,7 @@ export default function PortfolioGrid() {
             className={`font-mono text-[0.85rem] uppercase tracking-[0.15em] px-4 py-2.5 border transition-all duration-200 ${
               activeKey === key
                 ? "bg-ink text-chalk border-ink"
-                : "bg-transparent text-ink/45 border-black/15 hover:border-black/40 hover:text-ink"
+                : "bg-transparent text-ink/65 border-black/15 hover:border-black/40 hover:text-ink"
             }`}
           >
             {localize(catLabels[key], lang)}
@@ -65,13 +65,13 @@ export default function PortfolioGrid() {
                 {/* Info */}
                 <div className="p-6 border-t border-black/8">
                   <div className="mb-3">
-                    <span className="font-mono text-[0.85rem] text-coral uppercase tracking-wider">
+                    <span className="font-mono text-[0.85rem] text-amber-ink uppercase tracking-wider">
                       {p.tags.map(t => localize(catLabels[t], lang)).join(" · ")}
                     </span>
                   </div>
                   <h3 className="font-display font-semibold tracking-display text-ink text-2xl mb-1">{p.name}</h3>
-                  <p className="font-body text-sm text-ink/40 mb-2">{localize(p.client, lang)}</p>
-                  <p className="font-body text-sm text-ink/55 leading-relaxed">{localize(p.descShort, lang)}</p>
+                  <p className="font-body text-sm text-ink/65 mb-2">{localize(p.client, lang)}</p>
+                  <p className="font-body text-sm text-ink/65 leading-relaxed">{localize(p.descShort, lang)}</p>
                   <div className="flex flex-wrap items-center gap-3 mt-5">
                     {/* Stretched link: the whole card opens the live site; the case study button sits above it. */}
                     <a href={p.url} target="_blank" rel="noopener noreferrer"

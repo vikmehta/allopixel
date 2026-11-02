@@ -19,7 +19,7 @@ export default function PageShowcase({ pages }: { pages: NonNullable<CaseStudy["
             className={`font-mono text-[0.85rem] uppercase tracking-[0.15em] px-4 py-2.5 border transition-all duration-200 ${
               i === index
                 ? "bg-ink text-chalk border-ink"
-                : "bg-transparent text-ink/45 border-black/15 hover:border-black/40 hover:text-ink"
+                : "bg-transparent text-ink/65 border-black/15 hover:border-black/40 hover:text-ink"
             }`}>
             {p.label[lang]}
           </button>

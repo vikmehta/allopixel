@@ -35,9 +35,9 @@ export default function Process() {
               viewport={vp} transition={{ duration: 0.6, delay: i * 0.1, ease }}
               className="border-t-2 border-black/10 pt-8 pr-8"
             >
-              <div className="font-mono text-[0.85rem] text-ink/30 uppercase tracking-widest mb-4">{nums[i]}</div>
+              <div className="font-mono text-[0.85rem] text-ink/65 uppercase tracking-widest mb-4">{nums[i]}</div>
               <h3 className="font-display font-semibold tracking-display text-ink text-xl mb-3">{step.title}</h3>
-              <p className="font-body text-sm text-ink/55 leading-relaxed">{step.desc}</p>
+              <p className="font-body text-sm text-ink/65 leading-relaxed">{step.desc}</p>
             </motion.div>
           ))}
         </div>

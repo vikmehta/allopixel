@@ -15,7 +15,7 @@ export default function PrivacyContent() {
           style={{ fontSize: "clamp(2.4rem, 6vw, 5rem)" }}>
           {p.title}
         </h1>
-        <p className="font-mono text-[0.85rem] uppercase tracking-wider text-ink/40 mt-6">{p.updated}</p>
+        <p className="font-mono text-[0.85rem] uppercase tracking-wider text-ink/65 mt-6">{p.updated}</p>
 
         <div className="mt-12 max-w-3xl">
           <p className="font-body text-lg text-ink/70 leading-relaxed">{p.intro}</p>

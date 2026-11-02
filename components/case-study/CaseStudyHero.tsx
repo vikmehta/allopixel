@@ -20,7 +20,7 @@ export default function CaseStudyHero({ project: p }: Props) {
   return (
     <section className="pt-36 pb-12 bg-chalk">
       <div className="max-w-[1600px] mx-auto px-8 md:px-12 lg:px-16">
-        <Link href="/work" className="font-mono text-[0.85rem] uppercase tracking-[0.15em] text-ink/40 hover:text-coral transition-colors inline-block mb-10">
+        <Link href="/work" className="font-mono text-[0.85rem] uppercase tracking-[0.15em] text-ink/65 hover:text-coral transition-colors inline-block mb-10">
           ← {cs.back}
         </Link>
         <span className="section-label block mb-5">{cs.label}</span>
@@ -28,7 +28,7 @@ export default function CaseStudyHero({ project: p }: Props) {
           style={{ fontSize: "clamp(2.8rem, 7vw, 7rem)" }}>
           {p.name}
         </h1>
-        <p className="font-display text-2xl md:text-3xl text-coral mt-6 max-w-3xl leading-snug">{c.tagline[lang]}</p>
+        <p className="font-display text-2xl md:text-3xl text-amber-ink mt-6 max-w-3xl leading-snug">{c.tagline[lang]}</p>
 
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mt-12 pt-8 border-t border-black/10">
           <dl className="grid grid-cols-1 sm:grid-cols-[auto_1fr_auto] gap-x-12 gap-y-6">

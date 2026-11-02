@@ -48,7 +48,7 @@ export default function ScrollPreview({ screen, domain = "harmoniatherapycenter.
         <span className="w-2.5 h-2.5 rounded-full bg-black/15" />
         <span className="w-2.5 h-2.5 rounded-full bg-black/15" />
         <span className="w-2.5 h-2.5 rounded-full bg-black/15" />
-        <span className="mx-auto font-mono text-[0.7rem] tracking-[0.06em] text-ink/45 bg-white/80 px-6 py-0.5 rounded-full">{domain}</span>
+        <span className="mx-auto font-mono text-[0.7rem] tracking-[0.06em] text-ink/65 bg-white/80 px-6 py-0.5 rounded-full">{domain}</span>
         <span className="w-[42px]" />
       </div>
 

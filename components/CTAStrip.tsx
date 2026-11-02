@@ -30,7 +30,7 @@ export default function CTAStrip({ variant = "default", btnHref = "/contact", da
             <div>
               <h2 className="font-display font-bold tracking-display leading-[0.92] text-chalk"
                 style={{ fontSize: "clamp(2rem, 4vw, 4rem)" }}>{c.heading}</h2>
-              <p className="font-body text-chalk/40 mt-3">{c.sub}</p>
+              <p className="font-body text-chalk/60 mt-3">{c.sub}</p>
             </div>
             <Link href={btnHref} className="btn btn-primary shrink-0">{c.btn}</Link>
           </motion.div>
@@ -52,7 +52,7 @@ export default function CTAStrip({ variant = "default", btnHref = "/contact", da
           <div>
             <h2 className="font-display font-bold tracking-display leading-[0.92] text-ink"
               style={{ fontSize: "clamp(2rem, 4vw, 4rem)" }}>{c.heading}</h2>
-            <p className="font-body text-ink/60 mt-3">{c.sub}</p>
+            <p className="font-body text-ink/85 mt-3">{c.sub}</p>
           </div>
           <Link href={btnHref} className="btn btn-ink shrink-0">{c.btn}</Link>
         </motion.div>

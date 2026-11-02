@@ -10,6 +10,7 @@
   --color-chalk:   #FFFFFF;   /* white — clean base, lets amber + teal pop */
   --color-ink:     #092724;   /* light_sea_green-100 — deep dark teal-green */
   --color-coral:   #FF9F1C;   /* amber_glow — CTAs, hero accent, marquee */
+  --color-amber-ink: #9A5900; /* darker amber for small text on light backgrounds (5.5:1 on white) */
   --color-warm:    #FFBF69;   /* honey_bronze — gold highlights */
   --color-teal:    #2EC4B6;   /* light_sea_green — cool accent */
   --color-mint:    #CBF3F0;   /* frozen_water — cool surface / alternating bg */

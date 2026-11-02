@@ -65,7 +65,7 @@ export default function ContactForm() {
       {status === "success" ? (
         <div className="border border-white/10 p-6 text-center">
           <p className="font-display font-bold text-xl text-white tracking-display">{f.successTitle}</p>
-          <p className="font-body text-sm text-white/40 mt-2">{f.successSub}</p>
+          <p className="font-body text-sm text-white/60 mt-2">{f.successSub}</p>
         </div>
       ) : (
         <button type="submit" disabled={status === "sending"}
@@ -76,7 +76,7 @@ export default function ContactForm() {
         </button>
       )}
 
-      <p className="font-body text-sm text-white/55">
+      <p className="font-body text-sm text-white/60">
         {f.privacyNote}{" "}
         <Link href="/privacy" className="underline hover:text-coral transition-colors">{f.privacyLink}</Link>.
       </p>
