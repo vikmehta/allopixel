@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import { notFound } from "next/navigation";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { hasLocale, locales, siteUrl } from "@/lib/locale";
-import { ogLocale } from "@/lib/seo";
+import { ogLocale, ogImage } from "@/lib/seo";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -75,8 +75,8 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
     ...(lang === "en" && {
       keywords: ["web design Montreal","brand design small business","affordable logo design Canada","brand identity Montreal","website design for artists","small business branding","boutique creative studio"],
     }),
-    openGraph: { type: "website", locale: ogLocale[lang], url: siteUrl, siteName: "AllôPixel", title: c.ogTitle, description: c.ogDescription },
-    twitter: { card: "summary_large_image" },
+    openGraph: { type: "website", locale: ogLocale[lang], url: siteUrl, siteName: "AllôPixel", title: c.ogTitle, description: c.ogDescription, images: [ogImage(lang, "home")] },
+    twitter: { card: "summary_large_image", images: [ogImage(lang, "home").url] },
     robots: { index: true, follow: true },
   };
 }
@@ -93,7 +93,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
           description: siteCopy[lang].schemaDescription,
           address: { "@type": "PostalAddress", addressLocality: "Montréal", addressRegion: "QC", addressCountry: "CA" },
           priceRange: "$$",
-          image: "https://allopixel.com/opengraph-image.png",
+          image: "https://allopixel.com/og/home.png",
           logo: "https://allopixel.com/logo-horizontal.svg",
           sameAs: ["https://www.instagram.com/allopixel/", "https://www.facebook.com/AlloPixel/"],
         })}} />

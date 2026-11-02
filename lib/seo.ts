@@ -73,6 +73,57 @@ const pages: Record<PageKey, Record<Lang, { title: string; description: string }
 
 export const ogLocale: Record<Lang, string> = { en: "en_CA", fr: "fr_CA" };
 
+/** Share images live in /public/og (not as app/ metadata files, which break on Vercel inside [lang]). */
+const ogImages: Record<PageKey, { file: string; alt: Record<Lang, string> }> = {
+  home: {
+    file: "home",
+    alt: {
+      en: "AllôPixel — boutique creative studio: brand and web design for small businesses",
+      fr: "AllôPixel — studio créatif boutique : image de marque et conception web pour petites entreprises",
+    },
+  },
+  services: {
+    file: "services",
+    alt: {
+      en: "AllôPixel — services and transparent pricing for brand, web and social media",
+      fr: "AllôPixel — services et tarifs transparents pour l'image de marque, le web et les médias sociaux",
+    },
+  },
+  work: {
+    file: "work",
+    alt: {
+      en: "AllôPixel — our work: websites and brands for small businesses",
+      fr: "AllôPixel — nos réalisations : sites web et marques pour petites entreprises",
+    },
+  },
+  about: {
+    file: "about",
+    alt: {
+      en: "AllôPixel — about us: a small team working directly with you",
+      fr: "AllôPixel — à propos : une petite équipe qui travaille directement avec vous",
+    },
+  },
+  contact: {
+    file: "contact",
+    alt: {
+      en: "AllôPixel — get in touch: start with a free 30-minute call",
+      fr: "AllôPixel — contactez-nous : commencez par un appel gratuit de 30 minutes",
+    },
+  },
+  privacy: {
+    file: "home",
+    alt: {
+      en: "AllôPixel — boutique creative studio: brand and web design for small businesses",
+      fr: "AllôPixel — studio créatif boutique : image de marque et conception web pour petites entreprises",
+    },
+  },
+};
+
+export function ogImage(lang: Lang, key: PageKey) {
+  const { file, alt } = ogImages[key];
+  return { url: `/og/${file}.png`, width: 1200, height: 630, alt: alt[lang] };
+}
+
 /** Title, description, canonical and hreflang alternates for a top-level page. */
 export function pageMetadata(lang: Lang, key: PageKey): Metadata {
   const { title, description } = pages[key][lang];
@@ -81,7 +132,8 @@ export function pageMetadata(lang: Lang, key: PageKey): Metadata {
     title: key === "home" ? { absolute: title } : title,
     description,
     alternates,
-    openGraph: { type: "website", url: alternates.canonical, siteName: "AllôPixel", locale: ogLocale[lang] },
+    openGraph: { type: "website", url: alternates.canonical, siteName: "AllôPixel", locale: ogLocale[lang], images: [ogImage(lang, key)] },
+    twitter: { card: "summary_large_image", images: [ogImage(lang, key).url] },
   };
 }
 
