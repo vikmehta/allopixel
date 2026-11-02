@@ -4,7 +4,7 @@ import Link from "@/components/LocaleLink";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { featuredProjects as projects, hasCaseStudy, localize } from "@/lib/projects";
+import { featuredProjects as projects, hasCaseStudy, localize, catLabels } from "@/lib/projects";
 import CaseStudyButton from "@/components/CaseStudyButton";
 
 const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
@@ -59,7 +59,7 @@ export default function SelectedWork() {
                   </div>
                   <div className={`md:col-span-5 ${!isEven ? "md:order-1 md:pr-16" : "md:pl-16"} mt-6 md:mt-0`}>
                     <div className="flex items-center gap-3 mb-5">
-                      <span className="font-mono text-[0.85rem] text-coral uppercase tracking-widest">{p.tags[0]}</span>
+                      <span className="font-mono text-[0.85rem] text-coral uppercase tracking-widest">{localize(catLabels[p.tags[0]], lang)}</span>
                     </div>
                     <h3 className="font-display font-bold tracking-display leading-[0.92] text-ink mb-2"
                       style={{ fontSize: "clamp(1.8rem, 3vw, 3rem)" }}>
