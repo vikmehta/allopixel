@@ -96,7 +96,7 @@ const translations = {
     footer: {
       tagline: "Affordable design for ambitious small businesses. Brand identity, web design, and creative direction — without the agency price tag.",
       location: "Montréal, Canada", navigate: "Navigate", sayHello: "Say hello",
-      bookCall: "Book a free call →", copyright: "All rights reserved.", crafted: "Crafted with ❤️ by",
+      bookCall: "Book a free call →", copyright: "All rights reserved.", privacy: "Privacy Policy", crafted: "Crafted with ❤️ by",
     },
     marquee: {
       items: ["Brand Identity", "Web Design", "Logo Design", "Social Media", "Print & Collateral", "Montréal", "Affordable", "Fast Turnaround", "No Hidden Fees", "Creative Direction"],
@@ -123,6 +123,8 @@ const translations = {
         successTitle: "Allô! Your message landed safely.",
         successSub: "Expect to hear from us within 24 hours.",
         errorMsg: "Something went wrong. Email us at",
+        privacyNote: "We use your details only to reply to your enquiry. See our",
+        privacyLink: "Privacy Policy",
         services: ["Brand Identity", "Web Design & Development", "Logo Design", "Social Media Design", "Print & Collateral", "Full Package (Brand + Web)", "Other / Not sure yet"],
         budgets: ["Under $700", "$700 – $1,500", "$1,500 – $2,500", "$2,500 – $5,000", "$5,000+", "Not sure yet"],
       },
@@ -263,7 +265,7 @@ const translations = {
     footer: {
       tagline: "Design accessible pour les petites entreprises ambitieuses. Identité de marque, web et direction créative — sans les prix d'une agence.",
       location: "Montréal, Canada", navigate: "Navigation", sayHello: "Nous contacter",
-      bookCall: "Réserver un appel →", copyright: "Tous droits réservés.", crafted: "Fait avec ❤️ par",
+      bookCall: "Réserver un appel →", copyright: "Tous droits réservés.", privacy: "Politique de confidentialité", crafted: "Fait avec ❤️ par",
     },
     marquee: {
       items: ["Identité de marque", "Conception Web", "Création de logo", "Médias sociaux", "Impression & Matériel", "Montréal", "Abordable", "Délais rapides", "Sans frais cachés", "Direction créative"],
@@ -290,6 +292,8 @@ const translations = {
         successTitle: "Allô ! Votre message est bien reçu.",
         successSub: "Attendez-vous à nous entendre dans les 24 heures.",
         errorMsg: "Quelque chose a mal tourné. Écrivez-nous à",
+        privacyNote: "Nous utilisons vos renseignements uniquement pour répondre à votre demande. Consultez notre",
+        privacyLink: "politique de confidentialité",
         services: ["Identité de marque", "Conception & Développement Web", "Création de logo", "Conception Médias Sociaux", "Impression & Matériel", "Forfait complet (Marque + Web)", "Autre / Pas encore certain"],
         budgets: ["Moins de 700 $", "700 $ – 1 500 $", "1 500 $ – 2 500 $", "2 500 $ – 5 000 $", "5 000 $+", "Pas encore certain"],
       },
