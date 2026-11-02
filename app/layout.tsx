@@ -31,15 +31,15 @@ const dmMono = DM_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://allopixel.com"),
   title: {
-    default: "Allôpixel — Affordable Brand & Web Design for Small Businesses",
-    template: "%s | Allôpixel",
+    default: "AllôPixel — Affordable Brand & Web Design for Small Businesses",
+    template: "%s | AllôPixel",
   },
   description:
-    "Allôpixel is a boutique creative studio in Montréal offering brand identity, web design, and creative direction for small businesses, artists, and individuals — without the agency price tag.",
+    "AllôPixel is a boutique creative studio in Montréal offering brand identity, web design, and creative direction for small businesses, artists, and individuals — without the agency price tag.",
   keywords: ["web design Montreal","brand design small business","affordable logo design Canada","brand identity Montreal","website design for artists","small business branding","boutique creative studio"],
   openGraph: {
-    type: "website", locale: "en_CA", url: "https://allopixel.com", siteName: "Allôpixel",
-    title: "Allôpixel — Affordable Brand & Web Design",
+    type: "website", locale: "en_CA", url: "https://allopixel.com", siteName: "AllôPixel",
+    title: "AllôPixel — Affordable Brand & Web Design",
     description: "Brand identity, web design, and creative direction for small businesses — without the agency price tag.",
   },
   twitter: { card: "summary_large_image" },
@@ -52,7 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org", "@type": "LocalBusiness",
-          name: "Allôpixel", alternateName: "Allopixel", url: "https://allopixel.com", email: "info.allopixel@gmail.com",
+          name: "AllôPixel", alternateName: ["Allopixel", "Allo Pixel", "Allô Pixel", "AlloPixel"], url: "https://allopixel.com", email: "info.allopixel@gmail.com",
           description: "Boutique creative studio offering brand identity, web design, and creative direction for small businesses.",
           address: { "@type": "PostalAddress", addressLocality: "Montréal", addressRegion: "QC", addressCountry: "CA" },
           priceRange: "$$",

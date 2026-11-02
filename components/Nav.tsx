@@ -52,7 +52,7 @@ export default function Nav() {
         <nav className="max-w-[1600px] mx-auto px-8 md:px-12 lg:px-16 h-16 flex items-center justify-between">
           <Link href="/"
             className={`font-display font-bold text-xl tracking-display hover:text-coral transition-colors duration-200 ${onDark ? "text-chalk" : "text-ink"}`}
-            aria-label="Allôpixel home"
+            aria-label="AllôPixel home"
           >
             All<span className="text-coral">ô</span>Pixel
           </Link>
