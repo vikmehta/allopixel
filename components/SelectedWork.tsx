@@ -26,7 +26,7 @@ export default function SelectedWork() {
             </h2>
           </div>
           <Link href="/work"
-            className="font-mono text-[0.85rem] uppercase tracking-[0.15em] text-ink/40 hover:text-coral transition-colors flex items-center gap-2 shrink-0 mb-1">
+            className="font-mono text-[0.85rem] uppercase tracking-[0.15em] text-ink/65 hover:text-coral transition-colors flex items-center gap-2 shrink-0 py-2">
             {sw.viewAll}
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden>
               <path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
@@ -59,14 +59,14 @@ export default function SelectedWork() {
                   </div>
                   <div className={`md:col-span-5 ${!isEven ? "md:order-1 md:pr-16" : "md:pl-16"} mt-6 md:mt-0`}>
                     <div className="flex items-center gap-3 mb-5">
-                      <span className="font-mono text-[0.85rem] text-coral uppercase tracking-widest">{localize(catLabels[p.tags[0]], lang)}</span>
+                      <span className="font-mono text-[0.85rem] text-amber-ink uppercase tracking-widest">{localize(catLabels[p.tags[0]], lang)}</span>
                     </div>
                     <h3 className="font-display font-bold tracking-display leading-[0.92] text-ink mb-2"
                       style={{ fontSize: "clamp(1.8rem, 3vw, 3rem)" }}>
                       {p.name}
                     </h3>
                     <p className="font-mono text-[0.85rem] text-muted uppercase tracking-wider mb-4">{localize(p.client, lang)}</p>
-                    <p className="font-body text-base text-ink/55 leading-relaxed mb-8">{localize(p.desc, lang)}</p>
+                    <p className="font-body text-base text-ink/65 leading-relaxed mb-8">{localize(p.desc, lang)}</p>
                     <div className="flex flex-wrap items-center gap-3">
                       {/* Stretched link: the whole card opens the live site; the case study button sits above it. */}
                       <a href={p.url} target="_blank" rel="noopener noreferrer"

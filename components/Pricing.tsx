@@ -12,7 +12,7 @@ function PriceDigits({ price, size }: { price: string; size: string }) {
   if (price.startsWith("$")) {
     return (
       <>
-        <span className={`font-body font-semibold text-ink/50 self-start mt-1.5 ${size === "lg" ? "text-xl" : "text-sm"}`}>$</span>
+        <span className={`font-body font-semibold text-ink/65 self-start mt-1.5 ${size === "lg" ? "text-xl" : "text-sm"}`}>$</span>
         <span className={`font-display font-bold tracking-display text-ink leading-none ${size === "lg" ? "text-4xl md:text-5xl" : "text-xl"}`}>{price.slice(1)}</span>
       </>
     );
@@ -21,7 +21,7 @@ function PriceDigits({ price, size }: { price: string; size: string }) {
     return (
       <>
         <span className={`font-display font-bold tracking-display text-ink leading-none ${size === "lg" ? "text-4xl md:text-5xl" : "text-xl"}`}>{price.slice(0, -1).trim()}</span>
-        <span className={`font-body font-semibold text-ink/50 self-start mt-1.5 ${size === "lg" ? "text-xl" : "text-sm"}`}> $</span>
+        <span className={`font-body font-semibold text-ink/65 self-start mt-1.5 ${size === "lg" ? "text-xl" : "text-sm"}`}> $</span>
       </>
     );
   }
@@ -36,7 +36,7 @@ export default function Pricing() {
     <section className="bg-ink grain py-14 md:py-20 lg:py-36">
       <div className="max-w-[1600px] mx-auto px-8 md:px-12 lg:px-16">
         <div className="mb-16">
-          <span className="font-mono text-[0.85rem] uppercase tracking-widest text-chalk/40 block mb-5">{p.label}</span>
+          <span className="font-mono text-[0.85rem] uppercase tracking-widest text-chalk/60 block mb-5">{p.label}</span>
           <motion.h2
             initial={{ y: 20 }} whileInView={{ y: 0 }}
             viewport={vp} transition={{ duration: 0.65, ease }}
@@ -45,7 +45,7 @@ export default function Pricing() {
           >
             {p.heading[0]}<br />{p.heading[1]}
           </motion.h2>
-          <p className="font-body text-base text-chalk/50 mt-5 max-w-2xl leading-relaxed">{p.sub}</p>
+          <p className="font-body text-base text-chalk/60 mt-5 max-w-2xl leading-relaxed">{p.sub}</p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 gap-5">
@@ -70,15 +70,15 @@ export default function Pricing() {
               <div className="flex items-baseline gap-0.5 mt-4 mb-5">
                 <PriceDigits price={tier.price} size="lg" />
                 {tier.period && (
-                  <span className="font-body text-base text-ink/40 ml-0.5">{tier.period}</span>
+                  <span className="font-body text-base text-ink/65 ml-0.5">{tier.period}</span>
                 )}
               </div>
-              <p className="font-body text-sm text-ink/45 mb-6 leading-snug">{tier.tagline}</p>
+              <p className="font-body text-sm text-ink/65 mb-6 leading-snug">{tier.tagline}</p>
               <ul className="space-y-2.5 mb-8 flex-1">
                 {tier.features.map((f) => (
                   <li key={f} className="flex items-start gap-3">
                     <span className="text-coral mt-0.5 text-xs shrink-0" aria-hidden>✓</span>
-                    <span className="font-body text-sm text-ink/60">{f}</span>
+                    <span className="font-body text-sm text-ink/65">{f}</span>
                   </li>
                 ))}
               </ul>
@@ -90,7 +90,7 @@ export default function Pricing() {
           ))}
         </div>
 
-        <p className="font-body text-sm text-chalk/45 text-center mt-10">
+        <p className="font-body text-sm text-chalk/60 text-center mt-10">
           {p.customNote}{" "}
           <Link href="/contact" className="text-coral hover:underline">{p.customLink}</Link>
           {" "}{p.customSuffix}

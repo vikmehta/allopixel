@@ -18,7 +18,7 @@ export default function Services() {
       <div className="max-w-[1600px] mx-auto px-8 md:px-12 lg:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
           <div>
-            <span className="font-mono text-[0.85rem] uppercase tracking-widest text-chalk/40 block mb-5">{s.label}</span>
+            <span className="font-mono text-[0.85rem] uppercase tracking-widest text-chalk/60 block mb-5">{s.label}</span>
             <motion.h2
               initial={{ y: 20 }} whileInView={{ y: 0 }}
               viewport={vp} transition={{ duration: 0.65, ease }}
@@ -31,7 +31,7 @@ export default function Services() {
           <motion.p
             initial={{ y: 16 }} whileInView={{ y: 0 }}
             viewport={vp} transition={{ duration: 0.6, delay: 0.1, ease }}
-            className="font-body text-lg text-chalk/50 leading-relaxed self-end max-w-md"
+            className="font-body text-lg text-chalk/60 leading-relaxed self-end max-w-md"
           >
             {s.sub}
           </motion.p>
@@ -50,14 +50,14 @@ export default function Services() {
                 onMouseEnter={() => setHovered(i)}
                 onMouseLeave={() => setHovered(null)}
               >
-                <span className={`font-mono text-xs transition-colors duration-200 ${hovered === i ? "text-coral" : "text-chalk/25"}`}>
+                <span className={`font-mono text-xs transition-colors duration-200 ${hovered === i ? "text-coral" : "text-chalk/60"}`}>
                   {nums[i]}
                 </span>
                 <h3 className="font-display font-semibold tracking-display text-chalk leading-tight"
                   style={{ fontSize: "clamp(1.3rem, 2.5vw, 2rem)" }}>
                   {item.title}
                 </h3>
-                <p className="hidden lg:block font-body text-sm text-chalk/45 leading-relaxed col-start-2 lg:col-start-auto">
+                <p className="hidden lg:block font-body text-sm text-chalk/60 leading-relaxed col-start-2 lg:col-start-auto">
                   {item.desc}
                 </p>
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none"

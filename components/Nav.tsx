@@ -64,8 +64,8 @@ export default function Nav() {
           <div className="hidden md:flex items-center gap-10">
             {links.map(({ href, label }) => (
               <Link key={href} href={href}
-                className={`font-mono text-[0.7rem] uppercase tracking-[0.15em] transition-colors duration-200 ${
-                  pathname === href ? "text-coral" : onDark ? "text-chalk/55 hover:text-chalk" : "text-ink/50 hover:text-ink"
+                className={`py-2 font-mono text-[0.7rem] uppercase tracking-[0.15em] transition-colors duration-200 ${
+                  pathname === href ? (onDark ? "text-coral" : "text-amber-ink") : onDark ? "text-chalk/60 hover:text-chalk" : "text-ink/65 hover:text-ink"
                 }`}
               >{label}</Link>
             ))}
@@ -78,8 +78,8 @@ export default function Nav() {
               lang={lang === "en" ? "fr" : "en"}
               className={`font-mono text-[0.7rem] uppercase tracking-[0.15em] transition-colors duration-200 border px-2.5 py-1 ${
                 onDark
-                  ? "text-chalk/55 border-chalk/20 hover:text-chalk hover:border-chalk/40"
-                  : "text-ink/40 border-black/15 hover:text-ink hover:border-black/30"
+                  ? "text-chalk/60 border-chalk/20 hover:text-chalk hover:border-chalk/40"
+                  : "text-ink/65 border-black/15 hover:text-ink hover:border-black/30"
               }`}
               aria-label={lang === "en" ? "Passer en français" : "Switch to English"}
             >
@@ -134,13 +134,13 @@ export default function Nav() {
                   lang={lang === "en" ? "fr" : "en"}
                   onClick={() => setOpen(false)}
                   style={{ touchAction: "manipulation" }}
-                  className="font-mono text-[0.7rem] uppercase tracking-[0.15em] text-ink/40 border border-black/15 hover:text-ink hover:border-black/30 transition-colors px-2.5 py-2"
+                  className="font-mono text-[0.7rem] uppercase tracking-[0.15em] text-ink/65 border border-black/15 hover:text-ink hover:border-black/30 transition-colors px-2.5 py-2"
                 >
                   {lang === "en" ? "FR" : "EN"}
                 </NextLink>
               </motion.div>
             </div>
-            <p className="font-mono text-[0.85rem] text-ink/30 uppercase tracking-widest">
+            <p className="font-mono text-[0.85rem] text-ink/65 uppercase tracking-widest">
               info.allopixel@gmail.com · {tr.footer.location}
             </p>
           </motion.div>

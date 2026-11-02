@@ -33,7 +33,7 @@ export default function FAQ() {
                 <motion.span
                   animate={{ rotate: open === i ? 45 : 0 }}
                   transition={{ duration: 0.22 }}
-                  className="shrink-0 text-ink/30 text-xl leading-none"
+                  className="shrink-0 text-ink/65 text-xl leading-none"
                   aria-hidden
                 >+</motion.span>
               </button>
@@ -44,7 +44,7 @@ export default function FAQ() {
                 style={{ overflow: "hidden" }}
                 aria-hidden={open !== i}
               >
-                <p className="font-body text-sm text-ink/55 leading-relaxed pb-6">{faq.a}</p>
+                <p className="font-body text-sm text-ink/65 leading-relaxed pb-6">{faq.a}</p>
               </motion.div>
             </div>
           ))}

@@ -17,7 +17,7 @@ export default function WorkContent() {
             style={{ fontSize: "clamp(2.8rem, 7vw, 7rem)" }}>
             {w.heading[0]}<br /><span className="text-coral">{w.heading[1]}</span>
           </h1>
-          <p className="font-body text-lg text-ink/50 leading-relaxed mt-6 max-w-lg">{w.sub}</p>
+          <p className="font-body text-lg text-ink/65 leading-relaxed mt-6 max-w-lg">{w.sub}</p>
         </div>
       </section>
 

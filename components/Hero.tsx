@@ -41,7 +41,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.65, ease }}
               className="mt-12 flex flex-col sm:flex-row sm:items-end justify-between gap-10"
             >
-              <p className="font-body text-lg text-ink/55 leading-relaxed max-w-md">{h.sub}</p>
+              <p className="font-body text-lg text-ink/65 leading-relaxed max-w-md">{h.sub}</p>
               <div className="flex flex-wrap gap-3 sm:shrink-0">
                 <Link href="/work" className="btn btn-ink">{h.cta1}</Link>
                 <Link href="/contact" className="btn btn-outline">{h.cta2}</Link>
@@ -53,7 +53,7 @@ export default function Hero() {
         <div className="mt-16 flex flex-wrap gap-3">
           {h.tags.map((tag) => (
             <span key={tag}
-              className="font-mono text-[0.85rem] uppercase tracking-[0.14em] text-ink/50 border border-black/12 px-4 py-2 rounded-sm"
+              className="font-mono text-[0.85rem] uppercase tracking-[0.14em] text-ink/65 border border-black/12 px-4 py-2 rounded-sm"
             >
               {tag}
             </span>

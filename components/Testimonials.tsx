@@ -134,16 +134,16 @@ function Card({ item, index }: { item: Testimonial; index: number }) {
       {long && (
         <button type="button" onClick={() => setOpen(o => !o)}
           aria-expanded={open} aria-controls={bodyId}
-          className="self-start mt-3 font-mono text-[0.85rem] uppercase tracking-wider text-coral hover:text-ink transition-colors">
+          className="self-start mt-2 py-1 font-mono text-[0.85rem] uppercase tracking-wider text-amber-ink hover:text-ink transition-colors">
           {open ? t.less : t.more}
         </button>
       )}
 
       <figcaption className="pt-8">
         <div className="font-display font-semibold text-xl tracking-display text-ink">{item.name}</div>
-        <div className="font-mono text-[0.85rem] text-ink/50 uppercase tracking-wider mt-1">{item.role[lang]}</div>
-        {item.org && <div className="font-mono text-[0.85rem] text-coral uppercase tracking-wider mt-0.5">{item.org[lang]}</div>}
-        {item.creds && <div className="font-body text-sm text-ink/50 mt-2 leading-snug">{item.creds[lang]}</div>}
+        <div className="font-mono text-[0.85rem] text-ink/65 uppercase tracking-wider mt-1">{item.role[lang]}</div>
+        {item.org && <div className="font-mono text-[0.85rem] text-amber-ink uppercase tracking-wider mt-0.5">{item.org[lang]}</div>}
+        {item.creds && <div className="font-body text-sm text-ink/65 mt-2 leading-snug">{item.creds[lang]}</div>}
       </figcaption>
     </motion.figure>
   );
@@ -168,7 +168,7 @@ export default function Testimonials() {
           {testimonials.map((item, i) => <Card key={item.id} item={item} index={i} />)}
         </div>
 
-        <p className="mt-12 font-mono text-[0.8rem] uppercase tracking-wider text-ink/40">{t.note}</p>
+        <p className="mt-12 font-mono text-[0.8rem] uppercase tracking-wider text-ink/65">{t.note}</p>
       </div>
     </section>
   );

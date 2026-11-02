@@ -39,7 +39,7 @@ function Wide({ heading, note, children }: { heading: string; note?: string; chi
       <AnimatedSection className="max-w-[1600px] mx-auto px-8 md:px-12 lg:px-16">
         <div className="mb-10 max-w-2xl">
           <h2 className="font-display font-bold tracking-display leading-[0.95] text-ink" style={h2Style}>{heading}</h2>
-          {note && <p className="font-body text-lg text-ink/55 leading-relaxed mt-4">{note}</p>}
+          {note && <p className="font-body text-lg text-ink/65 leading-relaxed mt-4">{note}</p>}
         </div>
         {children}
       </AnimatedSection>
@@ -66,9 +66,9 @@ export default function CaseStudyContent({ project, next }: Props) {
           <ul className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 pt-8 border-t border-ink/10">
             {c.principles.map((pr, i) => (
               <li key={pr.title.en}>
-                <span className="font-mono text-[0.8rem] text-coral tracking-[0.14em]">{String(i + 1).padStart(2, "0")}</span>
+                <span className="font-mono text-[0.8rem] text-amber-ink tracking-[0.14em]">{String(i + 1).padStart(2, "0")}</span>
                 <h3 className="font-display font-semibold text-xl text-ink mt-2 mb-2">{pr.title[lang]}</h3>
-                <p className="font-body text-base text-ink/60 leading-relaxed">{pr.text[lang]}</p>
+                <p className="font-body text-base text-ink/65 leading-relaxed">{pr.text[lang]}</p>
               </li>
             ))}
           </ul>
@@ -91,7 +91,7 @@ export default function CaseStudyContent({ project, next }: Props) {
             {[{ screen: c.before, label: cs.original, accent: false }, { screen: c.after, label: cs.current, accent: true }].map(({ screen, label, accent }) => (
               <figure key={label}>
                 <ScrollPreview screen={screen} sizes="(max-width: 1024px) 100vw, 760px" />
-                <figcaption className={`font-mono text-[0.8rem] uppercase tracking-[0.16em] mt-4 ${accent ? "text-coral" : "text-ink/45"}`}>{label}</figcaption>
+                <figcaption className={`font-mono text-[0.8rem] uppercase tracking-[0.16em] mt-4 ${accent ? "text-amber-ink" : "text-ink/65"}`}>{label}</figcaption>
               </figure>
             ))}
           </div>
