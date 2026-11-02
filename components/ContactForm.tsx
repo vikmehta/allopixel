@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function ContactForm() {
@@ -74,6 +75,11 @@ export default function ContactForm() {
           ) : f.submit}
         </button>
       )}
+
+      <p className="font-body text-sm text-white/55">
+        {f.privacyNote}{" "}
+        <Link href="/privacy" className="underline hover:text-coral transition-colors">{f.privacyLink}</Link>.
+      </p>
 
       {status === "error" && (
         <p className="font-body text-sm text-coral/80">

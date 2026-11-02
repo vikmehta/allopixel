@@ -67,7 +67,8 @@ export default function Footer() {
 
         <div className="pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
           <p className="font-mono text-[0.85rem] text-chalk/25 uppercase tracking-widest">
-            © {new Date().getFullYear()} All<span className="text-coral/50">ô</span>Pixel. {f.copyright}
+            © {new Date().getFullYear()} All<span className="text-coral/50">ô</span>Pixel. {f.copyright}{" "}
+            <Link href="/privacy" className="underline underline-offset-4 hover:text-coral transition-colors">{f.privacy}</Link>
           </p>
           <p className="font-mono text-[0.85rem] text-chalk/25 uppercase tracking-widest">
             {f.crafted} All<span className="text-coral/50">ô</span>Pixel
