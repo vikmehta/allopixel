@@ -121,7 +121,7 @@ const ogImages: Record<PageKey, { file: string; alt: Record<Lang, string> }> = {
 
 export function ogImage(lang: Lang, key: PageKey) {
   const { file, alt } = ogImages[key];
-  return { url: `/og/${file}.png`, width: 1200, height: 630, alt: alt[lang] };
+  return { url: `/og/${file}${lang === "fr" ? "-fr" : ""}.png`, width: 1200, height: 630, alt: alt[lang] };
 }
 
 /** Title, description, canonical and hreflang alternates for a top-level page. */
