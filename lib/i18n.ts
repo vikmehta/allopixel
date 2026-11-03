@@ -7,7 +7,7 @@ const translations = {
       skipToContent: "Skip to content", openMenu: "Open menu", closeMenu: "Close menu",
     },
     hero: {
-      label: "Boutique Creative Studio · Montréal",
+      label: "Web & Brand Studio · Sainte-Martine · South Shore",
       headline: ["Great design.", "No agency", "price tag."],
       sub: "Brand identity, web design, and creative direction for small businesses, artists, and individuals",
       cta1: "See our work", cta2: "Free quote",
@@ -63,7 +63,7 @@ const translations = {
       heading: ["Questions we get", "all the time."],
       items: [
         { q: "How long does a project take?", a: "Most projects take 1–4 weeks. A logo takes about a week. A full brand + website is typically 3–4 weeks. We give you a clear timeline in your proposal before any work begins." },
-        { q: "Do you work with businesses outside Montréal?", a: "Absolutely. We work with clients across Canada and internationally. Everything is handled remotely — video calls, shared feedback tools, and clear communication throughout." },
+        { q: "Do you work with businesses outside the South Shore?", a: "Absolutely. We work with clients across Canada and internationally. Everything is handled remotely — video calls, shared feedback tools, and clear communication throughout." },
         { q: "What if I only need a logo?", a: "Completely fine. We offer standalone logo design, whether you're starting fresh or already have other brand elements in place. Tell us what you need and we'll send you a clear quote." },
         { q: "Do you offer payment plans?", a: "Yes. For larger projects, we typically split 50% upfront to begin and 50% on delivery. We can discuss other arrangements if needed." },
         { q: "What do I need to have ready before we start?", a: "Just your ideas and your goals. We'll guide you through everything else — you don't need to arrive with a creative brief or references prepared." },
@@ -95,11 +95,11 @@ const translations = {
     },
     footer: {
       tagline: "Affordable design for ambitious small businesses. Brand identity, web design, and creative direction — without the agency price tag.",
-      location: "Montréal, Canada", navigate: "Navigate", sayHello: "Say hello",
+      location: "Sainte-Martine, QC", navigate: "Navigate", sayHello: "Say hello",
       bookCall: "Book a free call →", copyright: "All rights reserved.", privacy: "Privacy Policy", crafted: "Crafted with ❤️ by",
     },
     marquee: {
-      items: ["Brand Identity", "Web Design", "Logo Design", "Social Media", "Print & Collateral", "Montréal", "Affordable", "Fast Turnaround", "No Hidden Fees", "Creative Direction"],
+      items: ["Brand Identity", "Web Design", "Logo Design", "Social Media", "Print & Collateral", "South Shore", "Affordable", "Fast Turnaround", "No Hidden Fees", "Creative Direction"],
     },
     contact: {
       label: "Get in touch", heading: ["Let's build something", "great."],
@@ -111,7 +111,7 @@ const translations = {
         { title: "You get a proposal", desc: "A clear proposal — scope, timeline, and price — before any work begins." },
       ],
       emailLabel: "Email", locationLabel: "Location",
-      location: "Montréal, Canada · Working globally",
+      location: "Sainte-Martine, QC · Serving the South Shore & Montérégie",
       form: {
         name: "Name", namePlaceholder: "Your name",
         email: "Email", emailPlaceholder: "you@example.com",
@@ -175,7 +175,7 @@ const translations = {
       skipToContent: "Passer au contenu", openMenu: "Ouvrir le menu", closeMenu: "Fermer le menu",
     },
     hero: {
-      label: "Studio Créatif Boutique · Montréal",
+      label: "Studio web et image de marque · Sainte-Martine · Rive-Sud",
       headline: ["Un design de qualité.", "Sans les prix", "d'une agence."],
       sub: "Identité de marque, conception web et direction créative pour les petites entreprises, artistes et particuliers",
       cta1: "Voir nos projets", cta2: "Devis gratuit",
@@ -231,7 +231,7 @@ const translations = {
       heading: ["Questions qu'on", "nous pose souvent."],
       items: [
         { q: "Combien de temps dure un projet ?", a: "La plupart des projets prennent 1 à 4 semaines. Un logo prend environ une semaine. Une marque complète + site web prend généralement 3 à 4 semaines. Nous vous donnons un calendrier clair dans votre proposition avant que le travail commence." },
-        { q: "Travaillez-vous avec des entreprises hors de Montréal ?", a: "Absolument. Nous travaillons avec des clients partout au Canada et à l'international. Tout est géré à distance — appels vidéo, outils de rétroaction partagés et communication claire tout au long du projet." },
+        { q: "Travaillez-vous avec des entreprises hors de la Rive-Sud ?", a: "Absolument. Nous travaillons avec des clients partout au Canada et à l'international. Tout est géré à distance — appels vidéo, outils de rétroaction partagés et communication claire tout au long du projet." },
         { q: "Et si j'ai seulement besoin d'un logo ?", a: "Tout à fait possible. Nous offrons la création de logo en service autonome, que vous partiez de zéro ou que vous ayez déjà d'autres éléments de marque. Dites-nous ce qu'il vous faut et nous vous enverrons une soumission claire." },
         { q: "Proposez-vous des plans de paiement ?", a: "Oui. Pour les projets plus importants, nous divisons généralement 50 % au début et 50 % à la livraison. Nous pouvons discuter d'autres arrangements si nécessaire." },
         { q: "Que dois-je avoir de prêt avant de commencer ?", a: "Juste vos idées et vos objectifs. Nous vous guiderons dans tout le reste — vous n'avez pas besoin d'arriver avec un brief créatif ou des références préparées." },
@@ -263,11 +263,11 @@ const translations = {
     },
     footer: {
       tagline: "Design accessible pour les petites entreprises ambitieuses. Identité de marque, web et direction créative — sans les prix d'une agence.",
-      location: "Montréal, Canada", navigate: "Navigation", sayHello: "Nous contacter",
+      location: "Sainte-Martine, QC", navigate: "Navigation", sayHello: "Nous contacter",
       bookCall: "Réserver un appel →", copyright: "Tous droits réservés.", privacy: "Politique de confidentialité", crafted: "Fait avec ❤️ par",
     },
     marquee: {
-      items: ["Identité de marque", "Conception Web", "Création de logo", "Médias sociaux", "Impression & Matériel", "Montréal", "Abordable", "Délais rapides", "Sans frais cachés", "Direction créative"],
+      items: ["Identité de marque", "Conception Web", "Création de logo", "Médias sociaux", "Impression & Matériel", "Rive-Sud", "Abordable", "Délais rapides", "Sans frais cachés", "Direction créative"],
     },
     contact: {
       label: "Nous contacter", heading: ["Créons quelque chose de", "grand."],
@@ -279,7 +279,7 @@ const translations = {
         { title: "Vous recevez une proposition", desc: "Une proposition claire — portée, calendrier et prix — avant que le travail commence." },
       ],
       emailLabel: "Courriel", locationLabel: "Localisation",
-      location: "Montréal, Canada · Travail à l'international",
+      location: "Sainte-Martine, QC · Au service de la Rive-Sud et de la Montérégie",
       form: {
         name: "Nom", namePlaceholder: "Votre nom",
         email: "Courriel", emailPlaceholder: "vous@exemple.com",

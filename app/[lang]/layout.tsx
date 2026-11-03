@@ -45,17 +45,17 @@ export const dynamicParams = false;
 const siteCopy = {
   en: {
     description:
-      "AllôPixel is a boutique creative studio in Montréal offering brand identity, web design, and creative direction for small businesses, artists, and individuals — without the agency price tag.",
-    ogTitle: "AllôPixel — Affordable Brand & Web Design",
-    ogDescription: "Brand identity, web design, and creative direction for small businesses — without the agency price tag.",
-    schemaDescription: "Boutique creative studio offering brand identity, web design, and creative direction for small businesses.",
+      "AllôPixel is a small web design and branding studio in Sainte-Martine, serving the South Shore and Montérégie. Websites from $700, brand identity and online stores for small businesses — without the agency price tag.",
+    ogTitle: "AllôPixel — Affordable Web Design, South Shore & Montérégie",
+    ogDescription: "Websites from $700, branding and online stores for small businesses in Sainte-Martine and the South Shore.",
+    schemaDescription: "Small web design and branding studio in Sainte-Martine serving the South Shore and Montérégie: websites, online stores and brand identity for small businesses.",
   },
   fr: {
     description:
-      "AllôPixel est un studio créatif boutique à Montréal qui offre identité de marque, conception web et direction créative aux petites entreprises, artistes et particuliers — sans le prix d'une agence.",
-    ogTitle: "AllôPixel — Image de marque et sites web abordables",
-    ogDescription: "Identité de marque, conception web et direction créative pour petites entreprises — sans le prix d'une agence.",
-    schemaDescription: "Studio créatif boutique offrant identité de marque, conception web et direction créative aux petites entreprises.",
+      "AllôPixel est un petit studio de conception web et d'image de marque à Sainte-Martine, au service de la Rive-Sud et de la Montérégie. Sites web dès 700 $, identité de marque et boutiques en ligne pour petites entreprises — sans le prix d'une agence.",
+    ogTitle: "AllôPixel — Création de site web, Rive-Sud et Montérégie",
+    ogDescription: "Sites web dès 700 $, image de marque et boutiques en ligne pour petites entreprises à Sainte-Martine et sur la Rive-Sud.",
+    schemaDescription: "Petit studio web et d'image de marque à Sainte-Martine au service de la Rive-Sud et de la Montérégie : sites web, boutiques en ligne et identité de marque pour petites entreprises.",
   },
 } as const;
 
@@ -67,14 +67,11 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
     metadataBase: new URL(siteUrl),
     title: {
       default: lang === "fr"
-        ? "AllôPixel — Image de marque et sites web abordables pour petites entreprises"
-        : "AllôPixel — Affordable Brand & Web Design for Small Businesses",
+        ? "AllôPixel — Création de site web, Rive-Sud et Montérégie"
+        : "AllôPixel — Affordable Web Design, South Shore & Montérégie",
       template: "%s | AllôPixel",
     },
     description: c.description,
-    ...(lang === "en" && {
-      keywords: ["web design Montreal","brand design small business","affordable logo design Canada","brand identity Montreal","website design for artists","small business branding","boutique creative studio"],
-    }),
     openGraph: { type: "website", locale: ogLocale[lang], url: siteUrl, siteName: "AllôPixel", title: c.ogTitle, description: c.ogDescription, images: [ogImage(lang, "home")] },
     twitter: { card: "summary_large_image", images: [ogImage(lang, "home").url] },
     robots: { index: true, follow: true },
@@ -91,7 +88,8 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
           "@context": "https://schema.org", "@type": "LocalBusiness",
           name: "AllôPixel", alternateName: ["Allopixel", "Allo Pixel", "Allô Pixel", "AlloPixel"], url: "https://allopixel.com", email: "info.allopixel@gmail.com",
           description: siteCopy[lang].schemaDescription,
-          address: { "@type": "PostalAddress", addressLocality: "Montréal", addressRegion: "QC", addressCountry: "CA" },
+          address: { "@type": "PostalAddress", addressLocality: "Sainte-Martine", addressRegion: "QC", addressCountry: "CA" },
+          areaServed: ["Sainte-Martine", "Châteauguay", "Beauharnois", "Saint-Rémi", "Saint-Urbain-Premier", "Salaberry-de-Valleyfield", "Brossard", "Montérégie", "Montréal"].map(name => ({ "@type": "Place", name })),
           priceRange: "$$",
           image: "https://allopixel.com/og/home.png",
           logo: "https://allopixel.com/logo-horizontal.svg",

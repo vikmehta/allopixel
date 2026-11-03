@@ -11,52 +11,52 @@ export const pagePath: Record<PageKey, string> = {
 const pages: Record<PageKey, Record<Lang, { title: string; description: string }>> = {
   home: {
     en: {
-      title: "AllôPixel — Affordable Brand & Web Design for Small Businesses",
-      description: "Boutique creative studio in Montréal. Brand identity, web design, and creative direction for small businesses — without the agency price tag.",
+      title: "AllôPixel — Affordable Web Design, South Shore & Montérégie",
+      description: "Small web design studio in Sainte-Martine serving the South Shore and Montérégie. Websites from $700, branding and online stores. Clear prices.",
     },
     fr: {
-      title: "AllôPixel — Image de marque et sites web abordables pour petites entreprises",
-      description: "Studio créatif boutique à Montréal. Identité de marque, conception web et direction créative pour les petites entreprises — sans le prix d'une agence.",
+      title: "AllôPixel — Création de site web, Rive-Sud et Montérégie",
+      description: "Studio web à Sainte-Martine, au service de la Rive-Sud et de la Montérégie. Sites web dès 700 $, image de marque, boutiques en ligne. Prix clairs.",
     },
   },
   services: {
     en: {
-      title: "Services & Pricing",
-      description: "Transparent pricing for brand identity, web design, social media, and print. No hidden fees — just honest creative work.",
+      title: "Web Design Services & Pricing — From $700",
+      description: "Website packages from $700 to $5,000: landing page, business site, online store. Branding too. Based in Sainte-Martine, serving the South Shore.",
     },
     fr: {
-      title: "Services et tarifs",
-      description: "Tarifs transparents pour l'identité de marque, la conception web, les médias sociaux et l'impression. Aucun frais caché — simplement du travail créatif honnête.",
+      title: "Création de site web — tarifs dès 700 $",
+      description: "Forfaits de site web de 700 $ à 5 000 $ : page d'atterrissage, site d'entreprise, boutique en ligne. Image de marque aussi. Sainte-Martine, Rive-Sud.",
     },
   },
   work: {
     en: {
-      title: "Work",
-      description: "Selected projects by AllôPixel — brand identities, websites, and creative direction for small businesses, artists, and individuals.",
+      title: "Web Design Portfolio — Small Business Websites",
+      description: "Websites and brands we've built for small businesses, clinics, shops and creatives. See our web design projects and what we did for each client.",
     },
     fr: {
-      title: "Réalisations",
-      description: "Projets choisis par AllôPixel — identités de marque, sites web et direction créative pour petites entreprises, artistes et particuliers.",
+      title: "Réalisations : sites web pour petites entreprises",
+      description: "Sites web et identités de marque créés pour des petites entreprises, cliniques, boutiques et créatifs. Découvrez nos projets de création de site web.",
     },
   },
   about: {
     en: {
-      title: "About",
-      description: "AllôPixel is a boutique creative studio in Montréal. We believe great design should be accessible to every small business.",
+      title: "About Our Web Design Studio in Sainte-Martine",
+      description: "AllôPixel is a small, owner-run web design and branding studio in Sainte-Martine, serving the South Shore and Montérégie. Meet the team and how we work.",
     },
     fr: {
-      title: "À propos",
-      description: "AllôPixel est un studio créatif boutique à Montréal. Nous croyons qu'un excellent design devrait être accessible à toutes les petites entreprises.",
+      title: "À propos — studio web à Sainte-Martine",
+      description: "AllôPixel, petit studio web et d'image de marque à Sainte-Martine, au service de la Rive-Sud et de la Montérégie. Découvrez l'équipe et notre approche.",
     },
   },
   contact: {
     en: {
-      title: "Contact",
-      description: "Start a project with AllôPixel. Book a free discovery call or send us a message — we respond within 24 hours.",
+      title: "Contact — Free Web Design Consultation",
+      description: "Book a free 30-minute call about your website. Sainte-Martine studio serving Châteauguay, Beauharnois, Saint-Rémi and the South Shore. Reply in 24 h.",
     },
     fr: {
-      title: "Contact",
-      description: "Lancez un projet avec AllôPixel. Réservez un appel découverte gratuit ou écrivez-nous — nous répondons en 24 heures.",
+      title: "Contact — consultation gratuite en création web",
+      description: "Appel gratuit de 30 minutes sur votre site web. Studio à Sainte-Martine au service de Châteauguay, Beauharnois, Saint-Rémi et de la Rive-Sud. Réponse en 24 h.",
     },
   },
   privacy: {
@@ -69,6 +69,31 @@ const pages: Record<PageKey, Record<Lang, { title: string; description: string }
       description: "Comment AllôPixel recueille, utilise et protège les renseignements personnels que vous partagez par l'entremise de ce site.",
     },
   },
+};
+
+/** Keyword lists. Google ignores the keywords tag, but Bing and some directories still read it. Chosen from the keyword research (agence web, web design + place, prix, refonte, boutique en ligne). */
+const keywords: Record<PageKey, Record<Lang, string[]>> = {
+  home: {
+    en: ["web design South Shore", "web design Montérégie", "web designer Châteauguay", "small business website", "affordable web design", "website design Sainte-Martine", "web design studio Quebec", "online store Shopify"],
+    fr: ["création de site web Rive-Sud", "création de site web Montérégie", "studio web Sainte-Martine", "agence web Rive-Sud", "site web petite entreprise", "création de site web professionnel", "site web abordable", "boutique en ligne Shopify"],
+  },
+  services: {
+    en: ["web design pricing", "website cost Quebec", "website packages", "landing page design", "small business website", "online store setup", "website redesign", "branding for small business"],
+    fr: ["prix site web", "tarifs création de site web", "forfait site web", "page d'atterrissage", "site web petite entreprise", "boutique en ligne", "refonte de site web", "image de marque petite entreprise"],
+  },
+  work: {
+    en: ["web design portfolio", "small business websites", "website examples", "web designer portfolio Quebec", "therapist website design", "Shopify store design"],
+    fr: ["portfolio conception web", "réalisations sites web", "exemples de sites web", "site web pour thérapeute", "création de boutique en ligne", "studio web Québec"],
+  },
+  about: {
+    en: ["web design studio Sainte-Martine", "web designer South Shore", "web design Montérégie", "small web design studio", "branding studio Quebec"],
+    fr: ["studio web Sainte-Martine", "concepteur web Rive-Sud", "création de site web Montérégie", "petit studio web", "studio d'image de marque Québec"],
+  },
+  contact: {
+    en: ["web designer Châteauguay", "web designer Beauharnois", "web designer Saint-Rémi", "free web design consultation", "website quote Quebec", "web design South Shore"],
+    fr: ["création de site web Châteauguay", "création de site web Beauharnois", "création de site web Saint-Rémi", "consultation gratuite site web", "soumission site web", "concepteur web Rive-Sud"],
+  },
+  privacy: { en: [], fr: [] },
 };
 
 export const ogLocale: Record<Lang, string> = { en: "en_CA", fr: "fr_CA" };
@@ -131,6 +156,7 @@ export function pageMetadata(lang: Lang, key: PageKey): Metadata {
   return {
     title: key === "home" ? { absolute: title } : title,
     description,
+    ...(keywords[key][lang].length > 0 && { keywords: keywords[key][lang] }),
     alternates,
     openGraph: { type: "website", url: alternates.canonical, siteName: "AllôPixel", locale: ogLocale[lang], images: [ogImage(lang, key)] },
     twitter: { card: "summary_large_image", images: [ogImage(lang, key).url] },

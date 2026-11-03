@@ -2,9 +2,9 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "AllôPixel — Affordable Brand & Web Design for Small Businesses",
+    name: "AllôPixel — Affordable Web Design, South Shore & Montérégie",
     short_name: "AllôPixel",
-    description: "Boutique creative studio in Montréal offering brand identity, web design, and creative direction for small businesses.",
+    description: "Small web design and branding studio in Sainte-Martine serving the South Shore and Montérégie.",
     start_url: "/",
     display: "standalone",
     background_color: "#092724",
