@@ -48,6 +48,7 @@ export default function ContactContent() {
               <div>
                 <p className="font-mono text-[0.85rem] uppercase tracking-widest text-chalk/60 mb-1.5">{c.locationLabel}</p>
                 <p className="font-body text-sm text-chalk/60">{c.location}</p>
+                <p className="font-body text-sm text-chalk/60 mt-1">{c.locationDetail}</p>
               </div>
             </div>
           </div>

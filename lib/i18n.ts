@@ -101,7 +101,7 @@ const translations = {
     },
     cta: {
       default: { heading: "Ready to build something great?", sub: "Start with a free 30-minute call about your website — no commitment.", btn: "Book a free call" },
-      work: { heading: "Like what you see?", sub: "Let's make something great together.", btn: "Start a project" },
+      work: { heading: "Like what you see?", sub: "Tell us about your website project and we'll send you a free estimate.", btn: "Start a project" },
       about: { heading: "Ready to work together?", sub: "Start with a free 30-minute call about your project — no commitment.", btn: "Work with us" },
       services: { heading: "Still have questions?", sub: "Book a free call and we'll answer everything.", btn: "Book a free call" },
     },
@@ -115,7 +115,7 @@ const translations = {
     },
     contact: {
       label: "Get in touch", heading: ["Let's build something", "great."],
-      sub: "Tell us about your project. We'll be in touch within 24 hours.",
+      sub: "Tell us about your website or branding project. We'll reply within 24 hours.",
       whatNext: "What happens next",
       steps: [
         { title: "We read your message", desc: "Every inquiry is reviewed personally. We respond within 24 hours." },
@@ -123,7 +123,8 @@ const translations = {
         { title: "You get a proposal", desc: "A clear proposal — scope, timeline, and price — before any work begins." },
       ],
       emailLabel: "Email", locationLabel: "Location",
-      location: "Sainte-Martine, QC · Serving the South Shore & Montérégie",
+      location: "Sainte-Martine, QC",
+      locationDetail: "Serving Châteauguay, Beauharnois, Saint-Rémi, the South Shore and Montérégie — and clients anywhere by video call.",
       form: {
         name: "Name", namePlaceholder: "Your name",
         email: "Email", emailPlaceholder: "you@example.com",
@@ -137,7 +138,7 @@ const translations = {
         errorMsg: "Something went wrong. Email us at",
         privacyNote: "We use your details only to reply to your enquiry. See our",
         privacyLink: "Privacy Policy",
-        services: ["Brand Identity", "Web Design & Development", "Logo Design", "Social Media Design", "Print & Collateral", "Full Package (Brand + Web)", "Other / Not sure yet"],
+        services: ["Website Design", "Online Store", "Website Redesign", "Brand Identity", "Logo Design", "Social Media Design", "Print & Collateral", "Full Package (Brand + Web)", "Other / Not sure yet"],
         budgets: ["Under $700", "$700 – $1,500", "$1,500 – $2,500", "$2,500 – $5,000", "$5,000+", "Not sure yet"],
       },
     },
@@ -167,7 +168,7 @@ const translations = {
     work: {
       label: "Portfolio",
       heading: ["Work that speaks", "for itself."],
-      sub: "Every project here was designed to help a brand show up clearly, consistently, and memorably.",
+      sub: "Websites and brands we've built for small businesses, clinics, shops and creatives. Browse our web design projects by category.",
     },
     servicesPage: {
       label: "Services",
@@ -285,7 +286,7 @@ const translations = {
     },
     cta: {
       default: { heading: "Prêts à créer quelque chose de grand ?", sub: "Commencez par un appel gratuit de 30 minutes sur votre site web — sans engagement.", btn: "Réserver un appel" },
-      work: { heading: "Ce que vous voyez vous plaît ?", sub: "Créons quelque chose de grand ensemble.", btn: "Démarrer un projet" },
+      work: { heading: "Ce que vous voyez vous plaît ?", sub: "Parlez-nous de votre projet de site web et nous vous enverrons une estimation gratuite.", btn: "Démarrer un projet" },
       about: { heading: "Prêts à travailler ensemble ?", sub: "Commencez par un appel gratuit de 30 minutes sur votre projet — sans engagement.", btn: "Travaillons ensemble" },
       services: { heading: "Vous avez encore des questions ?", sub: "Réservez un appel gratuit et nous répondrons à tout.", btn: "Réserver un appel" },
     },
@@ -299,7 +300,7 @@ const translations = {
     },
     contact: {
       label: "Nous contacter", heading: ["Créons quelque chose de", "grand."],
-      sub: "Parlez-nous de votre projet. Nous vous répondrons dans les 24 heures.",
+      sub: "Parlez-nous de votre projet de site web ou d'image de marque. Nous vous répondons en 24 heures.",
       whatNext: "Ce qui se passe ensuite",
       steps: [
         { title: "Nous lisons votre message", desc: "Chaque demande est examinée personnellement. Nous répondons dans les 24 heures." },
@@ -307,7 +308,8 @@ const translations = {
         { title: "Vous recevez une proposition", desc: "Une proposition claire — portée, calendrier et prix — avant que le travail commence." },
       ],
       emailLabel: "Courriel", locationLabel: "Localisation",
-      location: "Sainte-Martine, QC · Au service de la Rive-Sud et de la Montérégie",
+      location: "Sainte-Martine, QC",
+      locationDetail: "Au service de Châteauguay, Beauharnois, Saint-Rémi, de la Rive-Sud et de la Montérégie — et de clients partout par appel vidéo.",
       form: {
         name: "Nom", namePlaceholder: "Votre nom",
         email: "Courriel", emailPlaceholder: "vous@exemple.com",
@@ -321,7 +323,7 @@ const translations = {
         errorMsg: "Quelque chose a mal tourné. Écrivez-nous à",
         privacyNote: "Nous utilisons vos renseignements uniquement pour répondre à votre demande. Consultez notre",
         privacyLink: "politique de confidentialité",
-        services: ["Identité de marque", "Conception & Développement Web", "Création de logo", "Conception Médias Sociaux", "Impression & Matériel", "Forfait complet (Marque + Web)", "Autre / Pas encore certain"],
+        services: ["Création de site web", "Boutique en ligne", "Refonte de site web", "Identité de marque", "Création de logo", "Conception Médias Sociaux", "Impression & Matériel", "Forfait complet (Marque + Web)", "Autre / Pas encore certain"],
         budgets: ["Moins de 700 $", "700 $ – 1 500 $", "1 500 $ – 2 500 $", "2 500 $ – 5 000 $", "5 000 $+", "Pas encore certain"],
       },
     },
@@ -351,7 +353,7 @@ const translations = {
     work: {
       label: "Portfolio",
       heading: ["Un travail qui", "parle de lui-même."],
-      sub: "Chaque projet ici a été conçu pour aider une marque à se présenter clairement, de manière cohérente et mémorable.",
+      sub: "Sites web et marques réalisés pour des petites entreprises, cliniques, boutiques et créatifs. Parcourez nos projets de création de site web par catégorie.",
     },
     servicesPage: {
       label: "Services",
