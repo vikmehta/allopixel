@@ -20,7 +20,7 @@ function PriceDigits({ price, size }: { price: string; size: string }) {
   if (price.endsWith("$")) {
     return (
       <>
-        <span className={`font-display font-bold tracking-display text-ink leading-none ${size === "lg" ? "text-4xl md:text-5xl" : "text-xl"}`}>{price.slice(0, -1).trim()}</span>
+        <span className={`font-display font-bold tracking-display text-ink leading-none ${size === "lg" ? "text-4xl md:text-5xl" : "text-xl"}`}>{price.slice(0, -1).trim().replace(/ /g, "\u00a0")}</span>
         <span className={`font-body font-semibold text-ink/65 self-start mt-1.5 ${size === "lg" ? "text-xl" : "text-sm"}`}> $</span>
       </>
     );
@@ -67,12 +67,16 @@ export default function Pricing() {
                 </div>
               )}
               <h3 className="font-display font-bold text-xl tracking-display text-ink">{tier.name}</h3>
-              <div className="flex items-baseline gap-1 mt-4 mb-5">
-                {!tier.period && <span className="font-mono text-[0.85rem] uppercase tracking-wider text-ink/65">{p.from}</span>}
-                <PriceDigits price={tier.price} size="lg" />
-                {tier.period && (
-                  <span className="font-body text-base text-ink/65 ml-0.5">{tier.period}</span>
-                )}
+              <div className="mt-4 mb-5">
+                <span className="block font-mono text-[0.85rem] uppercase tracking-wider text-ink/65 mb-1 min-h-[1.25rem]">
+                  {!tier.period ? p.from : "\u00a0"}
+                </span>
+                <div className="flex items-baseline gap-0.5 whitespace-nowrap">
+                  <PriceDigits price={tier.price} size="lg" />
+                  {tier.period && (
+                    <span className="font-body text-base text-ink/65 ml-0.5">{tier.period}</span>
+                  )}
+                </div>
               </div>
               <p className="font-body text-sm text-ink/65 mb-6 leading-snug">{tier.tagline}</p>
               <ul className="space-y-2.5 mb-8 flex-1">
