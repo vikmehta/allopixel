@@ -102,7 +102,7 @@ const translations = {
     cta: {
       default: { heading: "Ready to build something great?", sub: "Start with a free 30-minute call about your website — no commitment.", btn: "Book a free call" },
       work: { heading: "Like what you see?", sub: "Let's make something great together.", btn: "Start a project" },
-      about: { heading: "Ready to work together?", sub: "Start with a free discovery call — no commitment.", btn: "Work with us" },
+      about: { heading: "Ready to work together?", sub: "Start with a free 30-minute call about your project — no commitment.", btn: "Work with us" },
       services: { heading: "Still have questions?", sub: "Book a free call and we'll answer everything.", btn: "Book a free call" },
     },
     footer: {
@@ -142,13 +142,14 @@ const translations = {
       },
     },
     about: {
-      label: "Our story", heading: ["We believe great design", "changes businesses."],
+      label: "Our story · Sainte-Martine", heading: ["We believe great design", "changes businesses."],
       story: [
         { size: "lg", text: "Most small business owners already know what bad design costs." },
         { size: "base", text: "The first impression that doesn't land. The client who chooses someone else. The brand that feels temporary while they wait for the \"right time\" to invest." },
         { size: "base", text: "What fewer people realize is that it doesn't have to be this way." },
-        { size: "base", text: "We started AllôPixel in Montréal because we believe the gap between what small businesses deserve and what they can afford isn't inevitable — it's a problem the industry created." },
-        { size: "base", text: "We're a small team that works directly on every project ourselves. No junior handoffs. No layers of account managers. No inflated pricing to cover overhead you never asked for." },
+        { size: "base", text: "We started AllôPixel because we believe the gap between what small businesses deserve and what they can afford isn't inevitable — it's a problem the industry created." },
+        { size: "base", text: "We're a small web design and branding studio, and we work directly on every project ourselves. No junior handoffs. No layers of account managers. No inflated pricing to cover overhead you never asked for." },
+        { size: "base", text: "We're based in Sainte-Martine, on the South Shore of Montréal. We work with small businesses in Châteauguay, Beauharnois, Saint-Rémi and across Montérégie, and with clients elsewhere in Québec, in Ontario and in the United States, mostly by video call." },
         { size: "base", text: "Just thoughtful design, modern websites, and branding that helps businesses look as professional as the work they already do." },
         { size: "base", text: "Because when design is done right, it doesn't feel like an expense." },
         { size: "lg-bold", text: "It feels like the investment that changes everything." },
@@ -161,6 +162,7 @@ const translations = {
         { title: "Quality Without Compromise", desc: "Affordable doesn't mean generic. Every project gets original thinking, meticulous craft, and a commitment to work we're genuinely proud of." },
       ],
       visualQuote: ["“Allô” is French for hello.", "Every project is a new introduction."],
+      placeLine: "Sainte-Martine, QC · South Shore & Montérégie",
     },
     work: {
       label: "Portfolio",
@@ -284,7 +286,7 @@ const translations = {
     cta: {
       default: { heading: "Prêts à créer quelque chose de grand ?", sub: "Commencez par un appel gratuit de 30 minutes sur votre site web — sans engagement.", btn: "Réserver un appel" },
       work: { heading: "Ce que vous voyez vous plaît ?", sub: "Créons quelque chose de grand ensemble.", btn: "Démarrer un projet" },
-      about: { heading: "Prêts à travailler ensemble ?", sub: "Commencez par un appel découverte gratuit — sans engagement.", btn: "Travaillons ensemble" },
+      about: { heading: "Prêts à travailler ensemble ?", sub: "Commencez par un appel gratuit de 30 minutes sur votre projet — sans engagement.", btn: "Travaillons ensemble" },
       services: { heading: "Vous avez encore des questions ?", sub: "Réservez un appel gratuit et nous répondrons à tout.", btn: "Réserver un appel" },
     },
     footer: {
@@ -324,13 +326,14 @@ const translations = {
       },
     },
     about: {
-      label: "Notre histoire", heading: ["Nous croyons que le design", "change les entreprises."],
+      label: "Notre histoire · Sainte-Martine", heading: ["Nous croyons que le design", "change les entreprises."],
       story: [
         { size: "lg", text: "La plupart des propriétaires de petites entreprises savent déjà ce que coûte un mauvais design." },
         { size: "base", text: "La première impression qui ne convainc pas. Le client qui choisit quelqu'un d'autre. La marque qui semble temporaire pendant qu'ils attendent le « bon moment » pour investir." },
         { size: "base", text: "Ce que peu de gens réalisent, c'est que ça n'a pas à être ainsi." },
-        { size: "base", text: "Nous avons fondé AllôPixel à Montréal parce que nous croyons que l'écart entre ce que les petites entreprises méritent et ce qu'elles peuvent se permettre n'est pas inévitable — c'est un problème créé par l'industrie." },
-        { size: "base", text: "Nous sommes une petite équipe qui travaille directement sur chaque projet nous-mêmes. Pas de transferts vers des juniors. Pas de couches de gestionnaires de comptes. Pas de tarifs gonflés pour couvrir des frais généraux que vous n'avez jamais demandés." },
+        { size: "base", text: "Nous avons fondé AllôPixel parce que nous croyons que l'écart entre ce que les petites entreprises méritent et ce qu'elles peuvent se permettre n'est pas inévitable — c'est un problème créé par l'industrie." },
+        { size: "base", text: "Nous sommes un petit studio de conception web et d'image de marque, et nous travaillons nous-mêmes directement sur chaque projet. Pas de transferts vers des juniors. Pas de couches de gestionnaires de comptes. Pas de tarifs gonflés pour couvrir des frais généraux que vous n'avez jamais demandés." },
+        { size: "base", text: "Nous sommes établis à Sainte-Martine, sur la Rive-Sud de Montréal. Nous travaillons avec des petites entreprises de Châteauguay, Beauharnois, Saint-Rémi et de toute la Montérégie, ainsi qu'avec des clients ailleurs au Québec, en Ontario et aux États-Unis, surtout par appel vidéo." },
         { size: "base", text: "Juste un design réfléchi, des sites web modernes et une image de marque qui aide les entreprises à paraître aussi professionnelles que le travail qu'elles font déjà." },
         { size: "base", text: "Parce que lorsque le design est bien fait, ça ne ressemble pas à une dépense." },
         { size: "lg-bold", text: "Ça ressemble à l'investissement qui change tout." },
@@ -343,6 +346,7 @@ const translations = {
         { title: "Qualité sans compromis", desc: "Abordable ne veut pas dire générique. Chaque projet reçoit une pensée originale, un soin méticuleux et un engagement envers un travail dont nous sommes vraiment fiers." },
       ],
       visualQuote: ["« Allô » signifie bonjour en français.", "Chaque projet est une nouvelle introduction."],
+      placeLine: "Sainte-Martine, QC · Rive-Sud et Montérégie",
     },
     work: {
       label: "Portfolio",
