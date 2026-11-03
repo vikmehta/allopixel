@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { projects, hasCaseStudy, localize, catKeys, catLabels, type CatKey } from "@/lib/projects";
+import { projects, hasCaseStudy, localize, catKeys, catLabels, projectAlt, type CatKey } from "@/lib/projects";
 import CaseStudyButton from "@/components/CaseStudyButton";
 
 const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
@@ -51,7 +51,7 @@ export default function PortfolioGrid() {
                   {p.image ? (
                     <Image
                       src={p.image}
-                      alt={p.name}
+                      alt={projectAlt(p, lang)}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1600px) 50vw, 800px"
                       priority={i === 0}
