@@ -280,3 +280,7 @@ export const getProjectBySlug = (slug: string) => projects.find(p => p.slug === 
 /** Resolve a plain string or an EN/FR pair to the active language. */
 export const localize = (v: Localized | string, lang: Lang): string =>
   typeof v === "string" ? v : v[lang];
+
+/** Descriptive image text for a project screenshot, e.g. "Harmonia Therapy Center website — Health & Wellness". */
+export const projectAlt = (p: Project, lang: "en" | "fr") =>
+  lang === "fr" ? `Site web de ${p.name} — ${localize(p.client, lang)}` : `${p.name} website — ${localize(p.client, lang)}`;

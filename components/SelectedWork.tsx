@@ -4,7 +4,7 @@ import Link from "@/components/LocaleLink";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { featuredProjects as projects, hasCaseStudy, localize, catLabels } from "@/lib/projects";
+import { featuredProjects as projects, hasCaseStudy, localize, catLabels, projectAlt } from "@/lib/projects";
 import CaseStudyButton from "@/components/CaseStudyButton";
 
 const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
@@ -24,6 +24,7 @@ export default function SelectedWork() {
               style={{ fontSize: "clamp(2.2rem, 5vw, 4.5rem)" }}>
               {sw.heading[0]}<br />{sw.heading[1]}
             </h2>
+            <p className="font-body text-base text-ink/70 mt-4 max-w-md">{sw.caption}</p>
           </div>
           <Link href="/work"
             className="font-mono text-[0.85rem] uppercase tracking-[0.15em] text-ink/65 hover:text-coral transition-colors flex items-center gap-2 shrink-0 py-2">
@@ -50,7 +51,7 @@ export default function SelectedWork() {
                   <div className={`md:col-span-7 ${!isEven ? "md:order-2" : ""}`}>
                     <div className="relative overflow-hidden aspect-[16/10] rounded-sm">
                       {p.image ? (
-                        <Image src={p.image} alt={p.name} fill sizes="(max-width: 768px) 100vw, (max-width: 1600px) 58vw, 933px" priority={i === 0} className="object-cover object-top grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105 transition-all duration-700" />
+                        <Image src={p.image} alt={projectAlt(p, lang)} fill sizes="(max-width: 768px) 100vw, (max-width: 1600px) 58vw, 933px" priority={i === 0} className="object-cover object-top grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105 transition-all duration-700" />
                       ) : (
                         <div className="absolute inset-0 grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105 transition-all duration-700" style={{ background: p.gradient }} />
                       )}

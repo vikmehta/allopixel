@@ -9,11 +9,17 @@ const translations = {
     hero: {
       label: "Web & Brand Studio · Sainte-Martine · South Shore",
       headline: ["Great design.", "No agency", "price tag."],
-      sub: "Brand identity, web design, and creative direction for small businesses, artists, and individuals",
+      sub: "Websites, online stores and branding for small businesses in Sainte-Martine and across the South Shore. Clear prices, from $700.",
       cta1: "See our work", cta2: "Free quote",
       tags: ["Fast turnaround", "Transparent pricing", "No hidden fees"],
     },
+    intro: {
+      label: "The studio",
+      heading: "Web design for small businesses on the South Shore",
+      text: "AllôPixel is a small studio in Sainte-Martine. We design and build websites and online stores for small businesses, clinics, shops and creatives in Châteauguay, Beauharnois, Saint-Rémi and across Montérégie. You talk directly to the people doing the work, you know the price before we start, and your site is built to be found on Google and available in English and French.",
+    },
     selectedWork: {
+      caption: "Recent websites for clinics, shops and small businesses.",
       label: "Selected work",
       heading: ["Work that speaks", "for itself."],
       viewAll: "View all",
@@ -34,14 +40,14 @@ const translations = {
     services: {
       label: "What we do",
       heading: ["Everything your", "brand needs."],
-      sub: "Under one roof, without the agency overhead. Every service is available standalone or as part of a package.",
+      sub: "Websites and online stores first, with branding to match. Every service is available on its own or as a package.",
       items: [
-        { title: "Brand Identity", desc: "Logo, color systems, typography, and brand guidelines that make you instantly recognizable across every touchpoint." },
-        { title: "Web Design & Development", desc: "Beautiful, fast websites built from scratch — not templates. Responsive, accessible, and built to convert." },
-        { title: "Logo Design", desc: "A focused logo project — 2 concepts, multiple rounds of refinement, delivered in every format you'll ever need." },
+        { title: "Website Design", desc: "Custom websites for small businesses. Landing pages from $700, full sites from $1,500. Fast, mobile-friendly and built to be found on Google." },
+        { title: "Online Stores", desc: "Shopify and e-commerce shops that are easy for you to manage and simple for customers to buy from." },
+        { title: "Website Redesign", desc: "A tired or outdated site rebuilt to look modern, load fast and bring in enquiries." },
+        { title: "Brand Identity & Logo", desc: "Logo, color systems, typography, and brand guidelines that make you instantly recognizable across every touchpoint." },
         { title: "Social Media Design", desc: "Consistent content templates that make maintaining a polished, on-brand presence genuinely effortless." },
         { title: "Print & Collateral", desc: "Business cards, brochures, menus, and signage that carry your brand into the physical world with confidence." },
-        { title: "Creative Direction", desc: "Ongoing strategic creative oversight for brands that need a coherent visual story across every channel." },
       ],
     },
     testimonials: {
@@ -88,13 +94,13 @@ const translations = {
       ],
     },
     cta: {
-      default: { heading: "Ready to build something great?", sub: "Start with a free 30-minute discovery call — no commitment.", btn: "Book a free call" },
+      default: { heading: "Ready to build something great?", sub: "Start with a free 30-minute call about your website — no commitment.", btn: "Book a free call" },
       work: { heading: "Like what you see?", sub: "Let's make something great together.", btn: "Start a project" },
       about: { heading: "Ready to work together?", sub: "Start with a free discovery call — no commitment.", btn: "Work with us" },
       services: { heading: "Still have questions?", sub: "Book a free call and we'll answer everything.", btn: "Book a free call" },
     },
     footer: {
-      tagline: "Affordable design for ambitious small businesses. Brand identity, web design, and creative direction — without the agency price tag.",
+      tagline: "Affordable web design and branding for small businesses in Sainte-Martine and the South Shore — without the agency price tag.",
       location: "Sainte-Martine, QC", navigate: "Navigate", sayHello: "Say hello",
       bookCall: "Book a free call →", copyright: "All rights reserved.", privacy: "Privacy Policy", crafted: "Crafted with ❤️ by",
     },
@@ -177,11 +183,17 @@ const translations = {
     hero: {
       label: "Studio web et image de marque · Sainte-Martine · Rive-Sud",
       headline: ["Un design de qualité.", "Sans les prix", "d'une agence."],
-      sub: "Identité de marque, conception web et direction créative pour les petites entreprises, artistes et particuliers",
+      sub: "Sites web, boutiques en ligne et image de marque pour les petites entreprises de Sainte-Martine et de la Rive-Sud. Prix clairs, dès 700 $.",
       cta1: "Voir nos projets", cta2: "Devis gratuit",
       tags: ["Délais rapides", "Prix transparents", "Sans frais cachés"],
     },
+    intro: {
+      label: "Le studio",
+      heading: "Création de site web pour petites entreprises de la Rive-Sud",
+      text: "AllôPixel est un petit studio de Sainte-Martine. Nous concevons des sites web et des boutiques en ligne pour les petites entreprises, cliniques, boutiques et créatifs de Châteauguay, Beauharnois, Saint-Rémi et de toute la Montérégie. Vous parlez directement aux personnes qui font le travail, vous connaissez le prix avant de commencer, et votre site est pensé pour être trouvé sur Google et offert en français et en anglais.",
+    },
     selectedWork: {
+      caption: "Sites web récents pour cliniques, boutiques et petites entreprises.",
       label: "Projets sélectionnés",
       heading: ["Un travail qui", "parle de lui-même."],
       viewAll: "Voir tout",
@@ -202,14 +214,14 @@ const translations = {
     services: {
       label: "Ce que nous faisons",
       heading: ["Tout ce dont votre", "marque a besoin."],
-      sub: "Sous un même toit, sans les frais d'agence. Chaque service est disponible seul ou en forfait.",
+      sub: "D'abord des sites web et des boutiques en ligne, avec une image de marque assortie. Chaque service est offert seul ou en forfait.",
       items: [
-        { title: "Identité de marque", desc: "Logo, systèmes de couleurs, typographie et charte graphique pour vous rendre immédiatement reconnaissable sur tous les supports." },
-        { title: "Conception & Développement Web", desc: "Des sites web beaux et rapides, créés de zéro — pas de modèles. Responsifs, accessibles et conçus pour convertir." },
-        { title: "Création de logo", desc: "Un projet de logo ciblé — 2 concepts, plusieurs rondes de révision, livré dans tous les formats dont vous aurez besoin." },
+        { title: "Création de site web", desc: "Sites web sur mesure pour petites entreprises. Pages d'atterrissage dès 700 $, sites complets dès 1 500 $. Rapides, adaptés au mobile et pensés pour être trouvés sur Google." },
+        { title: "Boutiques en ligne", desc: "Boutiques Shopify et commerce électronique faciles à gérer pour vous et simples d'utilisation pour vos clients." },
+        { title: "Refonte de site web", desc: "Un site vieillot reconstruit pour paraître moderne, charger vite et générer des demandes." },
+        { title: "Identité de marque et logo", desc: "Logo, systèmes de couleurs, typographie et charte graphique pour vous rendre immédiatement reconnaissable sur tous les supports." },
         { title: "Conception Médias Sociaux", desc: "Des gabarits de contenu cohérents qui rendent l'entretien d'une présence soignée et fidèle à votre image vraiment facile." },
         { title: "Impression & Matériel", desc: "Cartes d'affaires, brochures, menus et signalisation qui transportent votre marque dans le monde physique avec assurance." },
-        { title: "Direction Créative", desc: "Supervision créative stratégique continue pour les marques qui ont besoin d'une histoire visuelle cohérente sur tous les canaux." },
       ],
     },
     testimonials: {
@@ -256,13 +268,13 @@ const translations = {
       ],
     },
     cta: {
-      default: { heading: "Prêts à créer quelque chose de grand ?", sub: "Commencez avec un appel découverte gratuit de 30 minutes — sans engagement.", btn: "Réserver un appel" },
+      default: { heading: "Prêts à créer quelque chose de grand ?", sub: "Commencez par un appel gratuit de 30 minutes sur votre site web — sans engagement.", btn: "Réserver un appel" },
       work: { heading: "Ce que vous voyez vous plaît ?", sub: "Créons quelque chose de grand ensemble.", btn: "Démarrer un projet" },
       about: { heading: "Prêts à travailler ensemble ?", sub: "Commencez par un appel découverte gratuit — sans engagement.", btn: "Travaillons ensemble" },
       services: { heading: "Vous avez encore des questions ?", sub: "Réservez un appel gratuit et nous répondrons à tout.", btn: "Réserver un appel" },
     },
     footer: {
-      tagline: "Design accessible pour les petites entreprises ambitieuses. Identité de marque, web et direction créative — sans les prix d'une agence.",
+      tagline: "Conception web et image de marque abordables pour petites entreprises de Sainte-Martine et de la Rive-Sud — sans le prix d'une agence.",
       location: "Sainte-Martine, QC", navigate: "Navigation", sayHello: "Nous contacter",
       bookCall: "Réserver un appel →", copyright: "Tous droits réservés.", privacy: "Politique de confidentialité", crafted: "Fait avec ❤️ par",
     },

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
+import HomeIntro from "@/components/HomeIntro";
 import SelectedWork from "@/components/SelectedWork";
 import Services from "@/components/Services";
 import Testimonials from "@/components/Testimonials";
@@ -22,6 +23,7 @@ export default async function HomePage({ params }: PageProps<"/[lang]">) {
     <>
       <Hero />
       <Marquee />
+      <HomeIntro />
       <SelectedWork />
       <Services />
       <Testimonials />
