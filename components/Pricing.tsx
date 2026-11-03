@@ -67,7 +67,8 @@ export default function Pricing() {
                 </div>
               )}
               <h3 className="font-display font-bold text-xl tracking-display text-ink">{tier.name}</h3>
-              <div className="flex items-baseline gap-0.5 mt-4 mb-5">
+              <div className="flex items-baseline gap-1 mt-4 mb-5">
+                {!tier.period && <span className="font-mono text-[0.85rem] uppercase tracking-wider text-ink/65">{p.from}</span>}
                 <PriceDigits price={tier.price} size="lg" />
                 {tier.period && (
                   <span className="font-body text-base text-ink/65 ml-0.5">{tier.period}</span>
