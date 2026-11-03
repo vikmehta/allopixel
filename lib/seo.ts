@@ -22,11 +22,11 @@ const pages: Record<PageKey, Record<Lang, { title: string; description: string }
   services: {
     en: {
       title: "Web Design Services & Pricing — From $700",
-      description: "Website packages from $700 to $5,000: landing page, business site, online store. Branding too. Based in Sainte-Martine, serving the South Shore.",
+      description: "Website packages starting at $700: landing page, business site, online store. Free estimate. Based in Sainte-Martine, serving the South Shore.",
     },
     fr: {
       title: "Création de site web — tarifs dès 700 $",
-      description: "Forfaits de site web de 700 $ à 5 000 $ : page d'atterrissage, site d'entreprise, boutique en ligne. Image de marque aussi. Sainte-Martine, Rive-Sud.",
+      description: "Forfaits de site web dès 700 $ : page d'atterrissage, site d'entreprise, boutique en ligne. Estimation gratuite. Sainte-Martine, Rive-Sud.",
     },
   },
   work: {
