@@ -3,6 +3,7 @@ import { Playfair_Display, DM_Sans, DM_Mono } from "next/font/google";
 import "../globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import EventBanner from "@/components/EventBanner";
 import { notFound } from "next/navigation";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { hasLocale, locales, siteUrl } from "@/lib/locale";
@@ -98,6 +99,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
       </head>
       <body className="bg-chalk text-ink antialiased font-body" suppressHydrationWarning>
         <LanguageProvider lang={lang}>
+          <EventBanner />
           <Nav />
           <main id="main-content">{children}</main>
           <Footer />

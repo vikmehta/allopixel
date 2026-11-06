@@ -3,10 +3,13 @@
 import Link from "@/components/LocaleLink";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { PROMO_CODE, PROMO_PERCENT, promoPrice, usePromoActive } from "@/lib/promo";
 
 const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
 const vp = { once: true, amount: 0 } as const;
 const featured = [false, false, false, true, false];
+// Which "project type" the contact form pre-selects for each card (same order as tr.pricing.tiers).
+const serviceKeys = ["other", "website", "website", "website", "store"];
 
 function PriceDigits({ price, size }: { price: string; size: string }) {
   if (price.startsWith("$")) {
@@ -29,8 +32,9 @@ function PriceDigits({ price, size }: { price: string; size: string }) {
 }
 
 export default function Pricing() {
-  const { tr } = useLanguage();
+  const { tr, lang } = useLanguage();
   const p = tr.pricing;
+  const promoActive = usePromoActive();
 
   return (
     <section className="bg-ink grain py-14 md:py-20 lg:py-36">
@@ -68,15 +72,31 @@ export default function Pricing() {
               )}
               <h3 className="font-display font-bold text-xl tracking-display text-ink">{tier.name}</h3>
               <div className="mt-4 mb-5">
-                <span className="block font-mono text-[0.85rem] uppercase tracking-wider text-ink/65 mb-1 min-h-[1.25rem]">
-                  {!tier.period ? p.from : "\u00a0"}
-                </span>
-                <div className="flex items-baseline gap-0.5 whitespace-nowrap">
-                  <PriceDigits price={tier.price} size="lg" />
-                  {tier.period && (
-                    <span className="font-body text-base text-ink/65 ml-0.5">{tier.period}</span>
-                  )}
-                </div>
+                {promoActive && !tier.period ? (
+                  <>
+                    <span className="flex items-baseline gap-2 font-mono text-[0.85rem] uppercase tracking-wider mb-1 min-h-[1.25rem]">
+                      <span className="flex items-baseline gap-0.5 text-ink/45 line-through decoration-2 whitespace-nowrap">
+                        <PriceDigits price={tier.price} size="sm" />
+                      </span>
+                      <span className="bg-coral text-ink px-2 py-0.5 text-[0.75rem] tracking-widest">{PROMO_CODE} -{PROMO_PERCENT}%</span>
+                    </span>
+                    <div className="flex items-baseline gap-0.5 whitespace-nowrap">
+                      <PriceDigits price={promoPrice(tier.price, lang)} size="lg" />
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <span className="block font-mono text-[0.85rem] uppercase tracking-wider text-ink/65 mb-1 min-h-[1.25rem]">
+                      {!tier.period ? p.from : "\u00a0"}
+                    </span>
+                    <div className="flex items-baseline gap-0.5 whitespace-nowrap">
+                      <PriceDigits price={tier.price} size="lg" />
+                      {tier.period && (
+                        <span className="font-body text-base text-ink/65 ml-0.5">{tier.period}</span>
+                      )}
+                    </div>
+                  </>
+                )}
               </div>
               <p className="font-body text-sm text-ink/65 mb-6 leading-snug">{tier.tagline}</p>
               <ul className="space-y-2.5 mb-8 flex-1">
@@ -87,7 +107,7 @@ export default function Pricing() {
                   </li>
                 ))}
               </ul>
-              <Link href="/contact"
+              <Link href={`/contact?service=${serviceKeys[i]}`}
                 className={`btn w-full justify-center ${featured[i] ? "btn-ink" : "btn-outline"}`}>
                 {p.getStarted}
               </Link>
