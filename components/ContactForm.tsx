@@ -1,13 +1,26 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "@/components/LocaleLink";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { PROMO_CODE, PROMO_PERCENT, usePromoActive } from "@/lib/promo";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
-  const { tr } = useLanguage();
+  const [promoEdit, setPromoEdit] = useState<string | null>(null);
+  const promoActive = usePromoActive();
+  const { tr, lang } = useLanguage();
   const f = tr.contact.form;
+  const projectRef = useRef<HTMLSelectElement>(null);
+
+  // "Get started" on a pricing card links here with ?service=…; pre-select the matching project type (budget is left for the visitor).
+  useEffect(() => {
+    const key = new URLSearchParams(window.location.search).get("service");
+    const index = key === "website" ? 0 : key === "store" ? 1 : key === "other" ? f.services.length - 1 : -1;
+    if (index >= 0 && projectRef.current) projectRef.current.value = f.services[index];
+  }, [f.services]);
+  // Shows HIVE15 automatically when the promo is active, until the visitor types their own value.
+  const promoCode = promoEdit ?? (promoActive ? PROMO_CODE : "");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -17,7 +30,7 @@ export default function ContactForm() {
       const res = await fetch("https://formspree.io/f/mdawzbwr", {
         method: "POST", body: data, headers: { Accept: "application/json" },
       });
-      if (res.ok) { setStatus("success"); (e.target as HTMLFormElement).reset(); }
+      if (res.ok) { setStatus("success"); (e.target as HTMLFormElement).reset(); setPromoEdit(null); }
       else setStatus("error");
     } catch { setStatus("error"); }
   }
@@ -39,7 +52,7 @@ export default function ContactForm() {
 
       <div>
         <label htmlFor="project-type" className="font-mono text-[0.85rem] uppercase tracking-widest text-coral block mb-3">{f.projectType}</label>
-        <select id="project-type" name="project_type" className={`${inputClass} cursor-pointer`}
+        <select id="project-type" name="project_type" ref={projectRef} className={`${inputClass} cursor-pointer`}
           style={{ background: "transparent", color: "rgba(250,250,248,0.7)" }}>
           <option value="" style={{ background: "#111" }}>{f.projectPlaceholder}</option>
           {f.services.map(o => <option key={o} value={o} style={{ background: "#111" }}>{o}</option>)}
@@ -53,6 +66,23 @@ export default function ContactForm() {
           <option value="" style={{ background: "#111" }}>{f.budgetPlaceholder}</option>
           {f.budgets.map(o => <option key={o} value={o} style={{ background: "#111" }}>{o}</option>)}
         </select>
+      </div>
+
+      <div>
+        <label htmlFor="promo-code" className="font-mono text-[0.85rem] uppercase tracking-widest text-coral block mb-3">
+          {lang === "fr" ? "Code promo (optionnel)" : "Promo code (optional)"}
+        </label>
+        <input id="promo-code" name="promo_code" type="text" value={promoCode}
+          onChange={(e) => setPromoEdit(e.target.value)}
+          placeholder={lang === "fr" ? `ex. ${PROMO_CODE}` : `e.g. ${PROMO_CODE}`}
+          className={inputClass} />
+        {promoCode.trim().toUpperCase() === PROMO_CODE && (
+          <p className="font-body text-sm text-coral mt-3">
+            {lang === "fr"
+              ? `🐝 ${PROMO_CODE} appliqué : ${PROMO_PERCENT} % de rabais sur votre projet (sauf le forfait d'entretien de site).`
+              : `🐝 ${PROMO_CODE} applied: ${PROMO_PERCENT}% off your project (excludes the Website Care Plan).`}
+          </p>
+        )}
       </div>
 
       <div>
