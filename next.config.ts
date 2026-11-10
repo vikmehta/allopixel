@@ -14,6 +14,8 @@ const nextConfig: NextConfig = {
     return [
       ...toWork.map(slug => ({ source: `/${slug}`, destination: "/work", permanent: true })),
       ...toHome.map(slug => ({ source: `/${slug}`, destination: "/", permanent: true })),
+      { source: "/index.html", destination: "/", permanent: true },
+      { source: "/home", destination: "/", permanent: true },
       { source: "/category/:path*", destination: "/", permanent: true },
       { source: "/author/:path*", destination: "/", permanent: true },
       { source: "/tag/:path*", destination: "/", permanent: true },
