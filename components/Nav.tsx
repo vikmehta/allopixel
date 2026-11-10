@@ -8,6 +8,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { stripLocale } from "@/lib/locale";
 
+/** Remember an explicit language choice so the homepage browser-language redirect (proxy.ts) stops applying. */
+function rememberLang() {
+  try {
+    const target = document.documentElement.lang.startsWith("fr") ? "en" : "fr";
+    document.cookie = `lang=${target}; path=/; max-age=31536000; samesite=lax`;
+  } catch {}
+}
+
 export default function Nav() {
   const rawPathname = usePathname() || "/";
   const pathname = stripLocale(rawPathname); // page path without the language prefix
@@ -76,6 +84,7 @@ export default function Nav() {
               href={altHref}
               hrefLang={lang === "en" ? "fr-CA" : "en-CA"}
               lang={lang === "en" ? "fr" : "en"}
+              onClick={rememberLang}
               className={`font-mono text-[0.7rem] uppercase tracking-[0.15em] transition-colors duration-200 border px-2.5 py-1 ${
                 onDark
                   ? "text-chalk/60 border-chalk/20 hover:text-chalk hover:border-chalk/40"
@@ -132,7 +141,7 @@ export default function Nav() {
                   href={altHref}
                   hrefLang={lang === "en" ? "fr-CA" : "en-CA"}
                   lang={lang === "en" ? "fr" : "en"}
-                  onClick={() => setOpen(false)}
+                  onClick={() => { rememberLang(); setOpen(false); }}
                   style={{ touchAction: "manipulation" }}
                   className="font-mono text-[0.7rem] uppercase tracking-[0.15em] text-ink/65 border border-black/15 hover:text-ink hover:border-black/30 transition-colors px-2.5 py-2"
                 >
