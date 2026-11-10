@@ -4,7 +4,7 @@ import Link from "@/components/LocaleLink";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { featuredProjects as projects, hasCaseStudy, localize, catLabels, projectAlt } from "@/lib/projects";
+import { featuredProjects as projects, hasCaseStudy, localize, catLabels, projectAlt, projectImage } from "@/lib/projects";
 import CaseStudyButton from "@/components/CaseStudyButton";
 
 const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
@@ -51,7 +51,7 @@ export default function SelectedWork() {
                   <div className={`md:col-span-7 ${!isEven ? "md:order-2" : ""}`}>
                     <div className="relative overflow-hidden aspect-[16/10] rounded-sm">
                       {p.image ? (
-                        <Image src={p.image} alt={projectAlt(p, lang)} fill sizes="(max-width: 768px) 100vw, (max-width: 1600px) 58vw, 933px" priority={i === 0} className="object-cover object-top grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105 transition-all duration-700" />
+                        <Image src={projectImage(p, lang)} alt={projectAlt(p, lang)} fill sizes="(max-width: 768px) 100vw, (max-width: 1600px) 58vw, 933px" priority={i === 0} className="object-cover object-top grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105 transition-all duration-700" />
                       ) : (
                         <div className="absolute inset-0 grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105 transition-all duration-700" style={{ background: p.gradient }} />
                       )}
