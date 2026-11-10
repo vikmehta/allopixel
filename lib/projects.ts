@@ -46,6 +46,7 @@ export type Project = {
   year: string;
   gradient: string;
   image: string;
+  imageFr?: string;               // same-size screenshot of the French version, when the site has one
   url: string;
   desc: Localized | string;       // longer copy, home page
   descShort: Localized | string;  // shorter copy, /work grid
@@ -60,7 +61,7 @@ export const projects: Project[] = [
     client: { en: "Health & Wellness", fr: "Santé et bien-être" },
     tags: ["Web Design", "Health"], year: "2026",
     gradient: "linear-gradient(135deg, #2E3030 0%, #4A4D45 50%, #6B7A50 100%)",
-    image: "/work-harmonia.webp", url: "https://harmoniatherapycenter.ca/", featured: true,
+    image: "/work-harmonia.webp", imageFr: "/work-harmonia-fr.webp", url: "https://harmoniatherapycenter.ca/", featured: true,
     desc: {
       en: "A bilingual WordPress website for a multidisciplinary psychotherapy practice, with services, team, blog, shop and online booking, in a calm, editorial design.",
       fr: "Un site WordPress bilingue pour une pratique de psychothérapie multidisciplinaire, avec services, équipe, blogue, boutique et réservation en ligne, dans un design éditorial et apaisant.",
@@ -174,7 +175,7 @@ export const projects: Project[] = [
   },
   {
     id: 6, slug: "poissonnerie-moj", name: "Poissonnerie MOJ", client: { en: "Food & Seafood Market", fr: "Marché alimentaire et poissonnerie" }, tags: ["Web Design", "Food"], year: "2025",
-    gradient: "linear-gradient(135deg, #061E2C 0%, #0D3A52 45%, #1A6080 100%)", image: "/work-moj.webp", url: "https://moj-three.vercel.app/", featured: true,
+    gradient: "linear-gradient(135deg, #061E2C 0%, #0D3A52 45%, #1A6080 100%)", image: "/work-moj.webp", imageFr: "/work-moj-fr.webp", url: "https://moj-three.vercel.app/", featured: true,
     desc: {
       en: "A custom-built bilingual website for a family-run seafood market in Châteauguay, showing the daily catch and the takeout kitchen to the local community.",
       fr: "Un site bilingue sur mesure pour une poissonnerie familiale de Châteauguay, qui présente l'arrivage du jour et la cuisine à emporter à la communauté locale.",
@@ -186,7 +187,7 @@ export const projects: Project[] = [
   },
   {
     id: 1, slug: "in-bloom-events", name: "In Bloom Events", client: { en: "Events & Networking", fr: "Événements et réseautage" }, tags: ["Web Design", "Events"], year: "2025",
-    gradient: "linear-gradient(135deg, #2A0F18 0%, #4A1F30 45%, #7A3A50 100%)", image: "/work-inbloom.jpeg", url: "https://www.inbloomevents.ca/", featured: true,
+    gradient: "linear-gradient(135deg, #2A0F18 0%, #4A1F30 45%, #7A3A50 100%)", image: "/work-inbloom.jpeg", imageFr: "/work-inbloom-fr.jpeg", url: "https://www.inbloomevents.ca/", featured: true,
     desc: {
       en: "A custom-built website for a women's empowerment and networking event in Québec, designed to feel as elevated as the event itself.",
       fr: "Un site web sur mesure pour un événement de réseautage et d'inspiration au féminin au Québec, à la hauteur de l'événement lui-même.",
@@ -222,7 +223,7 @@ export const projects: Project[] = [
   },
   {
     id: 4, slug: "reno-pro-plus", name: "Reno Pro Plus", client: { en: "Home Renovation", fr: "Rénovation résidentielle" }, tags: ["Web Design"], year: "2024",
-    gradient: "linear-gradient(135deg, #0D1525 0%, #1A2840 50%, #253A5A 100%)", image: "/work-renoproplus.jpeg", url: "https://renoproplus.com/",
+    gradient: "linear-gradient(135deg, #0D1525 0%, #1A2840 50%, #253A5A 100%)", image: "/work-renoproplus.jpeg", imageFr: "/work-renoproplus-fr.jpeg", url: "https://renoproplus.com/",
     desc: {
       en: "A website for a renovation company serving Laval and Montréal, built to turn a first look into a quote request.",
       fr: "Un site web pour une entreprise de rénovation de Laval et Montréal, conçu pour transformer un premier regard en demande de soumission.",
@@ -284,3 +285,6 @@ export const localize = (v: Localized | string, lang: Lang): string =>
 /** Descriptive image text for a project screenshot, e.g. "Harmonia Therapy Center website — Health & Wellness". */
 export const projectAlt = (p: Project, lang: "en" | "fr") =>
   lang === "fr" ? `Site web de ${p.name} — ${localize(p.client, lang)}` : `${p.name} website — ${localize(p.client, lang)}`;
+
+/** Preview screenshot for the active language; falls back to the English capture when the site has no French version. */
+export const projectImage = (p: Project, lang: Lang) => (lang === "fr" && p.imageFr) || p.image;
